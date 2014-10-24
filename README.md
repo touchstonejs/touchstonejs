@@ -1,4 +1,6 @@
-touchstone
+Touchstone
 ==========
 
-Mobile App Framework powered by React
+Mobile App Framework powered by React.
+
+Currently a prototype.

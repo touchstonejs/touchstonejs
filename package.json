@@ -1,0 +1,22 @@
+{
+  "name": "touchstone",
+  "version": "0.0.0",
+  "description": "A Mobile App Framework built on ReactJS",
+  "main": "src/js/app.js",
+  "author": "Jed Watson",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JedWatson/touchstone.git"
+  },
+  "bugs": {
+    "url": "https://github.com/JedWatson/touchstone/issues"
+  },
+  "dependencies": {
+    "react": "~0.11.2",
+    "react-tappable": "0.0.2",
+    "underscore": "~1.7.0"
+  },
+  "scripts": {
+    "test": "echo \"no tests yet\" && exit 0"
+  }
+}
