@@ -77,6 +77,9 @@
 // Select Field
 // ------------------------------
 
+@indicator-arrow-size: 4px;
+@indicator-arrow-gap:  2px;
+
 // style the native select field whilst retaining the default behaviour
 // apply default field styles
 
@@ -107,11 +110,10 @@
 // replicate the dropdown arrows
 .select-field-indicator,
 .select-field-indicator-arrow {
-	bottom: 1px;
-	content: '';
+	bottom: 0;
 	display: inline-block;
-	right: 1px;
-	top: 1px;
+	right: 0;
+	top: 0;
 	position: absolute;
 	pointer-events: none;
 }
@@ -124,14 +126,26 @@
 }
 // add the arrow back
 .select-field-indicator-arrow {
-	.square(0);
-	.translate(-50%,-50%);
-	border: 4px solid transparent;
-	border-top-color: @field-placeholder;
-	border-bottom-width: 0;
-	right: 4px;
-	text-align: center;
 	top: 50%;
+
+	&:before,
+	&:after {
+		.square(0);
+		border: @indicator-arrow-size solid transparent;
+		content: "";
+		position: absolute;
+		right: @indicator-arrow-size / 2;
+	}
+	&:before {
+		border-bottom-color: @field-color;
+		border-top-width: 0;
+		margin-top: -(@indicator-arrow-size + @indicator-arrow-gap);
+	}
+	&:after {
+		border-top-color: @field-color;
+		border-bottom-width: 0;
+		margin-bottom: -(@indicator-arrow-size + @indicator-arrow-gap);
+	}
 }
 
 
