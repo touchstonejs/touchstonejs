@@ -17,17 +17,18 @@
 
 	// separator
 	&:before {
-		.size(100%,1px);
-		.transform-origin(0 0);
-		background-color: @list-divider-color;
+		background-color: rgba(0, 0, 0, 0.15);
 		content: " ";
+		height: 1px;
 		left: 0;
 		position: absolute;
 		top: 0;
+		width: ~"calc(100% - @{field-padding-horizontal})";
 	
-		// simulate a 1px border on retina screens
+		// create a 1px border on retina screens
 		@media (-webkit-min-device-pixel-ratio: 2) {
 			.scaleY(0.5);
+			.transform-origin(0 0);
 		}
 	}
 
@@ -75,6 +76,7 @@
 
 // provide the little arrow indicating a view will be shown on tap
 
+.ios-list--tappable > .list-item:after,
 .list-item.is-tappable:after {
 	.pseudo-ionicon(#ccc, @ionicon-var-chevron-right, @ionicons-size-base);
 	.align-items(center);
