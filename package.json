@@ -12,9 +12,9 @@
     "url": "https://github.com/JedWatson/touchstone/issues"
   },
   "dependencies": {
-    "react": "~0.12.1",
-    "react-tappable": "0.2.3",
-    "underscore": "~1.7.0"
+    "react": "^0.12.1",
+    "react-tappable": "^0.2.3",
+    "underscore": "^1.7.0"
   },
   "scripts": {
     "test": "echo \"no tests yet\" && exit 0"
