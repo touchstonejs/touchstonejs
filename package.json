@@ -12,8 +12,8 @@
     "url": "https://github.com/JedWatson/touchstone/issues"
   },
   "dependencies": {
-    "react": "~0.11.2",
-    "react-tappable": "0.0.2",
+    "react": "~0.12.1",
+    "react-tappable": "0.2.3",
     "underscore": "~1.7.0"
   },
   "scripts": {
