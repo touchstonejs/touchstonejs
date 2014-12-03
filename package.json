@@ -17,6 +17,11 @@
     "react-tappable": "^0.2.3",
     "underscore": "^1.7.0"
   },
+  "browserify": {
+    "transform": [
+      "reactify"
+    ]
+  },
   "scripts": {
     "test": "echo \"no tests yet\" && exit 0"
   }
