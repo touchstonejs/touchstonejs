@@ -1,0 +1,69 @@
+// 
+// Toggle
+// ------------------------------
+
+// base
+
+.Toggle {
+	.display-flex();
+	font-size: @font-size-tiny;
+}
+
+
+// options
+
+.Toggle-item {
+	.flex-grow(1);
+	background-color: white;
+	border: none;
+	box-shadow: 0 0 0 1px @link-color;
+	color: @link-color;
+	cursor: pointer;
+	display: table-cell;
+	line-height: @toggle-height;
+	text-align: center;
+
+	&:first-child { .border-left-radius( @border-radius-small ); }
+	&:last-child { .border-right-radius( @border-radius-small ); }
+
+	
+	// tapped state
+
+	&.Tappable-active {
+		background-color: @gray-lighter;
+	}
+}
+
+
+// variants
+
+.toggle-variant(@color) {
+	box-shadow: 0 0 0 1px @color;
+	color: @color;
+
+	&.active {
+		background-color: @color;
+		color: white;
+	}
+}
+
+.Toggle > .Toggle-item,
+.Toggle.blue > .Toggle-item,
+.Toggle.primary > .Toggle-item     { .toggle-variant(@app-primary); }
+.Toggle.muted > .Toggle-item       { .toggle-variant(@gray-light); }
+.Toggle.green > .Toggle-item       { .toggle-variant(@green); }
+.Toggle.light-blue > .Toggle-item  { .toggle-variant(@light-blue); }
+.Toggle.yellow > .Toggle-item      { .toggle-variant(@yellow); }
+.Toggle.orange > .Toggle-item      { .toggle-variant(@orange); }
+.Toggle.red > .Toggle-item         { .toggle-variant(@red); }
+.Toggle.pink > .Toggle-item        { .toggle-variant(@pink); }
+.Toggle.purple > .Toggle-item      { .toggle-variant(@purple); }
+
+
+
+
+
+
+
+
+

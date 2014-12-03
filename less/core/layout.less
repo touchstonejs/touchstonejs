@@ -1,0 +1,48 @@
+//
+// Layout
+// ==============================
+
+
+
+
+// Setup
+// ------------------------------
+
+#app,
+html,
+body {
+	.square(100%);
+	background: @body-bg;
+	overflow: hidden;
+	position: fixed;
+}
+
+// make it play nice with mobile
+.app-wrapper {
+	.fill-space();
+	background-color: black; // exagerate opacity changes on views
+	overflow: hidden;
+	position: fixed; // fill-space positions absolutely by default
+}
+
+// desktop wrapper
+@media only screen and (min-width: 480px) {
+	.app-wrapper {
+		// .size(320px,480px); // iPhone 4
+		// .size(320px,568px); // iPhone 5
+		.size(376px,668px); // iPhone 6, actually "365,667" but that causes subpixel blur from transforms
+		.translate(-50%,-50%);
+		box-shadow: 0 0 12px -1px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(0, 0, 0, 0.06);
+		left: 50%;
+		top: 50%;
+	}
+}
+
+
+
+
+
+
+
+
+

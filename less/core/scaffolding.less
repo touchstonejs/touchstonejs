@@ -1,0 +1,107 @@
+//
+// Scaffolding
+// --------------------------------------------------
+
+
+// Reset the box-sizing
+//
+// Heads up! This reset may cause conflicts with some third-party widgets.
+// For recommendations on resolving such conflicts, see
+// http://getbootstrap.com/getting-started/#third-box-sizing
+*,
+*:before,
+*:after {
+  .box-sizing(border-box);
+}
+
+
+// Body reset
+
+html {
+  overflow: hidden;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+
+body {
+  background-color: @body-bg;
+  color: @text-color;
+  font-family: @font-family-base;
+  font-size: @font-size-base;
+  line-height: @line-height-base;
+
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+
+  text-rendering: optimizeLegibility;
+  word-wrap: break-word;
+  -webkit-user-drag: none;
+  -webkit-touch-callout: none;
+  -webkit-text-size-adjust: none;
+  -webkit-user-select: none;
+  
+  // smaller fonts on "shorter" devices
+  @media (max-height: 480px), (max-width: 320px) {
+    font-size: @font-size-small;
+  }
+}
+
+// Reset fonts for relevant elements
+input,
+button,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  resize: none;
+}
+
+
+// Links
+
+a {
+  color: @link-color;
+  cursor: pointer; // for piece of mind when developing on the desktop
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    color: @link-hover-color;
+    text-decoration: none;
+  }
+
+  &:focus {
+    outline: none;
+    text-decoration: none;
+  }
+}
+
+
+// Figures
+//
+// We reset this here because previously Normalize had no `figure` margins. This
+// ensures we don't break anyone's use of the element.
+
+figure {
+  margin: 0;
+}
+
+
+// Images
+
+img {
+  vertical-align: middle;
+}
+
+// Responsive images (ensure images don't scale beyond their parents)
+.img-responsive {
+  .img-responsive();
+}
+

@@ -1,0 +1,54 @@
+// 
+// Panels
+// ==============================
+
+
+// base
+
+.panel {
+	.retina-1px-border-top-and-bottom( rgba(0,0,0,0.17) );
+	margin-bottom: @gutter-large;
+
+	.view-inner > & {
+		border-radius: @border-radius-base;
+		box-shadow: 0 2px 0 rgba(0, 0, 0, 0.06), 0 0 0 1px rgba(0, 0, 0, 0.06);
+	}
+}
+.panel--first {
+	margin-top: @gutter-large;
+}
+
+
+// headings
+
+.panel-header {
+	color: @panel-header-color;
+	font-size: 80%;
+	// font-weight: 500;
+	line-height: 1;
+	
+	// use margin for vertical spacing to take advantage of collapsing
+	margin-bottom: @gutter-base;
+	margin-top: @gutter-large;
+	padding-left: @padding-base-horizontal;
+	padding-right: @padding-base-horizontal;
+	// text-transform: uppercase; // OTT
+}
+
+
+// body
+
+.panel-inner {
+	padding: @padding-base-vertical @padding-base-horizontal;
+
+	& + & {
+		box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.1);
+		// border-top: 1px solid rgba(0, 0, 0, 0.1);
+	}
+	&.is-first {
+		.border-top-radius(@border-radius-base);
+	}
+	&.is-last {
+		.border-bottom-radius(@border-radius-base);
+	}
+}

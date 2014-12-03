@@ -1,0 +1,258 @@
+// 
+// List
+// ==============================
+
+
+// item
+
+.list-item {
+	.display-flex();
+	color: @text-color;
+	// line-height: @font-size-base + 3;
+	line-height: 1;
+	overflow: hidden;
+	padding: @field-padding-vertical @field-padding-horizontal;
+	position: relative;
+	z-index: 1;
+
+	// separator
+	&:before {
+		.size(100%,1px);
+		.transform-origin(0 0);
+		background-color: @list-divider-color;
+		content: " ";
+		left: 0;
+		position: absolute;
+		top: 0;
+	
+		// simulate a 1px border on retina screens
+		@media (-webkit-min-device-pixel-ratio: 2) {
+			.scaleY(0.5);
+		}
+	}
+
+	// hide the first separator
+	&:first-child:before,
+	&.is-first:before {
+		display: none;
+	}
+	
+
+	// provide context for different separators
+	.ios-list &:before {
+		left: @padding-base-horizontal;
+	}
+	.icon-list & {
+		padding-left: (@padding-base-horizontal * 2) + @list-icon-size;
+
+		&:before {
+			left: (@padding-base-horizontal * 2) + @list-icon-size;
+		}
+	}
+	.avatar-list & {
+		padding-left: (@padding-base-horizontal * 2) + @list-avatar-size;
+
+		&:before {
+			left: (@padding-base-horizontal * 2) + @list-avatar-size;
+		}
+	}
+
+	&:hover,
+	&:active,
+	&:focus {
+		color: @text-color;
+		text-decoration: none;
+	}
+
+
+	// add active state
+
+	&.Tappable-active {
+		background-color: @gray-lighter;
+	}
+}
+
+
+// provide the little arrow indicating a view will be shown on tap
+
+.list-item.is-tappable:after {
+	.pseudo-ionicon(#ccc, @ionicon-var-chevron-right, @ionicons-size-base);
+	.align-items(center);
+	.display-flex();
+	height: 100%;
+	position: absolute;
+	right: @gutter-base;
+	top: 0;
+}
+
+
+// text
+
+.list-item-title {
+	.inline-align();
+	.text-overflow();
+
+	// stop descenders being cropped due to text-overflow
+	margin-bottom: -2px;
+	padding-bottom: 2px;
+}
+.list-item-subtitle {
+	color: @gray;
+	font-size: 85%;
+	font-weight: 300;
+}
+
+
+// center align elements
+
+.center-align-left,
+.center-align-right {
+	.display-flex();
+	.align-items(center);
+	height: 100%;
+	position: absolute;
+	top: 0;
+}
+.center-align-left {
+	left: @padding-base-horizontal;
+}
+.center-align-right {
+	right: @padding-base-horizontal;
+}
+
+
+
+
+// Item Notes
+// ------------------------------
+
+.item-note {
+	.display-flex();
+	.align-items(center);
+	height: 100%;
+	padding: 0 (@gutter-base / 2);
+	position: absolute;
+	right: 0;
+	top: 0;
+
+	// variants
+	&.is-muted {
+		.item-note-label { color: #999; }
+		.item-note-icon { color: #ccc; }
+	}
+	&.is-primary {
+		color: @app-primary;
+
+		.item-note-label,
+		.item-note-icon { color: @app-primary; }
+	}
+
+	// if just label or just icon
+	&.item-note-icon,
+	&.item-note-label {
+		padding-left: @gutter-base;
+		padding-right: @gutter-base;
+	}
+}
+
+.item-note-icon,
+.item-note-label {
+	.inline-align(top);
+	padding: @padding-base-vertical (@gutter-base / 2);
+}
+.item-note-label { color: #999; }
+.item-note-icon { color: #ccc; }
+
+
+
+
+// Icons
+// ------------------------------
+
+.list-item-icon-left,
+.list-item-icon-right {
+	min-height: @list-avatar-size;
+}
+.list-icon {
+	.inline-align();
+	.square(@list-icon-size);
+	.translateY(-50%);
+	line-height: @list-icon-size;
+	position: absolute;
+	top: 50%;
+	text-align: center;
+
+	// actual icon
+
+	&:before {
+		.display-flex();
+		.align-items(center);
+		.justify-content(center);
+		font-size: @ionicons-size-base;
+		height: 100%;
+	}
+
+	&.left {
+		left: @padding-base-horizontal;
+
+		&.flush {
+			left: 0;			
+		}
+	}
+	&.right {
+		right: @padding-base-horizontal;
+
+		&.flush {
+			right: 0;			
+		}
+	}
+}
+
+
+// contact lists
+
+.list-avatar {
+	.inline-align();
+	.square(@list-avatar-size);
+	.translateY(-50%);
+	background-color: mix(white, black, 70%);
+	border-radius: 50%;
+	color: white;
+	font-size: @ionicons-size-large;
+	line-height: @list-avatar-size;
+	left: @padding-base-horizontal;
+	position: absolute;
+	text-align: center;
+	top: 50%;
+
+	> img {
+		border-radius: 50%;
+		display: block;
+		height: auto;
+		max-width: 100%;
+	}
+}
+
+
+
+
+// Headers
+// ------------------------------
+
+.list-header {
+	.retina-1px-border-top-and-bottom( @list-divider-color );
+	background-color: @body-bg;
+	color: @panel-header-color;
+	display: block;
+	font-size: @font-size-tiny;
+	font-weight: 500;
+	line-height: 1.1;
+	margin: 0;
+	padding: (@padding-base-vertical / 2) @padding-base-horizontal;
+	position: relative;
+	text-transform: uppercase;
+}
+
+
+
+

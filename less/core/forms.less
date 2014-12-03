@@ -1,0 +1,144 @@
+// 
+// Forms
+// ==============================
+
+
+
+
+// Field
+// ------------------------------
+
+
+// label + control
+
+.field-label {
+	color: @gray;
+	line-height: @font-size-base + 3; // allows room for decenders. applied by the browser to inputs
+	// padding: @field-padding-vertical @field-padding-horizontal @field-padding-vertical 0;
+	width: 35%;
+}
+
+.field-control {
+	line-height: @font-size-base + 3; // allows room for decenders. applied by the browser to inputs
+	// padding: @field-padding-vertical 0;
+	position: relative;
+	width: 65%;
+}
+
+
+// input
+
+.field {
+	.placeholder( @field-placeholder );
+	background: none transparent;
+	border: 0 none;
+	box-shadow: none;
+	color: @field-color;
+	display: inline-block;
+	line-height: 1;
+	outline: none;
+	min-height: @font-size-base + 3;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	-webkit-appearance: none;
+
+	// when noedit allow users to select the text
+	div& {
+		overflow-x: auto;
+		white-space: nowrap;
+		-webkit-overflow-scrolling: touch;
+		-webkit-touch-callout: default;
+		-webkit-user-select: text;
+	}
+}
+
+
+
+
+// Misc. Controls
+// ------------------------------
+
+.form-control-with-toggle {
+	padding: @padding-base-vertical 0;
+	position: relative;
+}
+.form-control-toggle {
+	.btn();
+	.btn-link();
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+
+
+
+// Select Field
+// ------------------------------
+
+// style the native select field whilst retaining the default behaviour
+// apply default field styles
+
+.select-field {
+	.field();
+	color: @text-color;
+	font-size: inherit;
+	font-family: @font-family-base;
+	line-height: @line-height-base;
+	outline: none;
+	width: 100%;
+	-webkit-appearance: none;
+	   -moz-appearance: none;
+			appearance: none;
+
+	// Stop FF from showing that dotted outline
+	// this hack makes me feel dirty :(
+	&:-moz-focusring {
+		color: transparent; // hide text
+		text-shadow: 0 0 0 #000; // replace text with a shadow
+	}
+	&:focus + .select-field-indicator {
+		.select-field-indicator-arrow {
+			border-top-color: @gray;
+		}
+	}
+}
+// replicate the dropdown arrows
+.select-field-indicator,
+.select-field-indicator-arrow {
+	bottom: 1px;
+	content: '';
+	display: inline-block;
+	right: 1px;
+	top: 1px;
+	position: absolute;
+	pointer-events: none;
+}
+
+// hide the default arrow UI
+.select-field-indicator {
+	.border-right-radius( @border-radius-base - 2 );
+	background-color: white;
+	width: 1.5em;
+}
+// add the arrow back
+.select-field-indicator-arrow {
+	.square(0);
+	.translate(-50%,-50%);
+	border: 4px solid transparent;
+	border-top-color: @field-placeholder;
+	border-bottom-width: 0;
+	right: 4px;
+	text-align: center;
+	top: 50%;
+}
+
+
+
+
+
+
+
+
+

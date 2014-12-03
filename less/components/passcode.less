@@ -1,0 +1,82 @@
+// 
+// Pin Entry
+// ==============================
+
+@passcode-gutter:        4px;
+
+
+// base
+
+.Passcode {
+	margin: 0 auto;
+	max-width: 190px;
+	text-align: center;
+	width: 70%;
+}
+
+
+// label
+
+.Passcode-label {
+	// font-size: @font-size-small;
+}
+
+
+// evenly space the fields
+
+.Passcode-fields {
+	.display-flex();
+}
+
+.Passcode-field {
+	.flex(1,0,0);
+	margin: @passcode-gutter;
+	position: relative;
+}
+
+
+// simulate inputs
+
+.Passcode-input {
+	background: none;
+	border: none;
+	border-radius: 0;
+	box-shadow: inset 0 -4px 0 currentColor;
+	bottom: 0;
+	height: 60px;
+	left: @passcode-gutter;
+	right: @passcode-gutter;
+	position: relative;
+	text-align: center;
+	width: 100%;
+
+	&:after {
+		.square(16px);
+		.fill-space();
+		.translateY(-50%);
+		background-color: currentColor;
+		border-radius: 50%;
+		content: "";
+		display: none;
+		margin: 0 auto;
+		top: 50%;
+	}
+
+	// remove all browser styles
+	&,
+	&:hover,
+	&:active,
+	&:focus {
+		outline: none;
+		-webkit-appearance: none;
+	}
+
+	// fill value
+	&.has-value {
+		box-shadow: none;
+		
+		&:after {
+			display: block;
+		}
+	}
+}
