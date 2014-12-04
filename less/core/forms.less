@@ -59,16 +59,19 @@
 // Misc. Controls
 // ------------------------------
 
-.form-control-with-toggle {
-	padding: @padding-base-vertical 0;
-	position: relative;
-}
 .form-control-toggle {
-	.btn();
-	.btn-link();
+	background-color: transparent;
+	border: none;
+	color: @app-primary;
+	display: inline-block;
+	padding: (@padding-base-vertical + 1) @padding-base-horizontal; // extra v-pixel accounts for the border on list-items
 	position: absolute;
+	outline: none;
+	text-align: center;
+	text-decoration: none;
 	right: 0;
 	top: 0;
+	-webkit-appearance: none;
 }
 
 

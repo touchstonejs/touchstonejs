@@ -19,7 +19,7 @@
 }
 
 
-// headings
+// panel headings site above the panel
 
 .panel-header {
 	color: @panel-header-color;
@@ -32,7 +32,20 @@
 	margin-top: @gutter-large;
 	padding-left: @padding-base-horizontal;
 	padding-right: @padding-base-horizontal;
-	// text-transform: uppercase; // OTT
+}
+
+
+// panel info sits below the panel, use if the panel needs further explanation
+
+.panel-info {
+	color: @panel-header-color;
+	font-size: 80%;
+	line-height: 1.1;
+	
+	margin-bottom: @gutter-large;
+	margin-top: -(@gutter-large / 2);
+	padding-left: @padding-base-horizontal;
+	padding-right: @padding-base-horizontal;
 }
 
 
