@@ -11,53 +11,13 @@
 	// line-height: @font-size-base + 3;
 	line-height: 1;
 	overflow: hidden;
-	padding: @field-padding-vertical @field-padding-horizontal;
 	position: relative;
 	z-index: 1;
 
-	// separator
-	&:before {
-		background-color: rgba(0, 0, 0, 0.15);
-		content: " ";
-		height: 1px;
-		left: 0;
-		position: absolute;
-		top: 0;
-		width: ~"calc(100% - @{field-padding-horizontal})";
-	
-		// create a 1px border on retina screens
-		@media (-webkit-min-device-pixel-ratio: 2) {
-			.scaleY(0.5);
-			.transform-origin(0 0);
-		}
-	}
+	// create the ios-style gap on the left
+	padding-left: @padding-base-horizontal;
 
-	// hide the first separator
-	&:first-child:before,
-	&.is-first:before {
-		display: none;
-	}
-	
-
-	// provide context for different separators
-	.ios-list &:before {
-		left: @padding-base-horizontal;
-	}
-	.icon-list & {
-		padding-left: (@padding-base-horizontal * 2) + @list-icon-size;
-
-		&:before {
-			left: (@padding-base-horizontal * 2) + @list-icon-size;
-		}
-	}
-	.avatar-list & {
-		padding-left: (@padding-base-horizontal * 2) + @list-avatar-size;
-
-		&:before {
-			left: (@padding-base-horizontal * 2) + @list-avatar-size;
-		}
-	}
-
+	// stop changes on various states when developing on desktop
 	&:hover,
 	&:active,
 	&:focus {
@@ -69,22 +29,55 @@
 	// add active state
 
 	&.Tappable-active {
-		background-color: @gray-lighter;
+		background-color: @item-tap-bg;
+	}
+
+
+	// hide the last item's border
+	&:last-child .item-inner {
+		border-bottom: none;
+	}
+
+	// transition in and out of tap bg highlight
+	&.Tappable-inactive {
+		.transition( background-color 300ms );
 	}
 }
 
 
 // provide the little arrow indicating a view will be shown on tap
 
-.ios-list--tappable > .list-item:after,
 .list-item.is-tappable:after {
 	.pseudo-ionicon(#ccc, @ionicon-var-chevron-right, @ionicons-size-base);
 	.align-items(center);
 	.display-flex();
 	height: 100%;
 	position: absolute;
-	right: @gutter-base;
+	right: @padding-base-horizontal;
 	top: 0;
+}
+
+
+// wrap item content
+
+.item-inner {
+	.display-flex();
+	.align-items(center);
+	.justify-content(space-between);
+	border-bottom: 1px solid @item-divider-color;
+	min-height: @item-height;
+	padding: @field-padding-vertical @field-padding-horizontal @field-padding-vertical 0;
+	width: 100%;
+
+	// create a 1px border on retina displays
+	@media (-webkit-min-device-pixel-ratio: 2) {
+		border-bottom-width: .5px;
+	}
+
+	// add gap between media and content
+	.item-media + & {
+		margin-left: @field-padding-horizontal;
+	}
 }
 
 
@@ -130,58 +123,51 @@
 
 .item-note {
 	.display-flex();
-	.align-items(center);
-	height: 100%;
-	padding: 0 (@gutter-base / 2);
-	position: absolute;
-	right: 0;
-	top: 0;
+
 
 	// variants
-	&.is-muted {
-		.item-note-label { color: #999; }
-		.item-note-icon { color: #ccc; }
+	&.default {
+		color: #999;
+		
+		.item-note-icon {
+			color: #ccc;
+		}
 	}
-	&.is-primary {
-		color: @app-primary;
+	&.primary { color: @app-primary; }
 
-		.item-note-label,
-		.item-note-icon { color: @app-primary; }
-	}
+}
 
-	// if just label or just icon
-	&.item-note-icon,
-	&.item-note-label {
-		padding-left: @gutter-base;
-		padding-right: @gutter-base;
+// provide some space for the icon and get the size right
+.item-note-icon {
+	margin-left: (@padding-base-horizontal / 2);
+
+	&:before {
+		font-size: @ionicons-size-base;
 	}
 }
 
-.item-note-icon,
-.item-note-label {
-	.inline-align(top);
-	padding: @padding-base-vertical (@gutter-base / 2);
+
+
+
+// Item Media
+// ------------------------------
+
+
+.item-media {
+	.display-flex();
+	.flex-wrap(nowrap);
+	.align-items(center);
+	min-width: @item-icon-size;
 }
-.item-note-label { color: #999; }
-.item-note-icon { color: #ccc; }
-
-
 
 
 // Icons
-// ------------------------------
 
-.list-item-icon-left,
-.list-item-icon-right {
-	min-height: @list-avatar-size;
-}
-.list-icon {
+.item-icon {
 	.inline-align();
-	.square(@list-icon-size);
-	.translateY(-50%);
-	line-height: @list-icon-size;
-	position: absolute;
-	top: 50%;
+	.square(@item-icon-size);
+	border-radius: @border-radius-base;
+	line-height: @item-icon-size;
 	text-align: center;
 
 	// actual icon
@@ -194,6 +180,7 @@
 		height: 100%;
 	}
 
+	// align left
 	&.left {
 		left: @padding-base-horizontal;
 
@@ -201,6 +188,7 @@
 			left: 0;			
 		}
 	}
+	// align right
 	&.right {
 		right: @padding-base-horizontal;
 
@@ -208,20 +196,40 @@
 			right: 0;			
 		}
 	}
+
+	// add a box around the icon
+	&.rounded {
+		border-radius: @border-radius-base;
+		background-color: @body-bg;
+	}
 }
 
 
-// contact lists
+// icon variants
+
+.item-icon.primary-inverted {
+	background-color: @app-primary;
+	color: white;
+}
+.item-icon.primary {
+	color: @app-primary;
+}
+
+
+
+
+// Avatars
+// ------------------------------
 
 .list-avatar {
 	.inline-align();
-	.square(@list-avatar-size);
+	.square(@item-avatar-size);
 	.translateY(-50%);
 	background-color: mix(white, black, 70%);
 	border-radius: 50%;
 	color: white;
 	font-size: @ionicons-size-large;
-	line-height: @list-avatar-size;
+	line-height: @item-avatar-size;
 	left: @padding-base-horizontal;
 	position: absolute;
 	text-align: center;
@@ -242,7 +250,7 @@
 // ------------------------------
 
 .list-header {
-	.retina-1px-border-top-and-bottom( @list-divider-color );
+	.retina-1px-border-top-and-bottom( @item-divider-color );
 	background-color: @body-bg;
 	color: @panel-header-color;
 	display: block;

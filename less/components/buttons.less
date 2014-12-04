@@ -111,9 +111,6 @@ button {
 // ------------------------------
 
 .panel-button {
-	// add retina borders
-	.retina-1px-border-top-and-bottom( rgba(0,0,0,0.17) );
-
 	// de-chrome
 	border: 0 none;
 	font-weight: normal;
@@ -123,14 +120,27 @@ button {
 	-webkit-appearance: none;
 
 	// re-chrome
+	.text-overflow();
+	background-color: white;
+	border-bottom: 1px solid @item-divider-color;
+	border-top: 1px solid @item-divider-color;
 	color: @text-color;
 	display: block;
 	margin-bottom: @gutter-large;
-	padding: @padding-base-vertical @padding-base-horizontal;
+	height: @item-height;
+	line-height: @item-height;
+	padding: 0 @padding-base-horizontal;
 	position: relative;
 	text-align: center;
 	width: 100%;
 
+	// create a 1px border on retina displays
+	@media (-webkit-min-device-pixel-ratio: 2) {
+		border-bottom-width: .5px;
+		border-top-width: .5px;
+	}
+
+	// variants
 	&.muted { color: @gray; }
 	&.primary { color: @app-primary; font-weight: 500; }
 	&.info { color: @app-info; }
@@ -143,16 +153,12 @@ button {
 		margin-top: -(@gutter-large / 2);
 	}
 
-
 	// add active state
-
 	&.Tappable-active {
-		background-color: @gray-lighter;
+		background-color: @item-tap-bg;
 	}
 
-
 	// add disabled state
-
 	&.disabled,
 	&[disabled] {
 		pointer-events: none;
