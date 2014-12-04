@@ -10,13 +10,17 @@
 
 .Footerbar {
 	.display-flex();
-	.retina-1px-border-top( rgba(0,0,0,0.3) );
 	background-color: @headerbar-bg;
 	color: @headerbar-color;
 	height: @headerbar-height;
 	margin: 0;
 	position: relative;
 	z-index: 3;
+
+	// add a border to the top of the default bar
+	&.default {
+		.retina-1px-border-top( rgba(0,0,0,0.3) );
+	}
 }
 
 
@@ -45,11 +49,16 @@
 		&[disabled] {
 			color: @headerbar-inverted-button-color-disabled;
 		}
+
+		> .Footerbar-button-icon,
+		> .Footerbar-button-label {
+			color: inherit;
+		}
 	}
 }
+.Footerbar.primary { background-color: @app-primary; }
 .Footerbar.green { background-color: @green; }
-.Footerbar.blue,
-.Footerbar.primary { background-color: @blue; }
+.Footerbar.blue { background-color: @blue; }
 .Footerbar.light-blue { background-color: @light-blue; }
 .Footerbar.yellow { background-color: @yellow; }
 .Footerbar.orange { background-color: @orange; }
