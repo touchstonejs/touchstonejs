@@ -75,22 +75,21 @@
 	padding-top: @statusbar-height;
 	
 	.Headerbar {
-
 		&:before {
-			background-color: @headerbar-bg;
 			content: "";
 			display: block !important;
 			height: @statusbar-height;
 			left: 0;
-			position: fixed;
-			top: 0;
+			position: absolute;
+			top: -@statusbar-height;
 			width: 100%;
 		}
 		
 		// colour variants
+		&.default:before { background-color: @headerbar-bg; }
 		&.green:before { background-color: @green; }
-		&.blue:before,
-		&.primary:before { background-color: @blue; }
+		&.primary:before { background-color: @app-primary; }
+		&.blue:before { background-color: @blue; }
 		&.light-blue:before { background-color: @light-blue; }
 		&.yellow:before { background-color: @yellow; }
 		&.orange:before { background-color: @orange; }
