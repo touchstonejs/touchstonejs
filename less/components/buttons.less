@@ -258,7 +258,17 @@ button {
 	}
 
 	
-	// active state
+	// inactive state - used when items are selectable
+
+	&.inactive {
+		&:before,
+		> .action-button-label {
+			opacity: .4;
+		}
+	}
+
+	
+	// tapped state
 
 	&.Tappable-active {
 		background-color: @gray-lighter;

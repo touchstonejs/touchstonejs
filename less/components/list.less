@@ -29,6 +29,7 @@
 	// add active state
 
 	&.Tappable-active {
+		.transition( background-color 10ms linear 50ms ); // delay the tap highlight, it may just be a scroll
 		background-color: @item-tap-bg;
 	}
 
@@ -63,6 +64,14 @@
 	padding: @field-padding-vertical @field-padding-horizontal @field-padding-vertical 0;
 	width: 100%;
 
+	// alternative alignment (applied to the "list-item")
+	.align-children-top > & {
+		.align-items(flex-start);
+	}
+	.align-children-bottom > & {
+		.align-items(flex-end);
+	}
+
 	// hide the last item's border
 	.list-item:last-child & {
 		border-bottom: none;
@@ -95,30 +104,35 @@
 }
 
 
-// wrap item content
+// wrap item content so text cropping works
 
 .item-content {
-	.display-flex();
-	.align-items(flex-start);
-	.flex-flow(column nowrap);
-	width: 100%;
+	.flex(1, 0, 0);
+
+	&.row-children {
+		.display-flex();
+	}
 }
 
 
 // text
 
 .item-title {
-	.flex-grow(1);
 	.text-overflow();
 
-	// stop descenders being cropped due to text-overflow
-	margin-bottom: -2px;
-	padding-bottom: 2px;
+	// make room for descenders to stop the being cropped
+	margin-bottom: -1px;
+	padding-bottom: 1px;
 }
 .item-subtitle {
+	.text-overflow();
 	color: @gray;
 	font-size: 85%;
 	font-weight: 300;
+	
+	// make room for descenders to stop the being cropped
+	margin-bottom: -1px;
+	padding-bottom: 1px;
 }
 
 
@@ -147,6 +161,7 @@
 
 .item-note {
 	.display-flex();
+	white-space: nowrap;
 
 
 	// variants
@@ -159,6 +174,11 @@
 	}
 	&.primary { color: @app-primary; }
 
+}
+
+// one line
+.item-note-label {
+	white-space: nowrap;
 }
 
 // provide some space for the icon and get the size right
@@ -237,6 +257,10 @@
 }
 .item-icon.primary {
 	color: @app-primary;
+}
+.item-icon.default {
+	background-color: @body-bg;
+	color: @text-color;
 }
 
 
