@@ -9,17 +9,25 @@
 // ------------------------------
 
 
+// vertically align label and control top
+
+.field-item > .item-inner {
+	.align-items(flex-start);
+}
+
+
 // label + control
 
 .field-label {
 	color: @gray;
-	line-height: @font-size-base + 3; // allows room for decenders. applied by the browser to inputs
+	// font-weight: 300;
+	// line-height: @font-size-base + 3; // allows room for decenders. applied by the browser to inputs
 	// padding: @field-padding-vertical @field-padding-horizontal @field-padding-vertical 0;
 	width: 35%;
 }
 
 .field-control {
-	line-height: @font-size-base + 3; // allows room for decenders. applied by the browser to inputs
+	// line-height: @font-size-base + 3; // allows room for decenders. applied by the browser to inputs
 	// padding: @field-padding-vertical 0;
 	position: relative;
 	width: 65%;
@@ -43,13 +51,17 @@
 	width: 100%;
 	-webkit-appearance: none;
 
-	// when noedit allow users to select the text
+	// when readonly allow users to select the text
 	div& {
-		overflow-x: auto;
-		white-space: nowrap;
 		-webkit-overflow-scrolling: touch;
 		-webkit-touch-callout: default;
 		-webkit-user-select: text;
+	}
+
+	// one line
+	&.one-line {
+		overflow-x: auto;
+		white-space: nowrap;
 	}
 }
 
@@ -59,19 +71,23 @@
 // Misc. Controls
 // ------------------------------
 
-.form-control-toggle {
-	background-color: transparent;
-	border: none;
-	color: @app-primary;
-	display: inline-block;
-	padding: (@padding-base-vertical + 1) @padding-base-horizontal; // extra v-pixel accounts for the border on list-items
+.field-note {
+	padding-left: floor(@padding-base-horizontal / 2); // provide a buffer between the input
+	position: relative;
+
+	// increase the tappable area
+	&:after {
+		.fill-space();
+		content: " ";
+		margin: -@padding-base-vertical -@padding-base-horizontal;
+		padding: @padding-base-vertical @padding-base-horizontal;
+	}
+}
+
+// some field notes need to be out of the flow so they don't change the % widths of field label/control
+.field-note-over {
 	position: absolute;
-	outline: none;
-	text-align: center;
-	text-decoration: none;
-	right: 0;
-	top: 0;
-	-webkit-appearance: none;
+	right: @padding-base-horizontal;
 }
 
 
