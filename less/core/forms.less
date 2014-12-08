@@ -79,6 +79,18 @@ textarea::-webkit-input-placeholder { line-height: normal; }
 // Misc. Controls
 // ------------------------------
 
+label.item-content {
+	position: relative;
+
+	// increase the tappable area
+	&:after {
+		.fill-space();
+		content: " ";
+		margin: -@padding-base-vertical -@padding-base-horizontal;
+		padding: @padding-base-vertical @padding-base-horizontal;
+	}
+}
+
 .field-note {
 	padding-left: floor(@padding-base-horizontal / 2); // provide a buffer between the input
 	position: relative;
