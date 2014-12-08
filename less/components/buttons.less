@@ -17,7 +17,7 @@ button {
 	border-radius: @border-radius-base;
 	border: 0 none;
 	display: inline-block;
-	font-weight: 500;
+	font-weight: @font-weight-bold;
 	padding: @padding-base-vertical @padding-base-horizontal;
 	position: relative;
 	outline: none;
@@ -142,7 +142,7 @@ button {
 
 	// variants
 	&.muted { color: @gray; }
-	&.primary { color: @app-primary; font-weight: 500; }
+	&.primary { color: @app-primary; font-weight: @font-weight-bold; }
 	&.info { color: @app-info; }
 	&.success { color: @app-success; }
 	&.warning { color: @app-warning; }
@@ -198,6 +198,15 @@ button {
 	.loader(@font-size-huge, 500ms, @app-primary);
 	.transition-delay( 200ms );
 	opacity: 0;
+
+	// variants
+	.loading-button.default &  { .loader(@font-size-huge, 500ms, @text-color); }
+	.loading-button.muted &    { .loader(@font-size-huge, 500ms, @app-muted); }
+	.loading-button.primary &  { .loader(@font-size-huge, 500ms, @app-primary); }
+	.loading-button.info &     { .loader(@font-size-huge, 500ms, @app-info); }
+	.loading-button.success &  { .loader(@font-size-huge, 500ms, @app-success); }
+	.loading-button.warning &  { .loader(@font-size-huge, 500ms, @app-warning); }
+	.loading-button.danger &   { .loader(@font-size-huge, 500ms, @app-danger); }
 }
 
 // change state
@@ -290,7 +299,7 @@ button {
 .action-button-label {
 	.text-overflow();
 	font-size: @font-size-small;
-	font-weight: 500;
+	font-weight: @font-weight-bold;
 }
 
 
@@ -324,7 +333,7 @@ button {
 	border: 0 none;
 	color: white;
 	display: block;
-	font-weight: 500;
+	font-weight: @font-weight-bold;
 	position: relative;
 	outline: none;
 	text-align: center;
