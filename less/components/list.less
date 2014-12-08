@@ -29,7 +29,7 @@
 	// add active state
 
 	&.Tappable-active {
-		.transition( background-color 10ms linear 50ms ); // delay the tap highlight, it may just be a scroll
+		.transition( background-color 10ms linear 10ms ); // delay the tap highlight, it may just be a scroll
 		background-color: @item-tap-bg;
 	}
 
@@ -262,6 +262,17 @@
 	background-color: @body-bg;
 	color: @text-color;
 }
+
+
+// loading
+
+.item-icon.ion-load-a:before,
+.item-icon.ion-load-b:before,
+.item-icon.ion-load-c:before,
+.item-icon.ion-load-d:before {
+	.animation( spin 1s linear infinite );
+}
+
 
 
 
