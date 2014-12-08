@@ -8,8 +8,7 @@
 // Fixes
 // ------------------------------
 
-input::-webkit-input-placeholder,
-textarea::-webkit-input-placeholder { line-height: normal; }
+input::-webkit-input-placeholder { line-height: normal; }
 
 
 
@@ -108,6 +107,15 @@ label.item-content {
 .field-note-over {
 	position: absolute;
 	right: @padding-base-horizontal;
+}
+
+// field font sizes (applied to the parent)
+
+.field-item-text-sm .field {
+	font-size: .9em;
+}
+.field-item-text-xs .field {
+	font-size: .8em;
 }
 
 
