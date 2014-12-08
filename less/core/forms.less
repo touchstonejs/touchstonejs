@@ -5,6 +5,15 @@
 
 
 
+// Fixes
+// ------------------------------
+
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder { line-height: normal; }
+
+
+
+
 // Field
 // ------------------------------
 
@@ -53,7 +62,6 @@
 
 	// when readonly allow users to select the text
 	div& {
-		-webkit-overflow-scrolling: touch;
 		-webkit-touch-callout: default;
 		-webkit-user-select: text;
 	}
