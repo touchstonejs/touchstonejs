@@ -6,12 +6,10 @@
 // top
 
 .retina-1px-border-top(@color) {
-	background-color: white;
 	position: relative;
 
 	&:after {
 		.size(100%,1px);
-		.transform-origin(0 bottom);
 		background-color: @color;
 		top: -1px;
 		content: " ";
@@ -23,6 +21,7 @@
 	@media (-webkit-min-device-pixel-ratio: 2) {
 		&:after {
 			.scaleY(0.5);
+			.transform-origin(0 0);
 		}
 	}
 }
@@ -31,12 +30,10 @@
 // bottom
 
 .retina-1px-border-bottom(@color) {
-	background-color: white;
 	position: relative;
 
 	&:after {
 		.size(100%,1px);
-		.transform-origin(0 top);
 		background-color: @color;
 		bottom: -1px;
 		content: " ";
@@ -48,6 +45,7 @@
 	@media (-webkit-min-device-pixel-ratio: 2) {
 		&:after {
 			.scaleY(0.5);
+			.transform-origin(0 0);
 		}
 	}
 }
@@ -56,7 +54,6 @@
 // both
 
 .retina-1px-border-top-and-bottom(@color) {
-	background-color: white;
 	position: relative;
 
 	&:after,

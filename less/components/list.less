@@ -10,7 +10,7 @@
 	color: @text-color;
 	// line-height: @font-size-base + 3;
 	line-height: 1;
-	overflow: hidden;
+	// overflow: hidden;
 	position: relative;
 	z-index: 1;
 
@@ -35,7 +35,7 @@
 
 	// transition in and out of tap bg highlight
 	&.Tappable-inactive {
-		.transition( background-color 300ms );
+		.transition( background-color 200ms );
 	}
 }
 
@@ -59,7 +59,8 @@
 	.display-flex();
 	.align-items(center);
 	.justify-content(space-between);
-	border-bottom: 1px solid @item-divider-color;
+	.retina-1px-border-bottom(@item-divider-color);
+	// border-bottom: 1px solid @item-divider-color;
 	min-height: @item-height;
 	padding: @field-padding-vertical @field-padding-horizontal @field-padding-vertical 0;
 	width: 100%;
@@ -92,13 +93,13 @@
 
 	// create a 1px border on retina displays
 	@media (-webkit-min-device-pixel-ratio: 2) {
-		border-bottom-width: .5px;
+		border-bottom-width: 0.5px;
 
 		.list-item.has-border-bottom & {
-			border-bottom-width: .5px;
+			border-bottom-width: 0.5px;
 		}
 		.list-item.has-border-top & {
-			border-top-width: .5px;
+			border-top-width: 0.5px;
 		}
 	}
 }

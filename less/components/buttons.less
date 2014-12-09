@@ -120,10 +120,10 @@ button {
 	-webkit-appearance: none;
 
 	// re-chrome
-	.text-overflow();
+	.retina-1px-border-top-and-bottom( rgba(0,0,0,0.17) );
+	// .text-overflow();
 	background-color: white;
-	border-bottom: 1px solid @item-divider-color;
-	border-top: 1px solid @item-divider-color;
+	border: none;
 	color: @text-color;
 	display: block;
 	margin-bottom: @gutter-large;
@@ -133,12 +133,6 @@ button {
 	position: relative;
 	text-align: center;
 	width: 100%;
-
-	// create a 1px border on retina displays
-	@media (-webkit-min-device-pixel-ratio: 2) {
-		border-bottom-width: .5px;
-		border-top-width: .5px;
-	}
 
 	// variants
 	&.muted { color: @gray; }
