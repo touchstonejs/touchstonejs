@@ -17,6 +17,11 @@
 	bottom: 0;
 	padding: 1px;
 	position: fixed;
+
+	// taller devices need, proportionally, less space for the keyboard
+	@media (min-height: 569px) {
+		height: 33.33%;
+	}
 }
 
 
