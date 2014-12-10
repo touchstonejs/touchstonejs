@@ -6,10 +6,10 @@
   "author": "Jed Watson",
   "repository": {
     "type": "git",
-    "url": "https://github.com/JedWatson/touchstone.git"
+    "url": "https://github.com/JedWatson/touchstonejs.git"
   },
   "bugs": {
-    "url": "https://github.com/JedWatson/touchstone/issues"
+    "url": "https://github.com/JedWatson/touchstonejs/issues"
   },
   "dependencies": {
     "classnames": "^1.0.0",
