@@ -23,7 +23,7 @@ gulp.task('clean', function(done) {
 function buildSiteCSS() {
 	return gulp.src('site/src/less/site.less')
 		.pipe(less())
-		.pipe(gulp.dest('site/public/build/css/site.less'))
+		.pipe(gulp.dest('site/public/build/css'))
 		.pipe(connect.reload());
 }
 
@@ -41,7 +41,7 @@ gulp.task('build:site', [
 gulp.task('watch:site', [
 	'build:site:css'
 ], function() {
-	gulp.watch(['site/src/less/*.less'], ['build:site:css']);
+	gulp.watch(['site/src/less/**/*'], ['build:site:css']);
 });
 
 
