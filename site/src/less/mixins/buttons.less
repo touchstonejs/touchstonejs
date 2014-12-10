@@ -1,0 +1,23 @@
+// 
+// Button Variants
+// ------------------------------
+
+.button-variant(@color; @background;) {
+  #gradient .vertical( lighten(@background, 4%), darken(@background, 4%));
+  background-color: @background;
+  color: @color;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.18);
+
+  &:hover,
+  &:focus {
+    #gradient .vertical( lighten(@background, 8%), @background);
+    background-color: lighten(@background, 5%);
+    color: @color;
+    outline: none;
+    text-decoration: none;
+  }
+  &:active {
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.1);
+    background: darken(@background, 5%);
+  }
+}

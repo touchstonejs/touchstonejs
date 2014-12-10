@@ -1,0 +1,30 @@
+// 
+// Spinning loader
+// ------------------------------
+
+// provide size in px
+
+.loader(@size: @font-size-huge, @duration: 500, @color: currentColor) {
+	.square( @size );
+	margin: auto;
+	position: relative;
+
+	&:before,
+	&:after {
+		.square( @size );
+		content: "";
+		border-radius: 50%;
+		border: ceil(@size / 10) solid @color;
+		left: 0;
+		opacity: .33;
+		position: absolute;
+		top: 0;
+	}
+	&:after {
+		.animation( spin @duration linear infinite );
+		border-color: transparent;
+		border-top-color: @color;
+		display: inline-block;
+		opacity: 1;
+	}
+}

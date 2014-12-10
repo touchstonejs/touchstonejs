@@ -1,0 +1,207 @@
+// 
+// Layout
+// ==============================
+
+
+
+
+// Fixes
+// ------------------------------
+
+input::-webkit-input-placeholder { line-height: normal; }
+
+
+
+
+// Common
+// ------------------------------
+
+body {
+	font-weight: 300;
+	font-size: 13px;
+	
+	@media (min-width: 768px) {
+		font-size: 16px;
+	}
+}
+
+.inner {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 800px;
+	padding-left: @gutter-base;
+	padding-right: @gutter-base;
+	position: relative;
+}
+
+
+
+
+// Header
+// ------------------------------
+
+.header {
+	#gradient .directional( spin(@app-primary,-22%), spin(@app-primary,22%), 135deg );
+	background-color: @app-primary;
+	color: white;
+	padding: 4em 0;
+	text-align: center;
+
+	// container
+	.inner {
+		max-width: 640px;
+	}
+
+	* + * {
+		margin-top: 40px;
+	}
+}
+.header-brand {
+	.square(200px);
+}
+.header-form {
+	.display-flex();
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 400px;
+}
+.header-form-field {
+	.flex-grow(1);
+}
+.header-form-input {
+	.dechrome();
+	.placeholder( fade(white, 50%) );
+	background: fade(black, 10%);
+	border-radius: @border-radius-base;
+	color: white;
+	font-weight: 300;
+	padding: @padding-vertical-base @padding-horizontal-base;
+	width: 100%;
+
+	&:hover { background-color: fade(black, 15%);  }
+	&:focus { background-color: fade(black, 20%);  }
+	&:active { background-color: fade(black, 22%);  }
+}
+.header-form-button {
+	.dechrome();
+	background: white;
+	border-radius: @border-radius-base;
+	color: @app-primary;
+	margin-left: @padding-horizontal-base;
+	padding: @padding-vertical-base @padding-horizontal-base;
+	position: relative;
+
+	&:hover {
+		box-shadow: 0 2px 0 rgba(0, 0, 0, 0.1);
+	}
+	&:active {
+		box-shadow: none;
+		top: 1px;
+	}
+}
+
+
+
+
+// Body
+// ------------------------------
+
+
+.roadmap > .inner {}
+.roadmap-list-wrapper {
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+.roadmap-list {
+	.list-unstyled();
+}
+
+.roadmap-item {
+	& + & {
+		margin-top: .5em;
+	}
+
+	// icon
+	&:before {
+		font-size: 24px;
+		margin-right: 10px;
+		vertical-align: middle;
+		position: relative;
+		top: -2px;
+	}
+
+	// variants
+	&.done {
+		color: @green;
+	}
+}
+
+@media (min-width: 768px) {
+	.roadmap > .inner {
+		background: url('/iphone-preview.png') no-repeat left 4em;
+		background-size: contain;
+		min-height: 700px;
+		min-height: 100vh;
+		padding-top: 4em;
+		padding-left: 400px;
+		padding-left: 60vh;
+	}
+	.roadmap-list-wrapper {
+		background-color: fade(white, 50%);
+		border-radius: 2em;
+		padding-left: 20px;
+		padding-right: 20px;
+		padding-top: 60px;
+	}	
+}
+
+
+
+
+// Footer
+// ------------------------------
+
+.footer {
+	// background-color: @footer-bg;
+	color: @gray-light;
+	position: relative;
+	z-index: 2;
+
+	> .inner {
+		box-shadow: 0 -1px 0 fade(black, 20%);
+		overflow: hidden;
+		padding: @gutter-base;
+	}
+
+	a {
+		color: @gray;
+		display: block;
+	}
+}
+
+@media (min-width: 768px) {
+	.footer-buttons {
+		float: left;
+	}
+	.footer-brand {
+		float: right;
+	}
+	.footer-button {
+		display: inline-block;
+		margin-right: 1em;
+	}
+	.footer a {
+		display: inline-block;
+	}
+	.footer > .inner {
+		padding: 2em 0;
+	}
+}
+
+
+
+
+// Responsive
+// ------------------------------
+
+

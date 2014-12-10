@@ -1,0 +1,87 @@
+//
+// Retina Borders
+// ------------------------------
+
+
+// top
+
+.retina-1px-border-top(@color) {
+	position: relative;
+
+	&:after {
+		.size(100%,1px);
+		background-color: @color;
+		top: -1px;
+		content: " ";
+		left: 0;
+		position: absolute;
+	}
+	
+	// simulate a 1px border on retina screens
+	@media (-webkit-min-device-pixel-ratio: 2) {
+		&:after {
+			.scaleY(0.5);
+			.transform-origin(0 0);
+		}
+	}
+}
+
+
+// bottom
+
+.retina-1px-border-bottom(@color) {
+	position: relative;
+
+	&:after {
+		.size(100%,1px);
+		background-color: @color;
+		bottom: -1px;
+		content: " ";
+		left: 0;
+		position: absolute;
+	}
+	
+	// simulate a 1px border on retina screens
+	@media (-webkit-min-device-pixel-ratio: 2) {
+		&:after {
+			.scaleY(0.5);
+			.transform-origin(0 0);
+		}
+	}
+}
+
+
+// both
+
+.retina-1px-border-top-and-bottom(@color) {
+	position: relative;
+
+	&:after,
+	&:before {
+		.size(100%,1px);
+		background-color: @color;
+		content: " ";
+		left: 0;
+		position: absolute;
+	}
+	&:before {
+		top: -1px;
+	}
+	&:after {
+		bottom: -1px;
+	}
+
+	// simulate a 1px border on retina screens
+	@media (-webkit-min-device-pixel-ratio: 2) {
+		&:after,
+		&:before {
+			.scaleY(0.5);
+		}
+		&:before {
+			.transform-origin(0 bottom);
+		}
+		&:after {
+			.transform-origin(0 top);
+		}
+	}
+}

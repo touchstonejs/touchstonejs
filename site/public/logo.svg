@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 18.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 100 127.1" enable-background="new 0 0 100 127.1" xml:space="preserve">
+<rect x="-256.1" y="-171" display="none" fill="#E5E5E5" width="612.3" height="440.8"/>
+<g>
+	<g>
+		<path fill="#FFFFFF" d="M98.3,14.4C96.1,8.5,91.5,3.9,85.6,1.7C80.2,0,75.2,0,65.1,0H34.9c-10,0-15.1,0-20.5,1.7
+			C8.5,3.9,3.9,8.5,1.7,14.4C0,19.8,0,24.8,0,34.9v30.3c0,10,0,15.1,1.7,20.5c2.1,5.9,6.8,10.5,12.7,12.7c5.4,1.7,10.4,1.7,20.5,1.7
+			h30.3c10,0,15.1,0,20.5-1.7c5.9-2.1,10.5-6.8,12.7-12.7c1.7-5.4,1.7-10.4,1.7-20.5V34.9C100,24.8,100,19.8,98.3,14.4z M75,31.6
+			H56.6v52.6H43.4V31.6H25V18.4h50V31.6z"/>
+	</g>
+</g>
+<text transform="matrix(1 0 0 1 0.6847 123.7229)" fill="#FFFFFF" font-family="'ProximaNova-Light'" font-size="16.3055">TouchstoneJS</text>
+</svg>
