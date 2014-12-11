@@ -2702,7 +2702,7 @@ body {
   background-image: linear-gradient(135deg, #c3299c, #c3292c);
   background-color: #c32964;
   color: white;
-  padding: 4em 0;
+  padding: 4em 0 3em 0;
   text-align: center;
 }
 .header .inner {
@@ -2710,6 +2710,16 @@ body {
 }
 .header * + * {
   margin-top: 40px;
+}
+.header a {
+  color: white;
+  text-decoration: none;
+}
+.header a:hover {
+  text-decoration: underline;
+}
+.header p {
+  margin: 1em 0;
 }
 .header-brand {
   width: 200px;
@@ -2791,6 +2801,15 @@ body {
 .header-form-button:active {
   box-shadow: none;
   top: 1px;
+}
+.header-links {
+  margin-top: 2em !important;
+}
+.header-links a {
+  margin: 0 0.5em;
+}
+.header-links .separator {
+  color: rgba(255, 255, 255, 0.3);
 }
 .roadmap-list-wrapper {
   padding-top: 20px;
