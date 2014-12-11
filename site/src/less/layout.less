@@ -18,10 +18,10 @@ input::-webkit-input-placeholder { line-height: normal; }
 
 body {
 	font-weight: 300;
-	font-size: 13px;
+	font-size: 15px;
 	
 	@media (min-width: 768px) {
-		font-size: 16px;
+		font-size: 17px;
 	}
 }
 
@@ -44,7 +44,8 @@ body {
 	#gradient .directional( spin(@app-primary,-22%), spin(@app-primary,22%), 135deg );
 	background-color: @app-primary;
 	color: white;
-	padding: 4em 0 3em 0;
+	padding: 4em 0 0;
+	position: relative;
 	text-align: center;
 
 	// container
@@ -84,23 +85,24 @@ body {
 }
 .header-form-input {
 	.dechrome();
-	.placeholder( fade(white, 50%) );
-	background: fade(black, 10%);
+	.placeholder( fade(black, 70%) );
+	background: fade(white, 70%);
 	border-radius: @border-radius-base;
-	color: white;
+	color: black;
 	font-weight: 300;
 	padding: @padding-vertical-base @padding-horizontal-base;
 	width: 100%;
 
-	&:hover { background-color: fade(black, 15%);  }
-	&:focus { background-color: fade(black, 20%);  }
-	&:active { background-color: fade(black, 22%);  }
+	&:hover { background-color: fade(white, 75%);  }
+	&:focus { background-color: fade(white, 80%);  }
+	&:active { background-color: fade(white, 85%);  }
 }
 .header-form-button {
 	.dechrome();
 	background: white;
 	border-radius: @border-radius-base;
 	color: @app-primary;
+	font-weight: 500;
 	margin-left: @padding-horizontal-base;
 	padding: @padding-vertical-base @padding-horizontal-base;
 	position: relative;
@@ -114,12 +116,33 @@ body {
 	}
 }
 .header-links {
-	margin-top: 2em !important;
-	a {
-		margin: 0 0.5em;	
+	// .fill-space(auto, 0,0,0);
+	background: fade(black, 10%);
+	margin-top: 4em;
+}
+.header-links-list {
+	.list-unstyled();
+	color: fade(white, 50%);
+
+	> li {
+		display: inline-block;
 	}
-	.separator {
-		color: rgba(255,255,255,0.3);
+	> li > a {
+		color: white;
+		display: block;
+		padding: 20px;
+
+		> i {
+			margin-right: .33em;
+		}
+
+		&:hover {
+			text-decoration: none;
+
+			> span {
+				text-decoration: underline;
+			}
+		}
 	}
 }
 
