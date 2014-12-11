@@ -18,10 +18,10 @@ input::-webkit-input-placeholder { line-height: normal; }
 
 body {
 	font-weight: 300;
-	font-size: 15px;
+	// font-size: 15px;
+	font-size: 17px;
 	
 	@media (min-width: 768px) {
-		font-size: 17px;
 	}
 }
 
@@ -119,6 +119,10 @@ body {
 	// .fill-space(auto, 0,0,0);
 	background: fade(black, 10%);
 	margin-top: 4em;
+
+	> .inner {
+		padding: 0;
+	}
 }
 .header-links-list {
 	.list-unstyled();
@@ -143,6 +147,15 @@ body {
 				text-decoration: underline;
 			}
 		}
+	}
+}
+
+@media (max-width: 768px) {
+	li.header-links-label {
+		display: none;
+	}
+	.header-links-list > li > a {
+		padding: 15px;
 	}
 }
 
@@ -185,7 +198,7 @@ body {
 	display: none;
 	left: 104px;
 	position: absolute;
-	top: 144px;
+	top: 148px;
 }
 
 @media (min-width: 768px) {
