@@ -2690,7 +2690,7 @@ body {
 .inner {
   margin-left: auto;
   margin-right: auto;
-  max-width: 800px;
+  max-width: 940px;
   padding-left: 20px;
   padding-right: 20px;
   position: relative;
@@ -2820,21 +2820,27 @@ body {
 }
 .roadmap .preview {
   display: none;
+  left: 104px;
+  position: absolute;
+  top: 144px;
 }
 @media (min-width: 768px) {
-  .preview {
+  .roadmap .preview {
     display: block;
   }
   .roadmap > .inner {
     background: url('/iphone-preview.png') no-repeat left 4em;
     background-size: contain;
-    min-height: 600px;
+    height: 900px;
     padding-bottom: 4em;
-    padding-top: 2em;
-    padding-left: 400px;
+    padding-top: 80px;
+    padding-left: 460px;
   }
   .roadmap-list-wrapper {
-    background-color: rgba(255, 255, 255, 0.5);
+    background-repeat: repeat-x;
+    background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.33), rgba(255, 255, 255, 0));
+    background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.33), rgba(255, 255, 255, 0));
+    background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.33), rgba(255, 255, 255, 0));
     border-radius: 2em;
     padding: 20px;
   }
