@@ -44,7 +44,7 @@ body {
 	#gradient .directional( spin(@app-primary,-22%), spin(@app-primary,22%), 135deg );
 	background-color: @app-primary;
 	color: white;
-	padding: 4em 0;
+	padding: 4em 0 3em 0;
 	text-align: center;
 
 	// container
@@ -55,6 +55,20 @@ body {
 	* + * {
 		margin-top: 40px;
 	}
+	
+	a {
+		color: white;
+		text-decoration: none;
+		
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+	
+	p {
+		margin: 1em 0;
+	}
+	
 }
 .header-brand {
 	.square(200px);
@@ -97,6 +111,15 @@ body {
 	&:active {
 		box-shadow: none;
 		top: 1px;
+	}
+}
+.header-links {
+	margin-top: 2em !important;
+	a {
+		margin: 0 0.5em;	
+	}
+	.separator {
+		color: rgba(255,255,255,0.3);
 	}
 }
 
