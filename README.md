@@ -3,11 +3,13 @@ Touchstone
 
 Mobile App Framework powered by React.
 
-Currently under development, docs to be written.
+Currently under development, docs will be available soon at [touchstonejs.io](http://www.touchstonejs.io).
+
+Follow [@touchstonejs](https://twitter.com/touchstonejs) on Twitter for updates.
 
 See the [touchstone-starter](https://github.com/Thinkmill/touchstone-starter) project for example usage.
 
-An online demo is available at [touchstone-preview.herokuapp.com](https://touchstone-preview.herokuapp.com).
+An online demo is available at [demo.touchstonejs.io](http://demo.touchstonejs.io).
 
 
 # License
