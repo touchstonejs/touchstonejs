@@ -2680,12 +2680,7 @@ input::-webkit-input-placeholder {
 }
 body {
   font-weight: 300;
-  font-size: 13px;
-}
-@media (min-width: 768px) {
-  body {
-    font-size: 16px;
-  }
+  font-size: 17px;
 }
 .inner {
   margin-left: auto;
@@ -2702,7 +2697,8 @@ body {
   background-image: linear-gradient(135deg, #c3299c, #c3292c);
   background-color: #c32964;
   color: white;
-  padding: 4em 0 3em 0;
+  padding: 4em 0 0;
+  position: relative;
   text-align: center;
 }
 .header .inner {
@@ -2750,31 +2746,31 @@ body {
   outline: none;
   text-decoration: none;
   -webkit-appearance: none;
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.7);
   border-radius: 4px;
-  color: white;
+  color: black;
   font-weight: 300;
   padding: 10px 15px;
   width: 100%;
 }
 .header-form-input::-moz-placeholder {
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(0, 0, 0, 0.7);
   opacity: 1;
 }
 .header-form-input:-ms-input-placeholder {
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(0, 0, 0, 0.7);
 }
 .header-form-input::-webkit-input-placeholder {
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(0, 0, 0, 0.7);
 }
 .header-form-input:hover {
-  background-color: rgba(0, 0, 0, 0.15);
+  background-color: rgba(255, 255, 255, 0.75);
 }
 .header-form-input:focus {
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(255, 255, 255, 0.8);
 }
 .header-form-input:active {
-  background-color: rgba(0, 0, 0, 0.22);
+  background-color: rgba(255, 255, 255, 0.85);
 }
 .header-form-button {
   background: none;
@@ -2791,6 +2787,7 @@ body {
   background: white;
   border-radius: 4px;
   color: #c32964;
+  font-weight: 500;
   margin-left: 15px;
   padding: 10px 15px;
   position: relative;
@@ -2803,13 +2800,46 @@ body {
   top: 1px;
 }
 .header-links {
-  margin-top: 2em !important;
+  background: rgba(0, 0, 0, 0.1);
+  margin-top: 4em;
 }
-.header-links a {
-  margin: 0 0.5em;
+.header-links > .inner {
+  padding: 0;
 }
-.header-links .separator {
-  color: rgba(255, 255, 255, 0.3);
+.header-links-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  color: rgba(255, 255, 255, 0.5);
+}
+.header-links-list > li {
+  margin: 0;
+  padding: 0;
+}
+.header-links-list > li {
+  display: inline-block;
+}
+.header-links-list > li > a {
+  color: white;
+  display: block;
+  padding: 20px;
+}
+.header-links-list > li > a > i {
+  margin-right: .33em;
+}
+.header-links-list > li > a:hover {
+  text-decoration: none;
+}
+.header-links-list > li > a:hover > span {
+  text-decoration: underline;
+}
+@media (max-width: 768px) {
+  li.header-links-label {
+    display: none;
+  }
+  .header-links-list > li > a {
+    padding: 15px;
+  }
 }
 .roadmap-list-wrapper {
   padding-top: 20px;
@@ -2841,7 +2871,7 @@ body {
   display: none;
   left: 104px;
   position: absolute;
-  top: 144px;
+  top: 148px;
 }
 @media (min-width: 768px) {
   .roadmap .preview {
