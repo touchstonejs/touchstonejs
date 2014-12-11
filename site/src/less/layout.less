@@ -106,7 +106,6 @@ body {
 // Body
 // ------------------------------
 
-
 .roadmap > .inner {}
 .roadmap-list-wrapper {
 	padding-top: 20px;
@@ -136,7 +135,14 @@ body {
 	}
 }
 
+.roadmap .preview {
+	display: none;
+}
+
 @media (min-width: 768px) {
+	.preview {
+		display: block;
+	}
 	.roadmap > .inner {
 		background: url('/iphone-preview.png') no-repeat left 4em;
 		background-size: contain;
