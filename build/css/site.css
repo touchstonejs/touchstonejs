@@ -2855,7 +2855,7 @@ body {
   padding: 0;
 }
 .roadmap-item + .roadmap-item {
-  margin-top: .5em;
+  margin-top: .3em;
 }
 .roadmap-item:before {
   font-size: 24px;
