@@ -15,6 +15,8 @@
 	.translate3d(0,0,0);
 	.transition-transform( 200ms cubic-bezier(0.77, 0, 0.175, 1) );
 	bottom: 0;
+	left: 0;
+	right: 0;
 	padding: 1px;
 	position: fixed;
 
@@ -30,45 +32,6 @@
 
 .Keypad.is-stowed {
 	.translate3d(0,100%,0);
-}
-
-
-// support for other styles
-
-.Keypad.is-black-translucent .Keypad-button {
-	background-color: rgba(0, 0, 0, 0.1);
-	color: white;
-
-	&:active {
-		background-color: rgba(0, 0, 0, 0.1);
-	}
-
-	// non-primary buttons e.g. decimal/delete
-	&.is-auxiliary {
-		background-color: rgba(0, 0, 0, 0.15);
-
-		&:active {
-			background-color: rgba(0, 0, 0, 0.2);
-		}
-	}
-}
-
-.Keypad.is-white-translucent .Keypad-button {
-	background-color: rgba(255, 255, 255, 0.45);
-	color: black;
-
-	&:active {
-		background-color: rgba(255, 255, 255, 0.35);
-	}
-
-	// non-primary buttons e.g. decimal/delete
-	&.is-auxiliary {
-		background-color: rgba(255, 255, 255, 0.25);
-
-		&:active {
-			background-color: rgba(255, 255, 255, 0.15);
-		}
-	}
 }
 
 
@@ -90,7 +53,12 @@
 
 .Keypad-button {
 	.square(100%);
+	.display-flex();
+	.flex-direction(column);
+	.align-items(center);
+	.justify-content(center);
 	line-height: 1.1;
+	position: relative;
 	text-align: center;
 
 	// remove buttons styles
@@ -99,29 +67,13 @@
 	outline: none;
 	-webkit-appearance: none;
 
-	// aesthetic
-	background-color: darken(@body-bg, 5%);
-	color: @text-color;
-
-	&:active {
-		background-color: darken(@body-bg, 10%);
-	}
-
-	// non-primary buttons e.g. decimal/delete
-	&.is-auxiliary {
-		background-color: darken(@body-bg, 15%);
-
-		&:active {
-			background-color: darken(@body-bg, 20%);
-		}
-	}
-
-	// disable user interaction (and visual feedback) with disabled buttons
+	// disable user interaction (and provide visual feedback) with disabled buttons
 	&.is-disabled {
 		pointer-events: none;
 		
 		.Keypad-button-primary-label,
-		.Keypad-button-secondary-label {
+		.Keypad-button-secondary-label,
+		.Keypad-button-icon {
 			opacity: .3;
 		}
 	}
@@ -135,6 +87,89 @@
 }
 .Keypad-button-secondary-label {
 	font-size: .8em;
+}
+
+
+// icons
+
+.Keypad-button-icon {
+	display: block;
+	height: 35%;
+	width: 100%;
+
+	> svg {
+		max-height: 100%;
+		max-width: 100%;
+	}
+}
+
+
+
+
+// Variants
+// ------------------------------
+
+
+// default
+
+.Keypad--default .Keypad-button {
+	background-color: darken(@body-bg, 5%);
+	color: @text-color;
+
+	&.Tappable-active {
+		background-color: darken(@body-bg, 10%);
+	}
+
+	// non-primary buttons e.g. decimal/delete
+	&.is-auxiliary {
+		background-color: darken(@body-bg, 15%);
+
+		&.Tappable-active {
+			background-color: darken(@body-bg, 20%);
+		}
+	}
+}
+
+
+// black translucent - best on light, colourful backgrounds
+
+.Keypad--black-translucent .Keypad-button {
+	background-color: rgba(0, 0, 0, 0.1);
+	color: white;
+
+	&.Tappable-active {
+		background-color: rgba(0, 0, 0, 0.1);
+	}
+
+	// non-primary buttons e.g. decimal/delete
+	&.is-auxiliary {
+		background-color: rgba(0, 0, 0, 0.15);
+
+		&.Tappable-active {
+			background-color: rgba(0, 0, 0, 0.2);
+		}
+	}
+}
+
+
+// white translucent - best on dark, colourful backgrounds
+
+.Keypad--white-translucent .Keypad-button {
+	background-color: rgba(255, 255, 255, 0.45);
+	color: black;
+
+	&.Tappable-active {
+		background-color: rgba(255, 255, 255, 0.35);
+	}
+
+	// non-primary buttons e.g. decimal/delete
+	&.is-auxiliary {
+		background-color: rgba(255, 255, 255, 0.25);
+
+		&.Tappable-active {
+			background-color: rgba(255, 255, 255, 0.15);
+		}
+	}
 }
 
 
