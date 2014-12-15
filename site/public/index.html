@@ -6,10 +6,8 @@
 	<meta name="format-detection" content="telephone=no" />
 	<meta name="msapplication-tap-highlight" content="no" />
 	
-	<!-- full screen -->
 	<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-	
-	<!-- styles -->
+
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 	<link rel="stylesheet" href="build/css/site.css">
 </head>
@@ -106,6 +104,8 @@
 			</div>
 		</div>
 	</footer>
+
+	<!-- Google Analytics -->
 	<script>
 		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -113,6 +113,21 @@
 		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 		ga('create', 'UA-57521145-1', 'auto');
 		ga('send', 'pageview');
+	</script>
+	
+	<!-- Hotjar -->
+	<script>
+		(function(f,b,g){
+			var xo=g.prototype.open,xs=g.prototype.send,c;
+			f.hj=f.hj||function(){(f.hj.q=f.hj.q||[]).push(arguments)};
+			f._hjSettings={hjid:7227, hjsv:2};
+			function ls(){f.hj.documentHtml=b.documentElement.outerHTML;c=b.createElement("script");c.async=1;c.src="//static.hotjar.com/c/hotjar-7227.js?sv=2";b.getElementsByTagName("head")[0].appendChild(c);}
+			if(b.readyState==="interactive"||b.readyState==="complete"||b.readyState==="loaded"){ls();}else{if(b.addEventListener){b.addEventListener("DOMContentLoaded",ls,false);}}
+			if(!f._hjPlayback && b.addEventListener){
+				g.prototype.open=function(l,j,m,h,k){this._u=j;xo.call(this,l,j,m,h,k)};
+				g.prototype.send=function(e){var j=this;function h(){if(j.readyState===4){f.hj("_xhr",j._u,j.status,j.response)}}this.addEventListener("readystatechange",h,false);xs.call(this,e)};
+			}
+		})(window,document,window.XMLHttpRequest);
 	</script>
 </body>
 </html>
