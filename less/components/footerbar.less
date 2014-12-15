@@ -10,7 +10,6 @@
 
 .Footerbar {
 	.display-flex();
-	background-color: @headerbar-bg;
 	color: @headerbar-color;
 	height: @headerbar-height;
 	margin: 0;
@@ -20,6 +19,7 @@
 	// add a border to the top of the default bar
 	&.default {
 		.retina-1px-border-top( rgba(0,0,0,0.3) );
+		background-color: @headerbar-bg;
 	}
 }
 
