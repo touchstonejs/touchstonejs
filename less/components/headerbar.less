@@ -15,6 +15,11 @@
 	margin: 0;
 	position: relative;
 	z-index: 3;
+	
+	// workaround for headerbar issue in KitKat Chrome,
+	// see https://github.com/JedWatson/touchstonejs/issues/11
+	-webkit-transform: translateZ(0);
+	transform: translateZ(0);
 
 	&.default {
 		.retina-1px-border-bottom( rgba(0,0,0,0.3) );
