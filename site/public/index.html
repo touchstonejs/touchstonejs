@@ -14,16 +14,16 @@
 <body>
 	<header class="header">
 		<div class="inner">
-			<img src="logo-mark.svg" alt="TouchstoneJS" class="header-brand" width="80" height="80" />
+			<img src="logo.svg" alt="TouchstoneJS" class="header-brand" width="120" height="120" />
 			<h1>React.js powered UI framework for developing beautiful hybrid mobile apps.</h1>
-			<h2>
-				Open source (MIT).
-				Docs, examples and getting started guide coming soon.
-			</h2>
 			<p class="header-form-title">
-				Get notified when we launch.
-				Or meet my big brother, 
-				<a href="http://keystonejs.com" target="_blank">KeystoneJS &rarr;</a>
+				Docs, examples and getting started guide coming soon.
+				<br />
+				Get notified when we launch:
+				<!-- 
+					Want a node.js backend? check out 
+					<a href="http://keystonejs.com" target="_blank">KeystoneJS &rarr;</a>
+				-->
 			</p>
 			<form action="//touchstonejs.us1.list-manage.com/subscribe/post?u=92d124e53e280584bf5005518&amp;id=e59f569ed3" method="post" class="header-form" target="_blank" novalidate>
 				<div class="header-form-field">
@@ -34,6 +34,7 @@
 				</div>
 				<button type="submit" class="header-form-button">Notify Me</button>
 			</form>
+			<!-- <p>Open source (MIT).</p> -->
 		</div>
 		<div class="header-links">
 			<div class="inner">
@@ -63,7 +64,17 @@
 	<section class="roadmap">
 		<div class="inner">
 			<div class="preview">
-				<iframe src="http://demo.touchstonejs.io" width="302" height="535" frameborder="0"></iframe>
+				<!-- <iframe src="http://demo.touchstonejs.io" width="302" height="535" frameborder="0"></iframe> -->
+				<video width="240" height="428" controls onended="videoEnded()" id="preview-video">
+					<source src="touchstonejs-demo.mp4" type="video/mp4">
+					<!-- <source src="touchstonejs-demo.ogv" type="video/ogv"> -->
+					<source src="touchstonejs-demo.webm" type="video/webm">
+					<img src="homescreen.png" title="Your browser does not support the <video> tag">
+				</video>
+				<div class="preview-button-overlay" id='preview-button-overlay'>
+					<p>Thanks for watching!<br />We've built a live demo that you can play with:</p>
+					<a href="http://demo.touchstonejs.io" target="_blank" class="preview-button">Check it out &rarr;</a>
+				</div>
 			</div>
 			<section class="roadmap-list-wrapper">
 				<h2>Roadmap</h2>
@@ -71,13 +82,13 @@
 					<li class="roadmap-item ion-ios7-checkmark done">Core app framework</li>
 					<li class="roadmap-item ion-ios7-checkmark done">Navigation framework</li>
 					<li class="roadmap-item ion-ios7-checkmark done">View transitions (CSS)</li>
-					<li class="roadmap-item ion-ios7-checkmark done">List controls</li>
 					<li class="roadmap-item ion-ios7-checkmark done">Form components</li>
 					<li class="roadmap-item ion-ios7-checkmark done">Header and navigation UI</li>
 					<li class="roadmap-item ion-ios7-checkmark done">Native touch behaviours</li>
 					<li class="roadmap-item ion-ios7-checkmark done">Custom keypad</li>
 					<li class="roadmap-item ion-ios7-checkmark done">Browserify build process</li>
 					<li class="roadmap-item ion-ios7-checkmark done">Working prototype</li>
+					<!-- <li class="roadmap-item ion-ios7-checkmark done">Landscape mode</li> -->
 					<li class="roadmap-item ion-ios7-checkmark-outline">Retain scroll position</li>
 					<li class="roadmap-item ion-ios7-checkmark-outline">Pull to reload</li>
 					<li class="roadmap-item ion-ios7-checkmark-outline">Dynamic headerbar</li>
@@ -85,9 +96,9 @@
 					<li class="roadmap-item ion-ios7-checkmark-outline">Partial view transitions</li>
 					<li class="roadmap-item ion-ios7-checkmark-outline">Gesture navigation</li>
 					<li class="roadmap-item ion-ios7-checkmark-outline">Cross-platform themes</li>
-					<li class="roadmap-item ion-ios7-checkmark-outline">Landscape mode</li>
 					<li class="roadmap-item ion-ios7-checkmark-outline">Project generator</li>
 				</ul>
+				<a href="http://demo.touchstonejs.io" target="_blank" class="demo-button">Check out the Demo &rarr;</a>
 			</section>
 		</div>
 	</section>
@@ -129,5 +140,13 @@
 			}
 		})(window,document,window.XMLHttpRequest);
 	</script>
+	
+	<!-- Custom -->
+	<script>
+		function videoEnded() {
+			document.getElementById('preview-button-overlay').className += " show";
+		};
+	</script>
+
 </body>
 </html>
