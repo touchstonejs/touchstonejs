@@ -191,7 +191,7 @@ button {
 .loading-button-icon {
 	.loader(@font-size-huge, 500ms, @app-primary);
 	.transition-delay( 200ms );
-	opacity: 0;
+	// opacity: 0;
 
 	// variants
 	.loading-button.default &  { .loader(@font-size-huge, 500ms, @text-color); }
@@ -205,9 +205,13 @@ button {
 }
 
 // change state
-.loading-button.is-loading {
-	.loading-button-icon { opacity: 1; }
-	.loading-button-text { opacity: 0; }
+.loading-button-icon {
+	.animation( fadeIn 300ms );
+	.animation-fill-mode( forward );
+}
+.loading-button-text {
+	.animation( fadeIn 300ms );
+	.animation-fill-mode( forward );
 }
 
 
@@ -253,12 +257,8 @@ button {
 
 	&.disabled,
 	&[disabled] {
+		opacity: .5;
 		pointer-events: none;
-
-		&:before,
-		> .action-button-label {
-			color: @headerbar-button-color-disabled;
-		}
 	}
 
 	
