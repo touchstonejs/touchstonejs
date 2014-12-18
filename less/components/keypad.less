@@ -121,7 +121,7 @@
 
 .Keypad--default .Keypad-button {
 	background-color: darken(@body-bg, 5%);
-	color: @text-color;
+	color: black;
 
 	&.Tappable-active {
 		background-color: darken(@body-bg, 10%);
@@ -134,6 +134,11 @@
 		&.Tappable-active {
 			background-color: darken(@body-bg, 20%);
 		}
+	}
+
+	// colour any svg icons appropriately
+	.svg-path {
+		fill: black;
 	}
 }
 
@@ -156,6 +161,11 @@
 			background-color: rgba(0, 0, 0, 0.2);
 		}
 	}
+
+	// colour any svg icons appropriately
+	.svg-path {
+		fill: white;
+	}
 }
 
 
@@ -176,6 +186,11 @@
 		&.Tappable-active {
 			background-color: rgba(255, 255, 255, 0.15);
 		}
+	}
+
+	// colour any svg icons appropriately
+	.svg-path {
+		fill: black;
 	}
 }
 
