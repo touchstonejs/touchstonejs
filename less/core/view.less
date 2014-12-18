@@ -50,6 +50,9 @@
 	// stop weird text rendering issue after transform/animation end
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+
+	// prepare the element for animation
+	.translateZ(0);
 }
 
 // disable user interaction
@@ -148,6 +151,7 @@
 .view-transition-show-from-right-enter,
 .view-transition-show-from-bottom-enter,
 .view-transition-show-from-left-enter {
+	pointer-events: none; // disable user interaction whilst views are transitioning
 	z-index: @view-transition-stack-top;
 }
 
@@ -155,6 +159,7 @@
 .view-transition-show-from-right-leave,
 .view-transition-show-from-bottom-leave,
 .view-transition-show-from-left-leave {
+	pointer-events: none; // disable user interaction whilst views are transitioning
 	z-index: @view-transition-stack-bottom;
 }
 
@@ -178,17 +183,17 @@
 // blank state
 
 .view-transition-show-from-top-leave,
-.view-transition-show-from-bottom-leave { .animation-name( artificial ); }
+.view-transition-show-from-bottom-leave   { .animation-name( artificial ); }
 
 // variants
 
-.view-transition-show-from-top-enter { .animation-name( viewShowFromTopEnter ); }
-.view-transition-show-from-right-enter { .animation-name( viewShowFromRightEnter ); }
-.view-transition-show-from-bottom-enter { .animation-name( viewShowFromBottomEnter ); }
-.view-transition-show-from-left-enter { .animation-name( viewShowFromLeftEnter ); }
+.view-transition-show-from-top-enter      { .animation-name( viewShowFromTopEnter ); }
+.view-transition-show-from-right-enter    { .animation-name( viewShowFromRightEnter ); }
+.view-transition-show-from-bottom-enter   { .animation-name( viewShowFromBottomEnter ); }
+.view-transition-show-from-left-enter     { .animation-name( viewShowFromLeftEnter ); }
 
-.view-transition-show-from-left-leave { .animation-name( viewShowFromLeftLeave ); }
-.view-transition-show-from-right-leave{ .animation-name( viewShowFromRightLeave ); }
+.view-transition-show-from-left-leave     { .animation-name( viewShowFromLeftLeave ); }
+.view-transition-show-from-right-leave    { .animation-name( viewShowFromRightLeave ); }
 
 
 
@@ -202,6 +207,7 @@
 .view-transition-reveal-from-right-enter,
 .view-transition-reveal-from-bottom-enter,
 .view-transition-reveal-from-left-enter {
+	pointer-events: none; // disable user interaction whilst views are transitioning
 	z-index: @view-transition-stack-bottom;
 }
 
@@ -209,6 +215,7 @@
 .view-transition-reveal-from-right-leave,
 .view-transition-reveal-from-bottom-leave,
 .view-transition-reveal-from-left-leave {
+	pointer-events: none; // disable user interaction whilst views are transitioning
 	z-index: @view-transition-stack-top;
 }
 
@@ -232,17 +239,17 @@
 // blank state
 
 .view-transition-reveal-from-top-enter,
-.view-transition-reveal-from-bottom-enter { .animation-name( artificial ); }
+.view-transition-reveal-from-bottom-enter   { .animation-name( artificial ); }
 
 // variants
 
-.view-transition-reveal-from-top-leave { .animation-name( viewRevealFromTopLeave ); }
-.view-transition-reveal-from-right-leave { .animation-name( viewRevealFromRightLeave ); }
-.view-transition-reveal-from-bottom-leave { .animation-name( viewRevealFromBottomLeave ); }
-.view-transition-reveal-from-left-leave { .animation-name( viewRevealFromLeftLeave ); }
+.view-transition-reveal-from-top-leave      { .animation-name( viewRevealFromTopLeave ); }
+.view-transition-reveal-from-right-leave    { .animation-name( viewRevealFromRightLeave ); }
+.view-transition-reveal-from-bottom-leave   { .animation-name( viewRevealFromBottomLeave ); }
+.view-transition-reveal-from-left-leave     { .animation-name( viewRevealFromLeftLeave ); }
 
-.view-transition-reveal-from-left-enter { .animation-name( viewRevealFromLeftEnter ); }
-.view-transition-reveal-from-right-enter { .animation-name( viewRevealFromRightEnter ); }
+.view-transition-reveal-from-left-enter     { .animation-name( viewRevealFromLeftEnter ); }
+.view-transition-reveal-from-right-enter    { .animation-name( viewRevealFromRightEnter ); }
 
 
 
