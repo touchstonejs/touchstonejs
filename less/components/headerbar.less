@@ -55,6 +55,12 @@
 			color: @headerbar-inverted-button-color-disabled;
 		}
 	}
+
+	// loading button
+	.loading-button-icon {
+		&:before { border-color: @headerbar-inverted-color; }
+		&:after { border-top-color: @headerbar-inverted-color; }
+	}
 }
 .Headerbar.green { background-color: @green; }
 .Headerbar.blue  { background-color: @blue; }
