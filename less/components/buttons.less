@@ -180,10 +180,7 @@ button {
 .loading-button-icon-wrapper {
 	.display-flex();
 	.align-items(center);
-	margin-left: -(@font-size-huge / 2);
-	left: 50%;
 	height: 100%;
-	position: absolute;
 	top: 0;
 }
 
@@ -191,7 +188,7 @@ button {
 .loading-button-icon {
 	.loader(@font-size-huge, 500ms, @app-primary);
 	.transition-delay( 200ms );
-	opacity: 0;
+	// opacity: 0;
 
 	// variants
 	.loading-button.default &  { .loader(@font-size-huge, 500ms, @text-color); }
@@ -206,6 +203,8 @@ button {
 
 // change state
 .loading-button.is-loading {
+	pointer-events: none;
+	
 	.loading-button-icon { opacity: 1; }
 	.loading-button-text { opacity: 0; }
 }
@@ -253,12 +252,8 @@ button {
 
 	&.disabled,
 	&[disabled] {
+		opacity: .5;
 		pointer-events: none;
-
-		&:before,
-		> .action-button-label {
-			color: @headerbar-button-color-disabled;
-		}
 	}
 
 	

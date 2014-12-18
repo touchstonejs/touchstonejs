@@ -55,6 +55,12 @@
 			color: @headerbar-inverted-button-color-disabled;
 		}
 	}
+
+	// loading button
+	.loading-button-icon {
+		&:before { border-color: @headerbar-inverted-color; }
+		&:after { border-top-color: @headerbar-inverted-color; }
+	}
 }
 .Headerbar.green { background-color: @green; }
 .Headerbar.blue  { background-color: @blue; }
@@ -98,6 +104,7 @@
 	left: 0;
 	line-height: @headerbar-height;
 	height: @headerbar-height;
+	min-width: @headerbar-height;
 	padding-left: @gutter-base;
 	padding-right: @gutter-base;
 	position: absolute;
@@ -144,7 +151,7 @@
 		font-size: @ionicons-size-large;
 		margin-right: @gutter-base / 2;
 		position: relative;
-		top: 3px; // FIXME: magic numbers are bad, but I can't figure this one out...
+		top: 3px; // FIXME: magic numbers are bad
 	}
 }
 
