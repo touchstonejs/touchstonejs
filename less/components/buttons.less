@@ -180,10 +180,7 @@ button {
 .loading-button-icon-wrapper {
 	.display-flex();
 	.align-items(center);
-	margin-left: -(@font-size-huge / 2);
-	left: 50%;
 	height: 100%;
-	position: absolute;
 	top: 0;
 }
 
@@ -205,13 +202,11 @@ button {
 }
 
 // change state
-.loading-button-icon {
-	.animation( fadeIn 300ms );
-	.animation-fill-mode( forward );
-}
-.loading-button-text {
-	.animation( fadeIn 300ms );
-	.animation-fill-mode( forward );
+.loading-button.is-loading {
+	pointer-events: none;
+	
+	.loading-button-icon { opacity: 1; }
+	.loading-button-text { opacity: 0; }
 }
 
 
