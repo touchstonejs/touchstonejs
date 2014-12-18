@@ -160,6 +160,12 @@
        -o-transform: translateY(@distance);
           transform: translateY(@distance);
 }
+.translateZ(@distance) {
+  -webkit-transform: translateZ(@distance);
+      -ms-transform: translateZ(@distance); // IE9 only
+       -o-transform: translateZ(@distance);
+          transform: translateZ(@distance);
+}
 .translate3d(@x; @y; @z) {
   -webkit-transform: translate3d(@x, @y, @z);
           transform: translate3d(@x, @y, @z);
