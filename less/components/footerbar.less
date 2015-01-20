@@ -5,6 +5,18 @@
 
 
 
+// SETUP
+// ------------------------------
+
+// make room for the footerbar
+
+.Footerbar + .view-wrapper > .view {
+	bottom: @headerbar-height;
+}
+
+
+
+
 // BASE
 // ------------------------------
 
@@ -14,7 +26,8 @@
 	height: @headerbar-height;
 	margin: 0;
 	position: relative;
-	z-index: 3;
+	z-index: @view-transition-stack-top + 1; // make sure the footerbar sits above the view, for transitions
+	width: 100%; // when positioned absolute/fixed
 
 	// add a border to the top of the default bar
 	&.default {
