@@ -142,7 +142,7 @@ button {
 	&.warning { color: @app-warning; }
 	&.danger { color: @app-danger; }
 
-	// when in a row
+	// stack panel buttons closer to one another when in a row
 	& + & {
 		margin-top: -(@gutter-large / 2);
 	}
@@ -158,6 +158,14 @@ button {
 		pointer-events: none;
 		opacity: .5;
 	}
+
+	// icons in buttons
+	& > .ion-sm,
+	& > .ion-md,
+	& > .ion-lg {
+		.inline-align();
+	}
+
 }
 .panel-button--first {
 	margin-top: @gutter-large;
