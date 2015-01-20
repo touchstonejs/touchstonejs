@@ -85,6 +85,8 @@
 // Components
 // ------------------------------
 
+@item-padding:                16px;
+
 @border-radius-small:          4px;
 @border-radius-base:           8px;
 @border-radius-large:         16px;
@@ -103,6 +105,7 @@
 @item-tap-bg:                 #d9d9d9;
 @item-height:                 44px;
 @item-avatar-size:            40px;
+@item-thumbnail-size:         60px;
 @item-icon-size:              29px;
 
 
@@ -166,6 +169,35 @@
 @zindex-tooltip:           1030;
 @zindex-modal-background:  1040;
 @zindex-modal:             1050;
+
+
+
+
+// Switch
+// -------------------------------
+
+@switch-width:                    51px;
+@switch-height:                   31px;
+@switch-border-width:             2px;
+@switch-border-radius:            20px;
+
+@switch-handle-width:             @switch-height - (@switch-border-width * 2);
+@switch-handle-height:            @switch-handle-width;
+@switch-handle-radius:            @switch-handle-width;
+@switch-handle-dragging-bg-color: darken(#fff, 5%);
+
+@switch-on-default-bg:            #4cd964;
+@switch-on-default-border:        @switch-on-default-bg;
+
+@switch-off-bg-color:             #fff;
+@switch-off-border-color:         #e6e6e6;
+
+@switch-handle-off-bg-color:      white;
+@switch-handle-on-bg-color:       @switch-handle-off-bg-color;
+
+@switch-transition-duration:      .3s;
+
+@switch-hit-area-expansion:   5px;
 
 
 
