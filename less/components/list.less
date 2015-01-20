@@ -281,7 +281,8 @@
 // Avatars
 // ------------------------------
 
-.list-avatar {
+.list-avatar, // deprecated, remove in next major version
+.item-avatar {
 	.inline-align();
 	.square(@item-avatar-size);
 	.translateY(-50%);
@@ -297,6 +298,25 @@
 
 	> img {
 		border-radius: 50%;
+		display: block;
+		height: auto;
+		max-width: 100%;
+	}
+}
+
+
+
+
+
+// Thumbnails
+// ------------------------------
+
+.item-thumbnail {
+	.square(@item-thumbnail-size);
+	margin-top: @padding-base-vertical;
+
+	> img {
+		border-radius: @border-radius-base;
 		display: block;
 		height: auto;
 		max-width: 100%;
