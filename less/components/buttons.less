@@ -182,8 +182,30 @@ button {
 	}
 
 }
+
+// stacking options
 .panel-button--first {
 	margin-top: @gutter-large;
+}
+.panel-button-bunched {
+	margin-bottom: @gutter-large / 2;
+}
+
+
+// stack buttons horizontally
+
+.panel-button-group {
+	.display-flex();
+	margin-bottom: @gutter-large;
+
+	 > .panel-button {
+	 	border-left: 1px solid darken(@body-bg, 10%);
+	 	margin: 0;
+
+	 	&:first-child {
+	 		border-left: none;
+	 	}
+	 }
 }
 
 
