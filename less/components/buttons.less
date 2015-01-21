@@ -135,12 +135,27 @@ button {
 	width: 100%;
 
 	// variants
-	&.muted { color: @gray; }
-	&.primary { color: @app-primary; font-weight: @font-weight-bold; }
-	&.info { color: @app-info; }
-	&.success { color: @app-success; }
-	&.warning { color: @app-warning; }
-	&.danger { color: @app-danger; }
+	&.muted,
+	&.muted:hover,
+	&.muted:focus { color: @gray; }
+	&.default,
+	&.default:hover,
+	&.default:focus { color: @text-color; }
+	&.primary,
+	&.primary:hover,
+	&.primary:focus { color: @app-primary; font-weight: @font-weight-bold; }
+	&.info,
+	&.info:hover,
+	&.info:focus { color: @app-info; }
+	&.success,
+	&.success:hover,
+	&.success:focus { color: @app-success; }
+	&.warning,
+	&.warning:hover,
+	&.warning:focus { color: @app-warning; }
+	&.danger,
+	&.danger:hover,
+	&.danger:focus { color: @app-danger; }
 
 	// stack panel buttons closer to one another when in a row
 	& + & {
