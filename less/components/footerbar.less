@@ -155,11 +155,30 @@
 	&.selected { color: @blue; }
 }
 
+
 // label
+
 .Footerbar-button-label {
 	.text-overflow();
 	color: @text-color;
 	font-size: @font-size-tiny;
+}
+
+
+
+
+// Badges
+// ------------------------------
+
+.Footerbar-button-badge {
+	font-size: @font-size-base;
+	height: auto;
+	line-height: @font-size-base;
+	padding: 5px;
+	position: absolute;
+	right: 33%; // fallback
+	right: calc(50% - 26px);
+	top: 4%;
 }
 
 
