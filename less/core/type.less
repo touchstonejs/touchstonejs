@@ -167,9 +167,16 @@ hr.dotted { border-top-style: dotted; }
 	color: @gray;
 }
 // base
+.text-default,
 .text-base,
-.btn-link.text-base {
-	color: @gray-dark;
+.btn-link.text-base,
+.btn-link.text-default {
+	&,
+	&:hover,
+	&:focus,
+	&:active {
+		color: @text-color;
+	}
 }
 
 // danger
