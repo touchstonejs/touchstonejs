@@ -7,11 +7,11 @@
 }
 
 .switch {
-	position: relative;
 	display: inline-block;
-	pointer-events: auto;
 	margin: -@switch-hit-area-expansion;
 	padding: @switch-hit-area-expansion;
+	pointer-events: auto;
+	position: relative;
 }
 .switch-default {
 	.switch-style(@switch-on-default-border, @switch-on-default-bg);
@@ -20,17 +20,16 @@
 /* the track appearance when the switch is "off" */
 .switch .track {
 	.transition( all @switch-transition-duration ease-in-out);
-
-	display: inline-block;
-	box-sizing: border-box;
-	width: @switch-width;
-	height: @switch-height;
-	border: solid @switch-border-width @switch-off-border-color;
-	border-radius: @switch-border-radius;
 	background-color: @switch-off-bg-color;
+	border-radius: @switch-border-radius;
+	border: solid @switch-border-width @switch-off-border-color;
+	box-sizing: border-box;
 	content: ' ';
 	cursor: pointer;
+	display: inline-block;
+	height: @switch-height;
 	pointer-events: none;
+	width: @switch-width;
 	-webkit-background-clip: padding-box;
 }
 
@@ -38,23 +37,23 @@
 /* also the handle's appearance when it is "off" */
 .switch .handle {
 	.transition(@switch-transition-duration cubic-bezier(0, 1.1, 1, 1.1));
-	position: absolute;
-	display: block;
-	width: @switch-handle-width;
-	height: @switch-handle-height;
-	border-radius: @switch-handle-radius;
 	background-color: @switch-handle-off-bg-color;
-	top: @switch-border-width + @switch-hit-area-expansion;
-	left: @switch-border-width + @switch-hit-area-expansion;
+	border-radius: @switch-handle-radius;
 	box-shadow: 0 2px 7px rgba(0,0,0,.35), 0 1px 1px rgba(0,0,0,.15);
+	display: block;
+	height: @switch-handle-height;
+	left: @switch-border-width + @switch-hit-area-expansion;
+	position: absolute;
+	top: @switch-border-width + @switch-hit-area-expansion;
+	width: @switch-handle-width;
 
 	&:before {
 		// used to create a larger (but hidden) hit area to slide the handle
-		position: absolute;
-		top: -4px;
+		content: " ";
 		left: ( (@switch-handle-width / 2) * -1) - 8;
 		padding: (@switch-handle-height / 2) + 5 (@switch-handle-width + 7);
-		content: " ";
+		position: absolute;
+		top: -4px;
 	}
 }
 
@@ -81,8 +80,8 @@
 .item-switch .switch {
 	// position the switch to the right within a list item
 	position: absolute;
-	top: (@item-padding / 2) + 2;
 	right: @item-padding;
+	top: (@item-padding / 2) + 2;
 	z-index: 3;
 }
 
