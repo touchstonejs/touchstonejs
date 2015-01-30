@@ -49,7 +49,7 @@ input::-webkit-input-placeholder { line-height: normal; }
 	background: none transparent;
 	border: 0 none;
 	box-shadow: none;
-	color: @field-color;
+	color: inherit;
 	display: inline-block;
 	line-height: 1;
 	outline: none;
@@ -184,12 +184,12 @@ label.item-content {
 		right: @indicator-arrow-size / 2;
 	}
 	&:before {
-		border-bottom-color: @field-color;
+		border-bottom-color: currentColor;
 		border-top-width: 0;
 		margin-top: -(@indicator-arrow-size + @indicator-arrow-gap);
 	}
 	&:after {
-		border-top-color: @field-color;
+		border-top-color: currentColor;
 		border-bottom-width: 0;
 		margin-bottom: -(@indicator-arrow-size + @indicator-arrow-gap);
 	}
