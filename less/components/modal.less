@@ -3,17 +3,16 @@
 // ------------------------------
 
 .Modal {
-	.transition( all 300ms );
 	.fill-space();
+	.translateZ(0); // bring stacking order up
+
 	position: fixed;
-	opacity: 0;
 	visibility: hidden;
 	z-index: 1000;
 
-	// show
-	&.visible {
+	// make the modal interactive
+	&.enter {
 		visibility: visible;
-		opacity: 1;
 	}
 }
 
@@ -41,12 +40,18 @@
 // backdrop
 
 .Modal-backdrop {
+	.transition( opacity 240ms );
 	.fill-space();
 	background-color: black;
-	opacity: .33;
+	opacity: 0;
 	pointer-events: none;
 	position: fixed;
 	z-index: 1100;
+
+	// fade the backdrop in/out
+	.enter > & {
+		opacity: .33;
+	}
 }
 
 
@@ -86,21 +91,26 @@
 
 // loading
 
-.Modal-loading {
+.Modal-mini {
+	.transition( all 280ms ease 120ms );
+	.translateY(25%);
+	border-radius: @border-radius-large;
+	left: 50%;
+	margin: -60px 0 0 -60px;
+	padding: 15px;
 	text-align: center;
+	top: 50%;
+	width: 120px;
 
-	&.Modal-dialog {
-		.transform( none );
-		border-radius: @border-radius-large;
-		left: 50%;
-		margin: -60px 0 0 -60px;
-		padding: 15px;
-		top: 50%;
-		width: 120px;
+	// fade the backdrop in/out
+	.enter > & {
+		.translateY(0);
+		opacity: 1;
 	}
-	.Modal-icon {
-		.animation( spin 1s linear infinite );
-	}
+}
+
+.Modal-loading > .Modal-icon {
+	.animation( spin 1s linear infinite );
 }
 
 
