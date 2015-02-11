@@ -74,32 +74,8 @@
 
 // add space for the statusbar in iOS
 
-.is-native-app .view {
+.is-native-app .Headerbar {
 	padding-top: @statusbar-height;
-	
-	.Headerbar:not(.Subheader) {
-		&:before {
-			content: "";
-			display: block !important;
-			height: @statusbar-height;
-			left: 0;
-			position: absolute;
-			top: -@statusbar-height;
-			width: 100%;
-		}
-		
-		// colour variants
-		&.default:before { background-color: @headerbar-bg; }
-		&.green:before { background-color: @green; }
-		&.primary:before { background-color: @app-primary; }
-		&.blue:before { background-color: @blue; }
-		&.light-blue:before { background-color: @light-blue; }
-		&.yellow:before { background-color: @yellow; }
-		&.orange:before { background-color: @orange; }
-		&.red:before { background-color: @red; }
-		&.pink:before { background-color: @pink; }
-		&.purple:before { background-color: @purple; }
-	}
 }
 
 // body
