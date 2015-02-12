@@ -31,6 +31,15 @@
 	}
 }
 
+// offset fixed headerbar (apply to the adjacent sibling)
+.offset-fixed-headerbar {
+	padding-top: @headerbar-height;
+
+	.is-native-app & {
+		padding-top: @headerbar-height + @statusbar-height;
+	}
+}
+
 
 // variants
 
