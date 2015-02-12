@@ -57,13 +57,10 @@ input::-webkit-input-placeholder { line-height: normal; }
 	margin: 0;
 	padding: 0;
 	width: 100%;
-	-webkit-appearance: none;
 
-	// when readonly allow users to select the text
-	div& {
-		-webkit-touch-callout: default;
-		-webkit-user-select: text;
-	}
+	-webkit-appearance: none;
+	-webkit-touch-callout: default;
+	-webkit-user-select: auto;
 
 	// one line
 	&.one-line {
@@ -80,14 +77,6 @@ input::-webkit-input-placeholder { line-height: normal; }
 
 label.item-content {
 	position: relative;
-
-	// increase the tappable area
-	&:after {
-		.fill-space();
-		content: " ";
-		margin: -@padding-base-vertical -@padding-base-horizontal;
-		padding: @padding-base-vertical @padding-base-horizontal;
-	}
 }
 
 .field-note {
