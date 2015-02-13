@@ -56,7 +56,9 @@ input::-webkit-input-placeholder { line-height: normal; }
 	min-height: @font-size-base + 3;
 	margin: 0;
 	padding: 0;
+	position: relative;
 	width: 100%;
+	z-index: 2;
 
 	-webkit-appearance: none;
 	-webkit-touch-callout: default;
@@ -77,6 +79,15 @@ input::-webkit-input-placeholder { line-height: normal; }
 
 label.item-content {
 	position: relative;
+
+	// increase the tappable area
+	&:after {
+		.fill-space();
+		content: " ";
+		margin: -@padding-base-vertical -@padding-base-horizontal;
+		padding: @padding-base-vertical @padding-base-horizontal;
+		z-index: 1;
+	}
 }
 
 .field-note {
