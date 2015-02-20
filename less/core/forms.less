@@ -19,7 +19,7 @@ input::-webkit-input-placeholder { line-height: normal; }
 
 // vertically align label and control top
 
-.field-item > .item-inner {
+.field-item.align-top > .item-inner {
 	.align-items(flex-start);
 }
 
@@ -93,6 +93,7 @@ label.item-content {
 .field-note {
 	padding-left: floor(@padding-base-horizontal / 2); // provide a buffer between the input
 	position: relative;
+	z-index: 2; // above the label
 
 	// increase the tappable area
 	&:after {
