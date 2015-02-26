@@ -24,10 +24,16 @@
 	.display-flex();
 	color: @headerbar-color;
 	height: @headerbar-height;
+	line-height: 1;
 	margin: 0;
 	position: relative;
-	z-index: @view-transition-stack-top + 1; // make sure the footerbar sits above the view, for transitions
 	width: 100%; // when positioned absolute/fixed
+	
+	// when outside the view make sure the footerbar sits "above" the view, for transitions
+	z-index: @view-transition-stack-top + 1;
+	
+	// when inside the view the footerbar behaves normally
+	.view & { z-index: 3; }
 
 	// add a border to the top of the default bar
 	&.default {
@@ -143,9 +149,8 @@
 	&:before {
 		color: inherit;
 		display: inline-block;
-		font-size: @ionicons-size-huge;
-		height: @ionicons-size-huge;
-		line-height: 1;
+		font-size: 28px;
+		// height: 28px;
 	}
 
 
@@ -161,7 +166,7 @@
 .Footerbar-button-label {
 	.text-overflow();
 	color: @text-color;
-	font-size: @font-size-tiny;
+	font-size: 11px;
 }
 
 
