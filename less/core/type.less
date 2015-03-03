@@ -199,12 +199,7 @@ hr.dotted { border-top-style: dotted; }
 // error
 .text-error,
 .btn-link.text-error {
-	color: @app-danger;
-
-	&:hover,
-	&:focus {
-		color: @app-danger;
-	}
+	.text-emphasis-variant(@app-danger);
 }
 
 // other
