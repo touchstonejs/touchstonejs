@@ -91,16 +91,12 @@
 		margin-left: @field-padding-horizontal;
 	}
 
-	// create a 1px border on retina displays
-	@media (-webkit-min-device-pixel-ratio: 2) {
-		border-bottom-width: 0.5px;
-
-		.list-item.has-border-bottom & {
-			border-bottom-width: 0.5px;
-		}
-		.list-item.has-border-top & {
-			border-top-width: 0.5px;
-		}
+	// enforce border when explicitly defined
+	.list-item.has-border-bottom & {
+		.retina-1px-border-bottom(@item-divider-color);
+	}
+	.list-item.has-border-top & {
+		.retina-1px-border-top(@item-divider-color);
 	}
 }
 
