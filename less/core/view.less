@@ -2,8 +2,6 @@
 // Views
 // ==============================
 
-
-
 // Temp solution for flexible view layout
 
 .FlexLayout {
@@ -11,12 +9,8 @@
 	.flex-direction(column);
 }
 
-
-
-
 // Static
 // ------------------------------
-
 
 // introduce iOS style springy scrolling
 
@@ -37,7 +31,6 @@
 		top: -1px;
 	}
 }
-
 
 // setup
 
@@ -84,39 +77,28 @@
 	margin: @padding-base-vertical @padding-base-horizontal;
 }
 
-
-
-
 // Animation
 // ------------------------------
 
-
 // React's CSSTransitionGroup requires an animation so we transition from .99 opacity to 1 with "artificial"
-
 
 // transition: none (default)
 .view-transition-none-enter { .animation( artificial 10ms ); }
 .view-transition-none-leave { .animation( fadeOut 10ms ); }
 
-
 // transition: fade
 .view-transition-fade-enter { .animation( artificial 10ms ); }
 .view-transition-fade-leave { .animation( fadeOut 380ms ); }
-
 
 // transition: fade expand 
 
 .view-transition-fade-expand-enter { .animation( artificial 10ms ); }
 .view-transition-fade-expand-leave { .animation( fadeExpand 320ms ); }
 
-
 // transition: fade contract 
 
 .view-transition-fade-contract-enter { .animation( artificial 10ms ); }
 .view-transition-fade-contract-leave { .animation( fadeContract 320ms ); }
-
-
-
 
 // SHOW
 // ====
@@ -171,9 +153,6 @@
 .view-transition-show-from-left-leave     { .animation-name( viewShowFromLeftLeave ); }
 .view-transition-show-from-right-leave    { .animation-name( viewShowFromRightLeave ); }
 
-
-
-
 // REVEAL
 // ======
 
@@ -226,12 +205,4 @@
 
 .view-transition-reveal-from-left-enter     { .animation-name( viewRevealFromLeftEnter ); }
 .view-transition-reveal-from-right-enter    { .animation-name( viewRevealFromRightEnter ); }
-
-
-
-
-
-
-
-
 
