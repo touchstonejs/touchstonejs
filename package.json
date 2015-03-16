@@ -14,7 +14,7 @@
   "dependencies": {
     "classnames": "^1.0.0",
     "react": "^0.12.2",
-    "react-tappable": "^0.2.3",
+    "react-tappable": "^0.4.0",
     "underscore": "^1.7.0"
   },
   "devDependencies": {
