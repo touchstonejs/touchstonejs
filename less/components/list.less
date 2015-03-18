@@ -185,9 +185,9 @@
 	.flex-wrap(nowrap);
 	.align-items(center);
 
-	&.is-avatar    { min-width: @item-avatar-size; }
-	&.is-icon      { min-width: @item-icon-size; }
-	&.is-thumbnail { min-width: @item-thumbnail-size; }
+	&.is-avatar    { .square(@item-avatar-size); }
+	&.is-icon      { .square(@item-icon-size); }
+	&.is-thumbnail { .square(@item-thumbnail-size); }
 }
 
 // Icons
@@ -275,10 +275,10 @@
 	top: 50%;
 
 	> img {
+		.square(100%);
 		border-radius: 50%;
 		display: block;
 		height: auto;
-		max-width: 100%;
 	}
 }
 
