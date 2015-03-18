@@ -184,7 +184,10 @@
 	.display-flex();
 	.flex-wrap(nowrap);
 	.align-items(center);
-	min-width: @item-icon-size;
+
+	&.is-avatar    { min-width: @item-avatar-size; }
+	&.is-icon      { min-width: @item-icon-size; }
+	&.is-thumbnail { min-width: @item-thumbnail-size; }
 }
 
 // Icons
