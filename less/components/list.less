@@ -184,7 +184,10 @@
 	.display-flex();
 	.flex-wrap(nowrap);
 	.align-items(center);
-	min-width: @item-icon-size;
+
+	&.is-avatar    { .square(@item-avatar-size); }
+	&.is-icon      { .square(@item-icon-size); }
+	&.is-thumbnail { .square(@item-thumbnail-size); }
 }
 
 // Icons
@@ -272,10 +275,10 @@
 	top: 50%;
 
 	> img {
+		.square(100%);
 		border-radius: 50%;
 		display: block;
 		height: auto;
-		max-width: 100%;
 	}
 }
 
