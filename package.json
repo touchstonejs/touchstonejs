@@ -12,7 +12,7 @@
     "url": "https://github.com/JedWatson/touchstonejs/issues"
   },
   "dependencies": {
-    "blacklist": "^1.0.0",
+    "blacklist": "^1.0.1",
     "classnames": "^1.0.0",
     "react": "^0.12.2",
     "react-tappable": "^0.4.0",
