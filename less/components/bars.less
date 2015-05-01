@@ -2,6 +2,9 @@
 // Bars
 // ==============================
 
+
+
+
 // Status Bar
 // ------------------------------
 
@@ -10,10 +13,13 @@
 	background-color: @headerbar-bg;
 }
 
+
+
+
 // Alert Bar
 // ------------------------------
 
-.alertbar {
+.Alertbar {
 	background-color: @gray-light;
 	color: white;
 	font-size: @font-size-small;
@@ -23,11 +29,6 @@
 	position: relative;
 	text-align: center;
 
-	
-	// animate in
-	
-	.animation( slideDown 320ms cubic-bezier(0.645, 0.045, 0.355, 1) );
-
 	// variants
 
 	&.primary  { background-color: @app-primary; }
@@ -36,7 +37,7 @@
 	&.danger   { background-color: @app-danger; }
 
 	// overlay translucent for pulse
-	&:after {
+	&.pulse::after {
 		.animation( pulse 2s linear infinite );
 		.fill-space();
 		background-color: black;
@@ -46,8 +47,7 @@
 	}
 }
 // sit the text above the pulsing background
-.alertbar-text {
+.Alertbar-inner {
 	position: relative;
 	z-index: 2;
 }
-
