@@ -1,19 +1,46 @@
-var del = require('del'),
-	gulp = require('gulp'),
-	bump = require('gulp-bump'),
-	connect = require('gulp-connect'),
-	deploy = require("gulp-gh-pages"),
-	git = require("gulp-git"),
-	less = require('gulp-less');
+var babel = require('gulp-babel');
+var bump = require('gulp-bump');
+var connect = require('gulp-connect');
+var del = require('del');
+var deploy = require("gulp-gh-pages");
+var git = require("gulp-git");
+var gulp = require('gulp');
+var less = require('gulp-less');
 
 
 /**
  * Clean the build
  */
 
-gulp.task('clean', function(done) {
+gulp.task('clean:lib', function(done) {
+	del(['lib'], done);
+});
+
+
+/**
+ * Build lib
+ */
+
+gulp.task('build:lib', function() {
+	return gulp.src([
+			'src/**/*.js',
+			'!**/__tests__/**/*'
+		])
+		.pipe(babel({
+			plugins: [require('babel-plugin-object-assign')]
+		}))
+		.pipe(gulp.dest('lib'));
+});
+
+
+/**
+ * Clean site build
+ */
+
+gulp.task('clean:site', function(done) {
 	del(['site/public/build'], done);
 });
+
 
 
 /**
