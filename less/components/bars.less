@@ -20,7 +20,6 @@
 // ------------------------------
 
 .Alertbar {
-	background-color: @gray-light;
 	color: white;
 	font-size: @font-size-small;
 	font-weight: @font-weight-bold;
@@ -31,10 +30,12 @@
 
 	// variants
 
+	&.default  { background-color: @gray-light; }
+	
+	&.danger   { background-color: @app-danger; }
 	&.primary  { background-color: @app-primary; }
 	&.success  { background-color: @app-success; }
 	&.warning  { background-color: @app-warning; }
-	&.danger   { background-color: @app-danger; }
 
 	// overlay translucent for pulse
 	&.pulse::after {

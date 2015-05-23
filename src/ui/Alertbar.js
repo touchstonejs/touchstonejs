@@ -1,6 +1,8 @@
-var React = require('react/addons'),
-	classnames = require('classnames'),
-	FlexBlock = require('./FlexBlock');
+var React = require('react/addons');
+var classnames = require('classnames');
+var FlexBlock = require('./FlexBlock');
+
+var alertTypes = ['default', 'primary', 'success', 'warning', 'danger'];
 
 module.exports = React.createClass({
 	displayName: 'Alertbar',
@@ -8,11 +10,12 @@ module.exports = React.createClass({
 		className: React.PropTypes.string,
 		height: React.PropTypes.string,
 		pulse: React.PropTypes.bool,
-		type: React.PropTypes.string
+		type: React.PropTypes.oneOf(alertTypes)
 	},
 	getDefaultProps: function() {
 		return {
-			height: '30px'
+			height: '30px',
+			type: 'default'
 		};
 	},
 	render: function() {
