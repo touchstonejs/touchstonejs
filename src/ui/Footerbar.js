@@ -1,6 +1,6 @@
 var React = require('react/addons'),
 	classnames = require('classnames'),
-	FlexBlock = require('./FlexBlock');
+	ViewContent = require('./ViewContent');
 
 module.exports = React.createClass({
 	displayName: 'Footerbar',
@@ -20,9 +20,9 @@ module.exports = React.createClass({
 		});
 
 		return (
-			<FlexBlock height={this.props.height} className={className}>
+			<ViewContent height={this.props.height} className={className}>
 				{this.props.children}
-			</FlexBlock>
+			</ViewContent>
 		);
 	}
 });

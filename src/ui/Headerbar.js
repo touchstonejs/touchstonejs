@@ -1,7 +1,7 @@
 var classnames = require('classnames');
 
 var React = require('react/addons');
-var FlexBlock = require('./FlexBlock');
+var ViewContent = require('./ViewContent');
 
 module.exports = React.createClass({
 	displayName: 'Headerbar',
@@ -22,9 +22,9 @@ module.exports = React.createClass({
 			label = <div className="Headerbar-label">{this.props.label}</div>;
 		}
 
-		return (<FlexBlock height={this.props.height} className={className}>
+		return (<ViewContent height={this.props.height} className={className}>
 			{this.props.children}
 			{label}
-		</FlexBlock>);
+		</ViewContent>);
 	}
 })

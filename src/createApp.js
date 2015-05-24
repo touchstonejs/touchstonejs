@@ -69,8 +69,8 @@ function createApp(views) {
 
 		getViewNotFound: function() {
 			return (
-				<UI.FlexLayout className="view">
-					<UI.FlexBlock>
+				<UI.View className="view">
+					<UI.ViewContent>
 						<UI.Feedback
 							iconKey="ion-alert-circled"
 							iconType="danger"
@@ -78,8 +78,8 @@ function createApp(views) {
 							actionText="Okay, take me home"
 							actionFn={this.gotoDefaultView}
 						/>
-					</UI.FlexBlock>
-				</UI.FlexLayout>
+					</UI.ViewContent>
+				</UI.View>
 			);
 		},
 

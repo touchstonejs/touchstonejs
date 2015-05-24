@@ -2,7 +2,7 @@ var React = require('react/addons'),
 	classnames = require('classnames');
 
 module.exports = React.createClass({
-	displayName: 'FlexBlock',
+	displayName: 'ViewContent',
 	propTypes: {
 		id: React.PropTypes.string,
 		className: React.PropTypes.string,
@@ -20,7 +20,7 @@ module.exports = React.createClass({
 
 	render: function() {
 		var className = classnames({
-			'FlexBlock': true,
+			'ViewContent': true,
 			'springy-scrolling': this.props.scrollable
 		}, this.props.className);
 		

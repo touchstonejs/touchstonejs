@@ -3,7 +3,7 @@ var icons = {
 	del: require('../icons/delete')
 };
 
-var FlexBlock = require('./FlexBlock');
+var ViewContent = require('./ViewContent');
 var KeypadButton = require('./KeypadButton');
 var React = require('react/addons');
 
@@ -40,7 +40,7 @@ module.exports = React.createClass({
 		}
 
 		return (
-			<FlexBlock className={keypadClassName}>
+			<ViewContent className={keypadClassName}>
 				<KeypadButton action={function() { return action('1') }} primaryLabel="1" />
 				<KeypadButton action={function() { return action('2') }} primaryLabel="2" secondaryLabel="ABC" />
 				<KeypadButton action={function() { return action('3') }} primaryLabel="3" secondaryLabel="DEF" />
@@ -53,7 +53,7 @@ module.exports = React.createClass({
 				{wildkey}
 				<KeypadButton action={function() { return action('0') }} primaryLabel="0" />
 				<KeypadButton action={function() { return action('delete') }} icon={icons.del} disabled={!this.props.enableDel} aux />
-			</FlexBlock>
+			</ViewContent>
 		);
 	}
 });

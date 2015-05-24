@@ -2,12 +2,8 @@
 // Views
 // ==============================
 
-// Temp solution for flexible view layout
 
-.FlexLayout {
-	.display-flex();
-	.flex-direction(column);
-}
+
 
 // Static
 // ------------------------------
@@ -34,7 +30,9 @@
 
 // setup
 
-.view {
+.View {
+	.display-flex();
+	.flex-direction(column);
 	.square(100%);
 	background-color: @body-bg;
 	overflow: hidden;

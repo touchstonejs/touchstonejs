@@ -1,6 +1,6 @@
 var React = require('react/addons');
 var classnames = require('classnames');
-var FlexBlock = require('./FlexBlock');
+var ViewContent = require('./ViewContent');
 
 var alertTypes = ['default', 'primary', 'success', 'warning', 'danger'];
 
@@ -26,9 +26,9 @@ module.exports = React.createClass({
 		var content = this.props.pulse ? <div className="Alertbar-inner">{this.props.children}</div> : this.props.children;
 
 		return (
-			<FlexBlock height={this.props.height} className={className}>
+			<ViewContent height={this.props.height} className={className}>
 				{content}
-			</FlexBlock>
+			</ViewContent>
 		);
 	}
 });
