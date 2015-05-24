@@ -7,7 +7,10 @@ var git = require("gulp-git");
 var gulp = require('gulp');
 var less = require('gulp-less');
 
-
+var src = [
+	'src/**/*.js',
+	'!**/__tests__/**/*'
+];
 /**
  * Clean the build
  */
@@ -22,14 +25,15 @@ gulp.task('clean:lib', function(done) {
  */
 
 gulp.task('build:lib', function() {
-	return gulp.src([
-			'src/**/*.js',
-			'!**/__tests__/**/*'
-		])
+	return gulp.src(src)
 		.pipe(babel({
 			plugins: [require('babel-plugin-object-assign')]
 		}))
 		.pipe(gulp.dest('lib'));
+});
+
+gulp.task('watch:lib', ['build:lib'], function() {
+	gulp.watch(src, ['build:lib']);
 });
 
 
