@@ -3,8 +3,6 @@ module.exports = {
 	ActionButtons: require('./ActionButtons'),
 	Alertbar: require('./Alertbar'),
 	Feedback: require('./Feedback'),
-	ViewContent: require('./ViewContent'),
-	View: require('./View'),
 	Footerbar: require('./Footerbar'),
 	FooterbarButton: require('./FooterbarButton'),
 	Headerbar: require('./Headerbar'),
@@ -22,5 +20,7 @@ module.exports = {
 	RadioList: require('./RadioList'),
 	Switch: require('./Switch'),
 	Textarea: require('./Textarea'),
-	Toggle: require('./Toggle')
+	Toggle: require('./Toggle'),
+	View: require('./View'),
+	ViewContent: require('./ViewContent')
 };
