@@ -1,6 +1,6 @@
 {
   "name": "touchstonejs",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "A Mobile App Framework built with ReactJS",
   "main": "index.js",
   "author": "Jed Watson",
