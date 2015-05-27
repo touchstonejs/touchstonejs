@@ -19,9 +19,8 @@ function createApp(views) {
 			this.views = {}
 
 			for (var viewName in views) {
-				var view = views[viewName]
-
-				this.views[viewName] = React.createElement(view, { app: this })
+				var view = views[viewName];
+				this.views[viewName] = React.React.createFactory(view);
 			}
 		},
 
@@ -38,8 +37,9 @@ function createApp(views) {
 		},
 
 		getCurrentView: function() {
-			var views = {};
-			views[this.state.currentView] = this.getView(this.state.currentView);
+			var viewsData = {};
+			viewsData[this.state.currentView] = this.getView(this.state.currentView);
+			var views = React.addons.createFragment(viewsData);
 			return views;
 		},
 
