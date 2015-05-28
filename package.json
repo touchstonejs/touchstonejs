@@ -41,7 +41,7 @@
 	"scripts": {
 		"build": "gulp build:lib",
 		"watch": "gulp watch:lib",
-		"test": "echo \"no tests yet\" && exit 0"
+		"test": "happiness"
 	},
 	"standard": {
 		"ignore": [
