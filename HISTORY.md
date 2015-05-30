@@ -2,12 +2,13 @@
 
 Please be aware that TouchstoneJS is still under heavy initial development, and the features / API are liable to change rapidly and possibly break things.
 
-## v0.3.0 / 2015-05-27
+## v0.3.0 / 2015-05-30
 
+* added happiness linter
 * lots of cleanup and consistency fixes
 * source code is now in `src`, built to `lib` for inclusion in projects without transpilation via browserify / webpack. use `npm run watch` and `npm run build` for development.
 
-Make sure you update to `touchstonejs-tasks` v0.2.0 when using this release of TouchstoneJS.
+Make sure you update to `touchstonejs-tasks` v0.2.1 when using this release of TouchstoneJS.
 
 ## v0.2.0 / 2015-04-01
 
