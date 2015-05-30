@@ -20,7 +20,7 @@ function createApp (views) {
 
 			for (var viewName in views) {
 				var view = views[viewName];
-				this.views[viewName] = React.React.createFactory(view);
+				this.views[viewName] = React.createFactory(view);
 			}
 		},
 
