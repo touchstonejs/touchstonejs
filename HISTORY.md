@@ -2,6 +2,10 @@
 
 Please be aware that TouchstoneJS is still under heavy initial development, and the features / API are liable to change rapidly and possibly break things.
 
+## v0.3.1 / 2015-05-30
+
+* added .npmignore becuase we're excuding `lib` from git, but it needs to be published to npm.
+
 ## v0.3.0 / 2015-05-30
 
 * added happiness linter
