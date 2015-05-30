@@ -45,26 +45,22 @@ module.exports = React.createClass({
 
 	render: function() {
 		// Set classnames
-		var dialogClassName = classnames({
-			'Modal-dialog': true,
+		var dialogClassName = classnames('Modal-dialog', this.props.className, {
 			'Modal-mini': this.props.mini,
 			'Modal-loading': this.props.loading
-		}, this.props.className);
-		var modalClassName = classnames('Modal', {
-			'enter': this.state.showModal
 		});
+		var modalClassName = classnames('Modal', { enter: this.state.showModal });
+		var iconClassName = classnames('Modal-icon', this.props.iconKey, this.props.iconType)
 
 		// Set dynamic content
-		var icon = this.props.iconKey ? <div className={'Modal-icon ' + this.props.iconKey + ' ' + this.props.iconType} /> : null;
+		var icon = this.props.iconKey ? <div className={iconClassName} /> : null;
 		var header = this.props.header ? <div className="Modal-header">{this.props.header}</div> : null;
 		var text = this.props.text ? <div className="Modal-text" dangerouslySetInnerHTML={{__html: this.props.text}} /> : null;
+
+		// actions
 		var primaryAction = this.props.primaryActionText ? <Tappable onTap={this.props.primaryActionFn} className="Modal-action Modal-action-primary">{this.props.primaryActionText}</Tappable> : null;
 		var secondaryAction = this.props.secondaryActionText ? <Tappable onTap={this.props.secondaryActionFn} className="Modal-action Modal-action-secondary">{this.props.secondaryActionText}</Tappable> : null;
-
-		var actions = primaryAction ? ( <div className="Modal-actions">
-			{secondaryAction}
-			{primaryAction}
-		</div> ) : null;
+		var actions = primaryAction ? ( <div className="Modal-actions">{secondaryAction} {primaryAction}</div> ) : null;
 
 		return (
 			<div className={modalClassName}>
