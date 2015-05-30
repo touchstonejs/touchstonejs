@@ -1,7 +1,6 @@
 var classnames = require('classnames');
 
 var React = require('react/addons');
-var ViewContent = require('./ViewContent');
 
 module.exports = React.createClass({
 	displayName: 'Headerbar',
@@ -22,9 +21,9 @@ module.exports = React.createClass({
 			label = <div className="Headerbar-label">{this.props.label}</div>;
 		}
 
-		return (<ViewContent height={this.props.height} className={className}>
+		return (<div height={this.props.height} className={className}>
 			{this.props.children}
 			{label}
-		</ViewContent>);
+		</div>);
 	}
 })
