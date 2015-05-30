@@ -29,7 +29,7 @@
 		"gulp-gh-pages": "^0.5.1",
 		"gulp-git": "^1.2.4",
 		"gulp-less": "^3.0.3",
-		"happiness": "^1.0.2"
+		"happiness": "^1.0.4"
 	},
 	"keywords": [
 		"react",
@@ -41,11 +41,12 @@
 	"scripts": {
 		"build": "gulp build:lib",
 		"watch": "gulp watch:lib",
-		"test": "happiness"
+		"lint": "happiness",
+		"test": "npm run lint"
 	},
 	"standard": {
 		"ignore": [
-      "**/lib/**"
+			"**/lib/**"
 		]
 	}
 }
