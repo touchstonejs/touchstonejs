@@ -1,8 +1,8 @@
-var xtend = require('xtend/mutable')
-var React = require('react/addons')
-var UI = require('./ui')
+var xtend = require('xtend/mutable');
+var React = require('react/addons');
+var UI = require('./ui');
 
-var DEFAULT_TRANSITION = 'none'
+var DEFAULT_TRANSITION = 'none';
 var TRANSITIONS = require('./constants/transition-keys');
 
 /**
@@ -13,10 +13,10 @@ var TRANSITIONS = require('./constants/transition-keys');
  *
  * It returns a Mixin which should be added to your App.
  */
-function createApp(views) {
+function createApp (views) {
 	return {
-		componentWillMount: function() {
-			this.views = {}
+		componentWillMount: function () {
+			this.views = {};
 
 			for (var viewName in views) {
 				var view = views[viewName];
@@ -29,45 +29,45 @@ function createApp(views) {
 			app: React.PropTypes.object.isRequired
 		},
 
-		getChildContext: function() {
+		getChildContext: function () {
 			return {
 				currentView: this.state.currentView,
 				app: this
-			}
+			};
 		},
 
-		getCurrentView: function() {
+		getCurrentView: function () {
 			var viewsData = {};
 			viewsData[this.state.currentView] = this.getView(this.state.currentView);
 			var views = React.addons.createFragment(viewsData);
 			return views;
 		},
 
-		getInitialState: function() {
+		getInitialState: function () {
 			return {
 				viewTransition: this.getViewTransition(DEFAULT_TRANSITION)
 			};
 		},
 
-		getView: function(key) {
+		getView: function (key) {
 			var view = views[key];
-			if (!view) return this.getViewNotFound()
+			if (!view) return this.getViewNotFound();
 
-			var givenProps = this.state[key + '_props']
+			var givenProps = this.state[key + '_props'];
 			var props = xtend({
 				key: key,
 				app: this,
 				viewClassName: this.state[key + '_class'] || 'view'
-			}, givenProps)
+			}, givenProps);
 
 			if (this.getViewProps) {
-				xtend(props, this.getViewProps())
+				xtend(props, this.getViewProps());
 			}
 
-			return React.createElement(view, props)
+			return React.createElement(view, props);
 		},
 
-		getViewNotFound: function() {
+		getViewNotFound: function () {
 			return (
 				<UI.View className="view">
 					<UI.ViewContent>
@@ -83,10 +83,10 @@ function createApp(views) {
 			);
 		},
 
-		getViewTransition: function(key) {
+		getViewTransition: function (key) {
 			if (!TRANSITIONS[key]) {
-				console.log('Invalid View Transition: ' + key)
-				key = 'none'
+				console.log('Invalid View Transition: ' + key);
+				key = 'none';
 			}
 
 			return xtend({
@@ -94,17 +94,17 @@ function createApp(views) {
 				name: 'view-transition-' + key,
 				in: false,
 				out: false
-			}, TRANSITIONS[key])
+			}, TRANSITIONS[key]);
 		},
 
-		showView: function(key, transition, props, state) {
+		showView: function (key, transition, props, state) {
 			if (typeof transition === 'object') {
-				props = transition
-				transition = DEFAULT_TRANSITION
+				props = transition;
+				transition = DEFAULT_TRANSITION;
 			}
 
 			if (typeof transition !== 'string') {
-				transition = DEFAULT_TRANSITION
+				transition = DEFAULT_TRANSITION;
 			}
 
 			console.log('Showing view |' + key + '| with transition |' + transition + '| and props ' + JSON.stringify(props));
@@ -122,7 +122,7 @@ function createApp(views) {
 
 			this.setState(newState);
 		}
-	}
+	};
 }
 
-module.exports = createApp
+module.exports = createApp;
