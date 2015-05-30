@@ -8,6 +8,25 @@
 // Static
 // ------------------------------
 
+// setup
+
+.View {
+	.display-flex();
+	.flex-direction(column);
+	.square(100%);
+	background-color: @body-bg;
+	line-height: 1; // reset. default line-height is for readable content not apps
+	overflow: hidden;
+	position: absolute;
+
+	// stop weird text rendering issue after transform/animation end
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+	// prepare the element for animation
+	.translateZ(0);
+}
+
 // introduce iOS style springy scrolling
 
 .springy-scrolling {
@@ -26,24 +45,6 @@
 	&:after {
 		top: -1px;
 	}
-}
-
-// setup
-
-.View {
-	.display-flex();
-	.flex-direction(column);
-	.square(100%);
-	background-color: @body-bg;
-	overflow: hidden;
-	position: absolute;
-
-	// stop weird text rendering issue after transform/animation end
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-
-	// prepare the element for animation
-	.translateZ(0);
 }
 
 // disable user interaction
