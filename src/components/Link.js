@@ -2,8 +2,8 @@ var React = require('react/addons');
 var Tappable = require('react-tappable');
 var Navigation = require('../mixins/Navigation');
 
-var TRANSITION_KEYS = require('../constants/transition-keys');
-var validTransitions = Object.keys(TRANSITION_KEYS);
+var transitions = require('../constants/transitions');
+var validTransitions = Object.keys(transitions);
 
 /**
  * Touchstone Link Component
@@ -11,7 +11,6 @@ var validTransitions = Object.keys(TRANSITION_KEYS);
  */
 
 module.exports = React.createClass({
-	
 	displayName: 'Link',
 
 	mixins: [Navigation],
@@ -48,5 +47,4 @@ module.exports = React.createClass({
 			</Tappable>
 		);
 	}
-	
 });

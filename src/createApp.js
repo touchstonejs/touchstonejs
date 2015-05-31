@@ -1,9 +1,7 @@
 var xtend = require('xtend/mutable');
 var React = require('react/addons');
 var UI = require('./ui');
-
-var DEFAULT_TRANSITION = 'none';
-var TRANSITIONS = require('./constants/transition-keys');
+var Transition = require('./mixins/Transition');
 
 /**
  * Touchstone App
@@ -15,6 +13,8 @@ var TRANSITIONS = require('./constants/transition-keys');
  */
 function createApp (views) {
 	return {
+		mixins: [Transition],
+
 		componentWillMount: function () {
 			this.views = {};
 
@@ -45,7 +45,7 @@ function createApp (views) {
 
 		getInitialState: function () {
 			return {
-				viewTransition: this.getViewTransition(DEFAULT_TRANSITION)
+				viewTransition: this.getCSSTransition()
 			};
 		},
 
@@ -83,28 +83,14 @@ function createApp (views) {
 			);
 		},
 
-		getViewTransition: function (key) {
-			if (!TRANSITIONS[key]) {
-				console.log('Invalid View Transition: ' + key);
-				key = 'none';
-			}
-
-			return xtend({
-				key: key,
-				name: 'view-transition-' + key,
-				in: false,
-				out: false
-			}, TRANSITIONS[key]);
-		},
-
 		showView: function (key, transition, props, state) {
 			if (typeof transition === 'object') {
 				props = transition;
-				transition = DEFAULT_TRANSITION;
+				transition = 'none';
 			}
 
 			if (typeof transition !== 'string') {
-				transition = DEFAULT_TRANSITION;
+				transition = 'none';
 			}
 
 			console.log('Showing view |' + key + '| with transition |' + transition + '| and props ' + JSON.stringify(props));
@@ -112,7 +98,7 @@ function createApp (views) {
 			var newState = {
 				currentView: key,
 				previousView: this.state.currentView,
-				viewTransition: this.getViewTransition(transition)
+				viewTransition: this.getCSSTransition(transition)
 			};
 
 			newState[key + '_class'] = 'view';
