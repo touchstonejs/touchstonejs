@@ -1,4 +1,4 @@
-// 
+//
 // Modal
 // ------------------------------
 
@@ -7,13 +7,8 @@
 	.translateZ(0); // bring stacking order up
 
 	position: fixed;
-	visibility: hidden;
+	visibility: visible;
 	z-index: 1000;
-
-	// make the modal interactive
-	&.enter {
-		visibility: visible;
-	}
 }
 
 // dialog
@@ -45,11 +40,6 @@
 	pointer-events: none;
 	position: fixed;
 	z-index: 1100;
-
-	// fade the backdrop in/out
-	.enter > & {
-		opacity: .33;
-	}
 }
 
 // header
@@ -95,12 +85,6 @@
 	text-align: center;
 	top: 50%;
 	width: 120px;
-
-	// fade the backdrop in/out
-	.enter > & {
-		.translateY(0);
-		opacity: 1;
-	}
 }
 
 .Modal-loading > .Modal-icon {

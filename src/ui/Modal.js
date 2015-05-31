@@ -1,10 +1,14 @@
-var classnames = require('classnames');
-
 var React = require('react/addons');
+var ReactCSSTransitionGroup = React.addons.CSSTransitionGroup;
 var Tappable = require('react-tappable');
+var Transition = require('../mixins/Transition');
+
+var classnames = require('classnames');
 
 module.exports = React.createClass({
 	displayName: 'Modal',
+	mixins: [Transition],
+
 	propTypes: {
 		className: React.PropTypes.string,
 		showModal: React.PropTypes.bool,
@@ -22,25 +26,8 @@ module.exports = React.createClass({
 
 	getDefaultProps: function() {
 		return {
-			showModal: false
+			transition: 'none'
 		};
-	},
-
-	getInitialState: function() {
-		return {
-			showModal: this.props.showModal
-		};
-	},
-
-	// TODO: use ReactTransitionGroup to handle fade in/out
-	componentDidMount: function() {
-		var self = this;
-
-		setTimeout(function() {
-			if (!self.isMounted()) return
-
-			self.setState({ showModal: true });
-		}, 1);
 	},
 
 	render: function() {
@@ -49,7 +36,6 @@ module.exports = React.createClass({
 			'Modal-mini': this.props.mini,
 			'Modal-loading': this.props.loading
 		});
-		var modalClassName = classnames('Modal', { enter: this.state.showModal });
 		var iconClassName = classnames('Modal-icon', this.props.iconKey, this.props.iconType)
 
 		// Set dynamic content
@@ -62,16 +48,26 @@ module.exports = React.createClass({
 		var secondaryAction = this.props.secondaryActionText ? <Tappable onTap={this.props.secondaryActionFn} className="Modal-action Modal-action-secondary">{this.props.secondaryActionText}</Tappable> : null;
 		var actions = primaryAction ? ( <div className="Modal-actions">{secondaryAction} {primaryAction}</div> ) : null;
 
+		// transition
+		var transition = this.getCSSTransition(this.props.transition)
+
 		return (
-			<div className={modalClassName}>
-				<div className={dialogClassName}>
-					{icon}
-					{header}
-					{text}
-					{actions}
+			<ReactCSSTransitionGroup
+				component="div"
+				transitionEnter={transition.in}
+				transitionLeave={transition.out}
+				transitionName={transition.name}>
+
+				<div className="Modal">
+					<div className={dialogClassName}>
+						{icon}
+						{header}
+						{text}
+						{actions}
+					</div>
+					<div className="Modal-backdrop" />
 				</div>
-				<div className="Modal-backdrop" />
-			</div>
+			</ReactCSSTransitionGroup>
 		);
 	}
 });
