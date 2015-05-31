@@ -49,26 +49,34 @@ module.exports = React.createClass({
 		var actions = primaryAction ? ( <div className="Modal-actions">{secondaryAction} {primaryAction}</div> ) : null;
 
 		// transition
-		var transition = this.getCSSTransition('show-from-bottom')
+		var dialogTransition = this.getCSSTransition('show-from-bottom')
+		var backdropTransition = this.getCSSTransition('fade')
+
+		console.log('backdropTransition', backdropTransition);
 
 		return (
-			<ReactCSSTransitionGroup
-				component="div"
-				className="view-wrapper"
-				transitionEnter={transition.in}
-				transitionLeave={transition.out}
-				transitionName={transition.name}>
-				<div className="Modal">
-
+			<div className="Modal">
+				<ReactCSSTransitionGroup
+					component="div"
+					transitionEnter={dialogTransition.in}
+					transitionLeave={dialogTransition.out}
+					transitionName={dialogTransition.name}
+					className="view-transition-fade">
 					<div className={dialogClassName}>
 						{icon}
 						{header}
 						{text}
 						{actions}
 					</div>
+				</ReactCSSTransitionGroup>
+				<ReactCSSTransitionGroup
+					component="div"
+					transitionEnter={backdropTransition.in}
+					transitionLeave={backdropTransition.out}
+					transitionName={backdropTransition.name}>
 					<div className="Modal-backdrop" />
-				</div>
-			</ReactCSSTransitionGroup>
+				</ReactCSSTransitionGroup>
+			</div>
 		);
 	}
 });
