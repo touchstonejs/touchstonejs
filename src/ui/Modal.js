@@ -49,16 +49,17 @@ module.exports = React.createClass({
 		var actions = primaryAction ? ( <div className="Modal-actions">{secondaryAction} {primaryAction}</div> ) : null;
 
 		// transition
-		var transition = this.getCSSTransition(this.props.transition)
+		var transition = this.getCSSTransition('show-from-bottom')
 
 		return (
 			<ReactCSSTransitionGroup
 				component="div"
+				className="view-wrapper"
 				transitionEnter={transition.in}
 				transitionLeave={transition.out}
 				transitionName={transition.name}>
-
 				<div className="Modal">
+
 					<div className={dialogClassName}>
 						{icon}
 						{header}
