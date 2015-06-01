@@ -3,23 +3,21 @@
 // ------------------------------
 
 .Modal {
-	.fill-space();
-	.translateZ(0); // bring stacking order up
-
-	position: fixed;
-	visibility: visible;
-	z-index: 1000;
 }
 
 // dialog
 
 .Modal-dialog {
 	background-color: fade(white, 95%);
-	border-radius: @border-radius-base;
-	// box-shadow: 0 1px 6px -1px rgba(0, 0, 0, 0.2);
-	padding: 20px;
+	border-radius: @border-radius-large;
+	left: 50%;
+	margin: -60px 0 0 -60px;
+	padding: 15px;
 	position: absolute;
-	z-index: 1200;
+	text-align: center;
+	top: 50%;
+	width: 120px;
+	z-index: @zindex-modal;
 
 	&.default {
 		.translateY(-50%);
@@ -29,28 +27,14 @@
 		width: 270px;
 	}
 }
-
-// backdrop
-
-.Modal-backdrop {
-	.transition( opacity 240ms );
-	.fill-space();
-	background-color: rgba(0, 0, 0, 0.33);
-	pointer-events: none;
-	position: fixed;
-	z-index: 1100;
+.Modal-dialog-enter {
+	.animation-name( modalDialogEnter );
+	.animation-duration( 280ms );
+	.animation-timing-function( cubic-bezier(0.680, -0.550, 0.265, 1.550) );
 }
-
-// header
-
-.Modal-header {
-	font-weight: @font-weight-bold;
-}
-
-// text
-
-.Modal-text {
-	font-size: @font-size-small;
+.Modal-dialog-leave {
+	.animation-duration( 140ms );
+	.animation-name( modalDialogLeave );
 }
 
 // icon
@@ -74,49 +58,79 @@
 
 // loading
 
-.Modal-mini {
-	.transition( all 280ms ease 120ms );
-	.translateY(25%);
-	border-radius: @border-radius-large;
-	left: 50%;
-	margin: -60px 0 0 -60px;
-	padding: 15px;
-	text-align: center;
-	top: 50%;
-	width: 120px;
+.Modal-icon.is-spinning {
+	.is-spinning(1s);
 }
 
-.Modal-loading > .Modal-icon {
-	.animation( spin 1s linear infinite );
+
+
+
+// Background
+// ------------------------------
+
+.Modal-backdrop {
+	.animation-duration( 140ms );
+	background-color: rgba(0, 0, 0, 0.33);
+	height: 100%;
+	left: 0;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: @zindex-modal-backdrop;
+}
+.Modal-background-enter {
+	.animation-name( modalBackdropEnter );
+}
+.Modal-background-leave {
+	.animation-delay( 240ms );
+	.animation-name( modalBackdropLeave );
 }
 
-// actions
 
-.Modal-actions {
-	.display-flex();
-	border-top: 1px solid darken(@body-bg, 10%);
-	margin: 20px -20px -20px;
+
+
+// Animation
+// --------------------
+
+
+// modal dialog
+
+@-webkit-keyframes modalDialogEnter {
+	from { opacity: 0; -webkit-transform: scale( .8 ); }
+	to { opacity: 1; -webkit-transform: scale( 1 ); }
 }
-.Modal-action {
-	.flex-grow(1);
-	color: @link-color;
-	padding: 10px;
-	text-align: center;
-
-	& + & {
-		border-left: 1px solid darken(@body-bg, 10%);
-	}
-
-	// round corners
-	&:first-child { border-bottom-left-radius: @border-radius-base; }
-	&:last-child { border-bottom-right-radius: @border-radius-base; }
-
-	// simulate tapped state
-	&.Tappable-active {
-		background-color: @body-bg;
-	}
+@keyframes modalDialogEnter {
+	from { opacity: 0; transform: scale( .8 ); }
+	to { opacity: 1; transform: scale( 1 ); }
 }
-.Modal-action-primary {
-	font-weight: @font-weight-bold;
+
+@-webkit-keyframes modalDialogLeave {
+	from { opacity: 1; -webkit-transform: scale( 1 ); }
+	to { opacity: 0; -webkit-transform: scale( .8 ); }
+}
+@keyframes modalDialogLeave {
+	from { opacity: 1; transform: scale( 1 ); }
+	to { opacity: 0; transform: scale( .8 ); }
+}
+
+
+// modal backdrop
+
+@-webkit-keyframes modalBackdropEnter {
+	from { opacity: 0; }
+	to { opacity: 1; }
+}
+@keyframes modalBackdropEnter {
+	from { opacity: 0; }
+	to { opacity: 1; }
+}
+
+@-webkit-keyframes modalBackdropLeave {
+	from { opacity: 1; }
+	to { opacity: 0; }
+}
+@keyframes modalBackdropLeave {
+	from { opacity: 1; }
+	to { opacity: 0; }
 }
 
