@@ -11,28 +11,20 @@ module.exports = React.createClass({
 		};
 	},
 	render: function() {
-		var disabled = this.props.disabled || this.props.readonly;
 		var className = classnames(this.props.className, {
 			'list-item': true,
 			'field-item': true,
 			'align-top': true,
 			'is-first': this.props.first,
-			'u-selectable': disabled
+			'u-selectable': this.props.disabled
 		});
 
-		var curated = blacklist(this.props, {
-			className: true,
-			disabled: true,
-			first: true,
-			readonly: true,
-			children: true,
-			label: true
-		})
+		var props = blacklist(this.props, 'children', 'className', 'disabled', 'first', 'label', 'readonly')
 
 		var renderInput = this.props.readonly ? (
 			<div className="field u-selectable">{this.props.value}</div>
 		) : (
-			<textarea disabled={disabled} {...curated} className="field" />
+			<textarea {...props} className="field" />
 		);
 
 		return (
