@@ -1,37 +1,32 @@
-var blacklist = require('blacklist')
-var classnames = require('classnames')
+var blacklist = require('blacklist');
+var classnames = require('classnames');
 
-var React = require('react/addons')
+var React = require('react/addons');
 
 module.exports = React.createClass({
 	displayName: 'Input',
+	propTypes: {
+		first: React.PropTypes.bool
+	},
 
 	getDefaultProps: function() {
 		return {
 			type: 'text'
 		};
 	},
-
 	render: function() {
-		var disabled = this.props.disabled || this.props.readonly
-		var className = classnames(this.props.className, 'field-item list-item', {
+		var className = classnames('field-item list-item', {
 			'is-first': this.props.first,
-			'u-selectable': disabled
-		})
+			'u-selectable': this.props.disabled
+		}, this.props.className);
 
-		var curated = blacklist(this.props, {
-			className: true,
-			disabled: true,
-			first: true,
-			readonly: true,
-			children: true
-		})
+		var inputProps = blacklist(this.props, 'children', 'className', 'first');
 
 		return (
 			<div className={className}>
 				<div className="item-inner">
 					<label className="item-content">
-						<input className="field" disabled={disabled} {...curated} />
+						<input className="field" {...inputProps} />
 					</label>
 					{this.props.children}
 				</div>
