@@ -14,5 +14,5 @@ An online demo is available at [demo.touchstonejs.io](http://demo.touchstonejs.i
 
 # License
 
-MIT. Copyright (c) 2014 Jed Watson
+MIT. Copyright (c) 2015 Jed Watson
 

@@ -1,5 +1,6 @@
-var React = require('react/addons'),
-	classnames = require('classnames');
+var React = require('react/addons');
+var blacklist = require('blacklist');
+var classnames = require('classnames');
 
 module.exports = React.createClass({
 	displayName: 'LabelInput',
@@ -31,10 +32,12 @@ module.exports = React.createClass({
 			'u-selectable': this.props.disabled
 		});
 
+		var props = blacklist(this.props, 'alignTop', 'children', 'first', 'readonly');
+
 		var renderInput = this.props.readonly ? (
 			<div className="field u-selectable">{this.props.value}</div>
 		) : (
-			<input disabled={this.props.disabled} type={this.props.type} pattern={this.props.pattern} ref={this.props.ref} value={this.props.value} defaultValue={this.props.defaultValue} onChange={this.props.onChange} className="field" placeholder={this.props.placeholder} />
+			<input className="field" {...props}/>
 		);
 
 		return (

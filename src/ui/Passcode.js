@@ -1,7 +1,7 @@
 var React = require('react/addons'),
 	classnames = require('classnames'),
 	Keypad = require('./Keypad'),
-	FlexBlock = require('./FlexBlock');
+	ViewContent = require('./ViewContent');
 
 module.exports = React.createClass({
 	displayName: 'Passcode',
@@ -72,7 +72,7 @@ module.exports = React.createClass({
 		});
 
 		return (
-			<FlexBlock>
+			<ViewContent grow>
 				<div className={passcodeClassName}>
 					<div className="Passcode-label">{this.props.helpText}</div>
 					<div className="Passcode-fields">
@@ -91,7 +91,7 @@ module.exports = React.createClass({
 					</div>
 				</div>
 				<Keypad type={this.props.type} action={this.handlePasscode} enableDel={Boolean(this.state.passcode.length)} stowed={this.state.keyboardIsStowed} />
-			</FlexBlock>
+			</ViewContent>
 		);
 	}
 });

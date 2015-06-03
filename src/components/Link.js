@@ -1,6 +1,9 @@
-var React = require('react/addons'),
-	Tappable = require('react-tappable'),
-	Navigation = require('../mixins/Navigation');
+var React = require('react/addons');
+var Tappable = require('react-tappable');
+var Navigation = require('../mixins/Navigation');
+
+var transitions = require('../constants/transitions');
+var validTransitions = Object.keys(transitions);
 
 /**
  * Touchstone Link Component
@@ -8,7 +11,6 @@ var React = require('react/addons'),
  */
 
 module.exports = React.createClass({
-	
 	displayName: 'Link',
 
 	mixins: [Navigation],
@@ -16,7 +18,7 @@ module.exports = React.createClass({
 	propTypes: {
 		to: React.PropTypes.string.isRequired,
 		params: React.PropTypes.object,
-		viewTransition: React.PropTypes.string,
+		viewTransition: React.PropTypes.oneOf(validTransitions),
 		component: React.PropTypes.any,
 		className: React.PropTypes.string
 	},
@@ -45,5 +47,4 @@ module.exports = React.createClass({
 			</Tappable>
 		);
 	}
-	
 });

@@ -1,7 +1,7 @@
 var React = require('react/addons');
 
 module.exports = React.createClass({
-	displayName: 'FlexContainer',
+	displayName: 'View',
 
 	propTypes: {
 		className: React.PropTypes.string
@@ -14,11 +14,11 @@ module.exports = React.createClass({
 	},
 
 	render: function() {
-		var className = this.props.className ? ('FlexLayout ' + this.props.className) : 'FlexLayout';
+		var className = this.props.className ? ('View ' + this.props.className) : 'View';
 
 		// react does not currently support duplicate properties (which we need for vendor-prefixed values)
 		// see https://github.com/facebook/react/issues/2020
-		// moved the display properties to css/touchstone/view.less using the class ".FlexLayout"
+		// moved the display properties to css/touchstone/view.less using the class ".View"
 
 		// when supported, apply the following:
 		// display: '-webkit-box',

@@ -1,18 +1,16 @@
-/** @jsx React.DOM */
-
-var React = require('react'),
-	classnames = require('classnames'),
-	Tappable = require('react-tappable');
+var React = require('react');
+var classnames = require('classnames');
+var Tappable = require('react-tappable');
 
 module.exports = React.createClass({
 	displayName: 'Toggle',
 
 	propTypes: {
-		options: React.PropTypes.array,
 		className: React.PropTypes.string,
+		onChange: React.PropTypes.func.isRequired,
+		options: React.PropTypes.array.isRequired,
 		type: React.PropTypes.string,
-		value: React.PropTypes.string,
-		onChange: React.PropTypes.func
+		value: React.PropTypes.string
 	},
 
 	getDefaultProps: function() {

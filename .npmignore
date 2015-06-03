@@ -16,7 +16,6 @@ results
 
 npm-debug.log
 
-lib/
 node_modules/
 site/public/build
 
