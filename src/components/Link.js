@@ -2,7 +2,7 @@ var React = require('react/addons');
 var Tappable = require('react-tappable');
 var Navigation = require('../mixins/Navigation');
 
-var transitions = require('../constants/transitions');
+var transitions = require('../constants/transitions.json');
 var validTransitions = Object.keys(transitions);
 
 /**
