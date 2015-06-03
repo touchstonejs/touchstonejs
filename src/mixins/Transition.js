@@ -1,5 +1,5 @@
 var xtend = require('xtend/mutable')
-var transitions = require('../constants/transitions')
+var transitions = require('../constants/transitions.json')
 
 module.exports = {
 	getCSSTransition: function (key) {
