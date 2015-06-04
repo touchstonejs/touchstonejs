@@ -14,7 +14,7 @@ module.exports = React.createClass({
 		className: React.PropTypes.string,
 		stowed: React.PropTypes.bool,
 		enableDel: React.PropTypes.bool,
-		type: React.PropTypes.string, // options: 'black-translucent', 'white-translucent'
+		type: React.PropTypes.oneOf(['black-translucent', 'white-translucent']),
 		wildkey: React.PropTypes.string
 	},
 
@@ -34,9 +34,9 @@ module.exports = React.createClass({
 		var wildkey;
 
 		if (this.props.wildkey === 'decimal') {
-			wildkey = <KeypadButton value="decimal" primaryLabel="&middot;" aux />
+			wildkey = <KeypadButton value="decimal" primaryLabel="&middot;" aux />;
 		} else {
-			wildkey = <KeypadButton aux disabled />
+			wildkey = <KeypadButton aux disabled />;
 		}
 
 		return (
