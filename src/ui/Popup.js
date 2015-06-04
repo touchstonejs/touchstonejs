@@ -1,6 +1,5 @@
 var React = require('react/addons');
 var ReactCSSTransitionGroup = React.addons.CSSTransitionGroup;
-var Tappable = require('react-tappable');
 var Transition = require('../mixins/Transition');
 
 var classnames = require('classnames');
