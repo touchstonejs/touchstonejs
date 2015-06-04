@@ -10,6 +10,7 @@ module.exports = React.createClass({
 		aux: React.PropTypes.bool,
 		className: React.PropTypes.string,
 		disabled: React.PropTypes.bool,
+		icon: React.PropTypes.string,
 		primaryLabel: React.PropTypes.string,
 		secondaryLabel: React.PropTypes.string,
 		value: React.PropTypes.string
