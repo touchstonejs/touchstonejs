@@ -12,29 +12,30 @@ module.exports = React.createClass({
 		className: React.PropTypes.string,
 		visible: React.PropTypes.bool
 	},
-	getDefaultProps: function() {
+
+	getDefaultProps: function () {
 		return {
 			transition: 'none'
 		};
 	},
-	renderBackdrop: function() {
+
+	renderBackdrop: function () {
 		if (!this.props.visible) return null;
-		return <div className="Modal-backdrop" />
+		return <div className="Modal-backdrop" />;
 	},
-	renderDialog: function() {
+
+	renderDialog: function () {
 		if (!this.props.visible) return null;
-		
+
 		// Set classnames
 		var dialogClassName = classnames('Modal-dialog', this.props.className);
 
-		return (
-			<div className={dialogClassName}>
-				{this.props.children}
-			</div>
-		);
+		return (<div className={dialogClassName}>
+			{this.props.children}
+		</div>);
 	},
 
-	render: function() {
+	render: function () {
 		return (
 			<div className="Modal">
 				<ReactCSSTransitionGroup transitionName="Modal-dialog" component="div">
