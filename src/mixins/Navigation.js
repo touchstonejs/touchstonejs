@@ -14,13 +14,13 @@ module.exports = {
 		app: React.PropTypes.object.isRequired
 	},
 	
-	showView: function() {
+	showView: function () {
 		this.context.app.showView.apply(this.context.app, arguments);
 	},
 	
-	showViewFn: function() {
+	showViewFn: function () {
 		var args = arguments;
-		return function() {
+		return function () {
 			this.context.app.showView.apply(this.context.app, args);
 		}.bind(this);
 	}

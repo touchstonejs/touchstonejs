@@ -23,14 +23,14 @@ module.exports = React.createClass({
 		className: React.PropTypes.string
 	},
 
-	getDefaultProps: function() {
+	getDefaultProps: function () {
 		return {
 			viewTransition: 'none',
 			component: 'span'
 		};
 	},
 
-	action: function() {
+	action: function () {
 		var params = this.props.params;
 
 		if ('function' === typeof params) {
@@ -40,7 +40,7 @@ module.exports = React.createClass({
 		this.showView(this.props.to, this.props.viewTransition, params);
 	},
 
-	render: function() {
+	render: function () {
 		return (
 			<Tappable onTap={this.action} className={this.props.className} component={this.props.component}>
 				{this.props.children}
