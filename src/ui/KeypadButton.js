@@ -18,10 +18,8 @@ module.exports = React.createClass({
 
 	getDefaultProps: function () {
 		return {
-			action: function() {},
-			className: '',
-			secondaryLabel: ''
-		}
+			action: function () {}
+		};
 	},
 
 	render: function () {
