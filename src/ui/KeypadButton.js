@@ -8,7 +8,6 @@ module.exports = React.createClass({
 	propTypes: {
 		action: React.PropTypes.func,
 		aux: React.PropTypes.bool,
-		className: React.PropTypes.string,
 		disabled: React.PropTypes.bool,
 		icon: React.PropTypes.string,
 		primaryLabel: React.PropTypes.string,
@@ -26,7 +25,7 @@ module.exports = React.createClass({
 		var className = classnames('Keypad-button', {
 			'is-auxiliary': this.props.aux,
 			'disabled': this.props.disabled
-		});
+		}, this.props.className);
 
 		var primaryLabel = this.props.primaryLabel ? <div className="Keypad-button-primary-label">{this.props.primaryLabel}</div> : null;
 		var secondaryLabel = this.props.secondaryLabel ? <div className="Keypad-button-secondary-label">{this.props.secondaryLabel}</div> : null;
