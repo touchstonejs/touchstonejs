@@ -13,36 +13,34 @@ module.exports = React.createClass({
 		value: React.PropTypes.string
 	},
 
-	getDefaultProps: function() {
+	getDefaultProps: function () {
 		return {
 			type: 'primary'
 		};
 	},
 
-	onChange: function(value) {
+	onChange: function (value) {
 		this.props.onChange(value);
 	},
 
-	render: function() {
+	render: function () {
+		var componentClassName = classnames('Toggle', this.props.className, this.props.type);
+		var self = this;
 
-		var componentClassName = classnames(this.props.className, this.props.type, {
-			'Toggle': true
+		var options = this.props.options.map(function (op) {
+			function onChange () {
+				self.onChange(op.value);
+			}
+
+			var itemClassName = classnames('Toggle-item', {
+				'active': op.value === self.props.value
+			});
+
+			return (<Tappable key={'option-' + op.value} onTap={onChange} className={itemClassName}>
+				{op.label}
+			</Tappable>);
 		});
 
-		var options = this.props.options.map(function(op) {
-			var itemClassName = classnames({
-				'Toggle-item': true,
-				'active': op.value === this.props.value
-			});
-			return (
-				<Tappable key={'option-' + op.value} onTap={this.onChange.bind(this, op.value)} className={itemClassName}>
-					{op.label}
-				</Tappable>
-			);
-		}.bind(this));
-
 		return <div className={componentClassName}>{options}</div>;
-
 	}
-
 });
