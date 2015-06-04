@@ -43,7 +43,14 @@ gulp.task('site', ['watch:site'], function () {
 	});
 });
 
-// git tag
+// Publish
+gulp.task('publish:npm', function (done) {
+	require('child_process')
+		.spawn('npm', ['publish'], { stdio: 'inherit' })
+		.on('close', done);
+});
+
+// Git tag
 gulp.task('publish:tag', function (done) {
 	var pkg = require('./package.json');
 	var v = 'v' + pkg.version;
@@ -66,13 +73,6 @@ function _bump (type) {
 gulp.task('bump', _bump.bind(null, 'patch'));
 gulp.task('bump:minor', _bump.bind(null, 'minor'));
 gulp.task('bump:major', _bump.bind(null, 'major'));
-
-// publish
-gulp.task('publish:npm', function (done) {
-	require('child_process')
-		.spawn('npm', ['publish'], { stdio: 'inherit' })
-		.on('close', done);
-});
 
 // Deploy
 gulp.task('publish:site', ['build:site'], function () {
