@@ -27,7 +27,7 @@ module.exports = React.createClass({
 			helpText: this.props.helpText,
 			keyboardIsStowed: true,
 			passcode: ''
-		}
+		};
 	},
 
 	componentDidMount: function () {
@@ -42,53 +42,47 @@ module.exports = React.createClass({
 	},
 
 	handlePasscode: function (keyCode) {
-		var passcode = this.state.passcode
+		var passcode = this.state.passcode;
 
 		if (keyCode === 'delete') {
-			passcode = passcode.slice(0, -1)
+			passcode = passcode.slice(0, -1);
 
 		} else {
-			passcode = passcode.concat(keyCode)
+			passcode = passcode.concat(keyCode);
 		}
 
 		if (passcode.length !== 4) {
 			return this.setState({
 				passcode: passcode
-			})
+			});
 		}
 
+		var self = this;
 		setTimeout(function () {
-			return this.props.action(passcode)
-		}.bind(this), 200); // the transition that stows the keyboard takes 150ms, it freezes if interrupted by the ReactCSSTransitionGroup
+			self.props.action(passcode);
+		}, 200); // the transition that stows the keyboard takes 150ms, it freezes if interrupted by the ReactCSSTransitionGroup
 
-		return this.setState({
-			passcode: passcode
-		})
+		this.setState({ passcode: passcode });
 	},
 
 	render: function () {
-		var passcodeClassName = classnames(this.props.type, {
-			'Passcode': true
+		var passcode = this.state.passcode
+		var passcodeClassname = classnames('Passcode', this.props.type);
+		var passcodeFields = [0, 1, 2, 3].map(function (i) {
+			var passcodeFieldClassname = classnames('Passcode-input', {
+				'has-value': passcode.length > i
+			});
+
+			return (<div className="Passcode-field">
+				<div className={passcodeFieldClassname} />
+			</div>);
 		});
 
 		return (
 			<ViewContent grow>
-				<div className={passcodeClassName}>
+				<div className={passcodeClassname}>
 					<div className="Passcode-label">{this.props.helpText}</div>
-					<div className="Passcode-fields">
-						<div className="Passcode-field">
-							<div className={'Passcode-input ' + ((this.state.passcode.length > 0) ? 'has-value' : '')} />
-						</div>
-						<div className='Passcode-field'>
-							<div className={'Passcode-input ' + ((this.state.passcode.length > 1) ? 'has-value' : '')} />
-						</div>
-						<div className='Passcode-field'>
-							<div className={'Passcode-input ' + ((this.state.passcode.length > 2) ? 'has-value' : '')} />
-						</div>
-						<div className='Passcode-field'>
-							<div className={'Passcode-input ' + ((this.state.passcode.length > 3) ? 'has-value' : '')} />
-						</div>
-					</div>
+					<div className="Passcode-fields">{passcodeFields}</div>
 				</div>
 				<Keypad type={this.props.type} action={this.handlePasscode} enableDel={Boolean(this.state.passcode.length)} stowed={this.state.keyboardIsStowed} />
 			</ViewContent>
