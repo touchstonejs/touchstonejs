@@ -9,12 +9,12 @@ module.exports = React.createClass({
 		height: React.PropTypes.string,
 		type: React.PropTypes.string
 	},
-	getDefaultProps: function() {
+	getDefaultProps: function () {
 		return {
 			height: '44px'
 		};
 	},
-	render: function() {
+	render: function () {
 		var className = classnames(this.props.className, this.props.type, {
 			'Footerbar': true
 		});

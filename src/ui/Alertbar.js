@@ -12,13 +12,13 @@ module.exports = React.createClass({
 		pulse: React.PropTypes.bool,
 		type: React.PropTypes.oneOf(alertTypes)
 	},
-	getDefaultProps: function() {
+	getDefaultProps: function () {
 		return {
 			height: '30px',
 			type: 'default'
 		};
 	},
-	render: function() {
+	render: function () {
 		var className = classnames(this.props.className, this.props.type, {
 			'Alertbar': true,
 			'pulse': this.props.pulse

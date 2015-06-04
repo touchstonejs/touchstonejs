@@ -9,14 +9,14 @@ module.exports = React.createClass({
 	displayName: 'ActionButton',
 	mixins: [Navigation],
 
-	getDefaultProps: function() {
+	getDefaultProps: function () {
 		return {
 			component: 'button',
 			disabled: false
 		};
 	},
 
-	render: function() {
+	render: function () {
 		var className = classnames(this.props.className, this.props.icon, {
 			'action-button': true,
 			'disabled': this.props.disabled

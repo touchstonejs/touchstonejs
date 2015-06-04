@@ -17,13 +17,13 @@ module.exports = React.createClass({
 		disabled: React.PropTypes.bool,
 		first: React.PropTypes.bool
 	},
-	getDefaultProps: function() {
+	getDefaultProps: function () {
 		return {
 			type: 'text',
 			readonly: false
 		};
 	},
-	render: function() {
+	render: function () {
 		var className = classnames(this.props.className, {
 			'list-item': true,
 			'field-item': true,

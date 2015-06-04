@@ -10,7 +10,7 @@ module.exports = React.createClass({
 		thumbnail: React.PropTypes.string
 	},
 
-	render: function() {
+	render: function () {
 		var className = classnames({
 			'item-media':   true,
 			'is-icon':      this.props.icon,

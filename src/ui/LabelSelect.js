@@ -8,22 +8,22 @@ module.exports = React.createClass({
 		label: React.PropTypes.string,
 		first: React.PropTypes.bool
 	},
-	getDefaultProps: function() {
+	getDefaultProps: function () {
 		return {
 			className: ''
 		};
 	},
-	getInitialState: function() {
+	getInitialState: function () {
 		return {
 			value: this.props.value
 		};
 	},
-	updateInputValue: function(event) {
+	updateInputValue: function (event) {
 		this.setState({
 			value: event.target.value
 		});
 	},
-	render: function() {
+	render: function () {
 		// Set Classes
 		var className = classnames(this.props.className, {
 			'list-item': true,
@@ -31,7 +31,7 @@ module.exports = React.createClass({
 		});
 
 		// Map Options
-		var options = this.props.options.map(function(op) {
+		var options = this.props.options.map(function (op) {
 			return (
 				<option key={'option-' + op.value} value={op.value}>
 					{op.label}

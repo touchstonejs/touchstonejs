@@ -9,12 +9,12 @@ module.exports = React.createClass({
 		first: React.PropTypes.bool
 	},
 
-	getDefaultProps: function() {
+	getDefaultProps: function () {
 		return {
 			type: 'text'
 		};
 	},
-	render: function() {
+	render: function () {
 		var className = classnames('field-item list-item', {
 			'is-first': this.props.first,
 			'u-selectable': this.props.disabled

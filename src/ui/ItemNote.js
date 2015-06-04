@@ -10,13 +10,13 @@ module.exports = React.createClass({
 		icon: React.PropTypes.string
 	},
 
-	getDefaultProps: function() {
+	getDefaultProps: function () {
 		return {
 			type: 'default'
 		};
 	},
 
-	render: function() {
+	render: function () {
 		var className = classnames({
 			'item-note': true
 		}, this.props.type, this.props.className);

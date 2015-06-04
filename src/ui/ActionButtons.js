@@ -5,12 +5,12 @@ module.exports = React.createClass({
 	propTypes: {
 		className: React.PropTypes.string
 	},
-	getDefaultProps: function() {
+	getDefaultProps: function () {
 		return {
 			className: ''
 		};
 	},
-	render: function() {
+	render: function () {
 		var className = this.props.className ? (this.props.className + ' action-buttons') : 'action-buttons';
 		return <div className={className}>{this.props.children}</div>;
 	}

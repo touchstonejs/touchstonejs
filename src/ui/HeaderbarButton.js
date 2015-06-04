@@ -20,13 +20,13 @@ module.exports = React.createClass({
 		label: React.PropTypes.string,
 		icon: React.PropTypes.string
 	},
-	getDefaultProps: function() {
+	getDefaultProps: function () {
 		return {
 			visible: true,
 			disabled: false
 		};
 	},
-	render: function() {
+	render: function () {
 		var className = classnames(this.props.className, this.props.position, this.props.icon, {
 			'Headerbar-button': true,
 			'hidden': !this.props.visible,

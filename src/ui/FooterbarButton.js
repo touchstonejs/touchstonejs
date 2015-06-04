@@ -18,14 +18,14 @@ module.exports = React.createClass({
 		label: React.PropTypes.string,
 		icon: React.PropTypes.string
 	},
-	getDefaultProps: function() {
+	getDefaultProps: function () {
 		return {
 			component: 'div',
 			disabled: false,
 			active: false
 		};
 	},
-	render: function() {
+	render: function () {
 		var className = classnames(this.props.className, this.props.icon, {
 			'Footerbar-button': true,
 			'active': this.props.active,

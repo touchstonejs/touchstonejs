@@ -12,12 +12,12 @@ module.exports = React.createClass({
 		actionText: React.PropTypes.string,
 		actionFn: React.PropTypes.func
 	},
-	getDefaultProps: function() {
+	getDefaultProps: function () {
 		return {
 			className: ''
 		};
 	},
-	render: function() {
+	render: function () {
 		var className = this.props.className ? ('view-feedback ' + this.props.className) : 'view-feedback';
 
 		var icon = this.props.iconKey ? <div className={'view-feedback-icon ' + this.props.iconKey + ' ' + this.props.iconType} /> : null;
