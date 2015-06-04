@@ -1,5 +1,5 @@
-var React = require('react/addons'),
-	classnames = require('classnames');
+var React = require('react/addons');
+var classnames = require('classnames');
 
 module.exports = React.createClass({
 	displayName: 'ViewContent',
@@ -11,19 +11,19 @@ module.exports = React.createClass({
 		grow: React.PropTypes.bool
 	},
 
-	getDefaultProps: function() {
+	getDefaultProps: function () {
 		return {
 			className: '',
 			height: ''
 		};
 	},
 
-	render: function() {
+	render: function () {
 		var className = classnames({
 			'ViewContent': true,
 			'springy-scrolling': this.props.scrollable
 		}, this.props.className);
-		
+
 		var inlineStyle = {};
 
 		// set height on blocks if provided
