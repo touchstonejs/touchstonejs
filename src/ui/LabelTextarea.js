@@ -1,20 +1,19 @@
+var React = require('react/addons');
+
 var blacklist = require('blacklist')
 var	classnames = require('classnames');
 
-var React = require('react/addons');
-
 module.exports = React.createClass({
 	displayName: 'LabelTextarea',
-	getDefaultProps: function() {
+
+	getDefaultProps: function () {
 		return {
 			rows: 3
 		};
 	},
-	render: function() {
-		var className = classnames(this.props.className, {
-			'list-item': true,
-			'field-item': true,
-			'align-top': true,
+
+	render: function () {
+		var className = classnames(this.props.className, 'list-item', 'field-item', 'align-top', {
 			'is-first': this.props.first,
 			'u-selectable': this.props.disabled
 		});
