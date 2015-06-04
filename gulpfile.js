@@ -9,14 +9,14 @@ var less = require('gulp-less');
 
 // Build/Clean/Watch lib
 gulp.task('build:lib', function () {
-	return gulp.src('src/**/*.js')
+	return gulp.src('src/**/*')
 		.pipe(babel({ plugins: [require('babel-plugin-object-assign')] }))
 		.pipe(gulp.dest('lib'));
 });
 
 gulp.task('clean:lib', function (done) { del(['lib'], done); });
 gulp.task('watch:lib', ['build:lib'], function () {
-	gulp.watch('src/**/*.js', ['build:lib']);
+	gulp.watch('src/**/*', ['build:lib']);
 });
 
 // Build/Clean/Watch site
