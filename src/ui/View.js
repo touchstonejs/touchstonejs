@@ -1,5 +1,7 @@
 var React = require('react/addons');
 
+var classnames = require('classnames');
+
 module.exports = React.createClass({
 	displayName: 'View',
 
@@ -7,19 +9,18 @@ module.exports = React.createClass({
 		className: React.PropTypes.string
 	},
 
-	getDefaultProps: function() {
+	getDefaultProps: function () {
 		return {
 			className: ''
 		};
 	},
 
-	render: function() {
-		var className = this.props.className ? ('View ' + this.props.className) : 'View';
+	render: function () {
+		var className = classnames('View', this.props.className);
 
 		// react does not currently support duplicate properties (which we need for vendor-prefixed values)
 		// see https://github.com/facebook/react/issues/2020
 		// moved the display properties to css/touchstone/view.less using the class ".View"
-
 		// when supported, apply the following:
 		// display: '-webkit-box',
 		// display: '-webkit-flex',

@@ -66,7 +66,7 @@ module.exports = React.createClass({
 	},
 
 	render: function () {
-		var passcode = this.state.passcode
+		var passcode = this.state.passcode;
 		var passcodeClassname = classnames('Passcode', this.props.type);
 		var passcodeFields = [0, 1, 2, 3].map(function (i) {
 			var passcodeFieldClassname = classnames('Passcode-input', {

@@ -27,7 +27,7 @@ module.exports = React.createClass({
 					<div className="item-note-icon ion-checkmark" />
 				</div>
 			) : null;
-			var icon = op.icon ? (<div className="item-media"><span className={iconClassname} /></div>) : null
+			var icon = op.icon ? (<div className="item-media"><span className={iconClassname} /></div>) : null;
 
 			function onChange () {
 				self.onChange(op.value);
