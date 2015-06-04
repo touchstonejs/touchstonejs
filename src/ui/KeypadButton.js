@@ -1,7 +1,7 @@
-var classnames = require('classnames')
+var classnames = require('classnames');
 
-var React = require('react/addons')
-var Tappable = require('react-tappable')
+var React = require('react/addons');
+var Tappable = require('react-tappable');
 
 module.exports = React.createClass({
 	displayName: 'KeypadButton',
@@ -16,7 +16,7 @@ module.exports = React.createClass({
 		value: React.PropTypes.string
 	},
 
-	getDefaultProps: function() {
+	getDefaultProps: function () {
 		return {
 			action: function() {},
 			className: '',
@@ -24,7 +24,7 @@ module.exports = React.createClass({
 		}
 	},
 
-	render: function() {
+	render: function () {
 		var className = classnames('Keypad-button', {
 			'is-auxiliary': this.props.aux,
 			'disabled': this.props.disabled
