@@ -1,7 +1,8 @@
-var React = require('react/addons'),
-	classnames = require('classnames'),
-	Keypad = require('./Keypad'),
-	ViewContent = require('./ViewContent');
+var Keypad = require('./Keypad');
+var React = require('react/addons');
+var ViewContent = require('./ViewContent');
+
+var classnames = require('classnames');
 
 module.exports = React.createClass({
 	displayName: 'Passcode',
@@ -13,7 +14,7 @@ module.exports = React.createClass({
 		helpText: React.PropTypes.string
 	},
 
-	getDefaultProps: function() {
+	getDefaultProps: function () {
 		return {
 			className: '',
 			helpText: 'Enter your passcode',
@@ -21,7 +22,7 @@ module.exports = React.createClass({
 		};
 	},
 
-	getInitialState: function() {
+	getInitialState: function () {
 		return {
 			helpText: this.props.helpText,
 			keyboardIsStowed: true,
@@ -29,18 +30,18 @@ module.exports = React.createClass({
 		}
 	},
 
-	componentDidMount: function() {
+	componentDidMount: function () {
+		var self = this;
+
 		// slide the keyboard up after the view is shown
-		setTimeout(function() {
+		setTimeout(function () {
 			if (!this.isMounted()) return;
-			this.setState({
-				keyboardIsStowed: false
-			});
-		}.bind(this), 400);
+
+			self.setState({ keyboardIsStowed: false });
+		}, 400);
 	},
 
-	handlePasscode: function(keyCode) {
-
+	handlePasscode: function (keyCode) {
 		var passcode = this.state.passcode
 
 		if (keyCode === 'delete') {
@@ -56,7 +57,7 @@ module.exports = React.createClass({
 			})
 		}
 
-		setTimeout(function() {
+		setTimeout(function () {
 			return this.props.action(passcode)
 		}.bind(this), 200); // the transition that stows the keyboard takes 150ms, it freezes if interrupted by the ReactCSSTransitionGroup
 
@@ -64,9 +65,8 @@ module.exports = React.createClass({
 			passcode: passcode
 		})
 	},
-	
-	render: function() {
 
+	render: function () {
 		var passcodeClassName = classnames(this.props.type, {
 			'Passcode': true
 		});
@@ -77,16 +77,16 @@ module.exports = React.createClass({
 					<div className="Passcode-label">{this.props.helpText}</div>
 					<div className="Passcode-fields">
 						<div className="Passcode-field">
-							<div className={"Passcode-input " + ((this.state.passcode.length > 0) ? "has-value" : "")} />
+							<div className={'Passcode-input ' + ((this.state.passcode.length > 0) ? 'has-value' : '')} />
 						</div>
-						<div className="Passcode-field">
-							<div className={"Passcode-input " + ((this.state.passcode.length > 1) ? "has-value" : "")} />
+						<div className='Passcode-field'>
+							<div className={'Passcode-input ' + ((this.state.passcode.length > 1) ? 'has-value' : '')} />
 						</div>
-						<div className="Passcode-field">
-							<div className={"Passcode-input " + ((this.state.passcode.length > 2) ? "has-value" : "")} />
+						<div className='Passcode-field'>
+							<div className={'Passcode-input ' + ((this.state.passcode.length > 2) ? 'has-value' : '')} />
 						</div>
-						<div className="Passcode-field">
-							<div className={"Passcode-input " + ((this.state.passcode.length > 3) ? "has-value" : "")} />
+						<div className='Passcode-field'>
+							<div className={'Passcode-input ' + ((this.state.passcode.length > 3) ? 'has-value' : '')} />
 						</div>
 					</div>
 				</div>
