@@ -9,7 +9,6 @@ module.exports = React.createClass({
 		action: React.PropTypes.func,
 		aux: React.PropTypes.bool,
 		className: React.PropTypes.string,
-		delete: React.PropTypes.bool,
 		disabled: React.PropTypes.bool,
 		primaryLabel: React.PropTypes.string,
 		secondaryLabel: React.PropTypes.string,
@@ -26,7 +25,7 @@ module.exports = React.createClass({
 
 	render: function() {
 		var className = classnames('Keypad-button', {
-			'is-auxiliary': this.props.aux || this.props.delete,
+			'is-auxiliary': this.props.aux,
 			'disabled': this.props.disabled
 		});
 
