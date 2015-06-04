@@ -6,15 +6,18 @@ var React = require('react/addons');
 module.exports = React.createClass({
 	displayName: 'Textarea',
 	propTypes: {
+		className: React.PropTypes.string,
 		first: React.PropTypes.bool,
 		rows: React.PropTypes.number
 	},
-	getDefaultProps: function() {
+
+	getDefaultProps: function () {
 		return {
 			rows: 3
 		};
 	},
-	render: function() {
+
+	render: function () {
 		var className = classnames('field-item list-item', {
 			'is-first': this.props.first,
 			'u-selectable': this.props.disabled
