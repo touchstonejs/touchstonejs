@@ -5,7 +5,7 @@ var Transition = require('../mixins/Transition');
 var classnames = require('classnames');
 
 module.exports = React.createClass({
-	displayName: 'Modal',
+	displayName: 'Popup',
 	mixins: [Transition],
 
 	propTypes: {
