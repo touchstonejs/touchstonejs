@@ -11,17 +11,20 @@ var Transition = require('./mixins/Transition');
  *
  * It returns a Mixin which should be added to your App.
  */
-function createApp (views) {
+function createApp (argViews) {
+	var viewFactories = {}
+
+	for (var viewName in argViews) {
+		var view = argViews[viewName];
+
+		viewFactories[viewName] = React.createFactory(view);
+	}
+
 	return {
 		mixins: [Transition],
 
 		componentWillMount: function () {
-			this.views = {};
-
-			for (var viewName in views) {
-				var view = views[viewName];
-				this.views[viewName] = React.createFactory(view);
-			}
+			this.views = viewFactories;
 		},
 
 		childContextTypes: {
@@ -39,8 +42,8 @@ function createApp (views) {
 		getCurrentView: function () {
 			var viewsData = {};
 			viewsData[this.state.currentView] = this.getView(this.state.currentView);
-			var views = React.addons.createFragment(viewsData);
-			return views;
+
+			return React.addons.createFragment(viewsData);
 		},
 
 		getInitialState: function () {
@@ -50,7 +53,7 @@ function createApp (views) {
 		},
 
 		getView: function (key) {
-			var view = views[key];
+			var view = viewFactories[key];
 			if (!view) return this.getViewNotFound();
 
 			var props = xtend({ key: key }, this.state.currentViewProps);
@@ -59,7 +62,7 @@ function createApp (views) {
 				xtend(props, this.getViewProps());
 			}
 
-			return React.createElement(view, props);
+			return view(props);
 		},
 
 		getViewNotFound: function () {
