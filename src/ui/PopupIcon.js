@@ -4,7 +4,7 @@ var classNames = require('classnames');
 module.exports = React.createClass({
 	displayName: 'PopupIcon',
 	propTypes: {
-		name: React.PropTypes.string,
+		name: React.PropTypes.string.isRequired,
 		type: React.PropTypes.oneOf(['default', 'muted', 'primary', 'success', 'warning', 'danger']),
 		spinning: React.PropTypes.bool
 	},
