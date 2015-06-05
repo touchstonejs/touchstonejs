@@ -53,7 +53,7 @@ function createApp (views) {
 			var view = views[key];
 			if (!view) return this.getViewNotFound();
 
-			var props = xtend({ key: key, app: this }, this.state.currentViewProps);
+			var props = xtend({ key: key }, this.state.currentViewProps);
 
 			if (this.getViewProps) {
 				xtend(props, this.getViewProps());
