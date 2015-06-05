@@ -93,7 +93,7 @@ function createApp (argViews) {
 
 			var newState = xtend({
 				currentView: key,
-				currentViewProps: props || {},
+				currentViewProps: props,
 				previousView: this.state.currentView,
 				viewTransition: this.getCSSTransition(transition)
 			}, state);
