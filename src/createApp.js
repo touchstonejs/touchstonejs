@@ -53,11 +53,7 @@ function createApp (views) {
 			var view = views[key];
 			if (!view) return this.getViewNotFound();
 
-			var givenProps = this.state[key + '_props'];
-			var props = xtend({
-				key: key,
-				app: this
-			}, givenProps);
+			var props = xtend({ key: key, app: this }, this.state.currentViewProps);
 
 			if (this.getViewProps) {
 				xtend(props, this.getViewProps());
@@ -96,11 +92,10 @@ function createApp (views) {
 
 			var newState = {
 				currentView: key,
+				currentViewProps: props || {},
 				previousView: this.state.currentView,
 				viewTransition: this.getCSSTransition(transition)
 			};
-
-			newState[key + '_props'] = props || {};
 
 			xtend(newState, state);
 
