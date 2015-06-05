@@ -4,6 +4,7 @@
   "description": "A Mobile App Framework built with ReactJS",
   "main": "index.js",
   "author": "Jed Watson",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/JedWatson/touchstonejs.git"
