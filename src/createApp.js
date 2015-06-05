@@ -56,8 +56,7 @@ function createApp (views) {
 			var givenProps = this.state[key + '_props'];
 			var props = xtend({
 				key: key,
-				app: this,
-				viewClassName: this.state[key + '_class'] || 'view'
+				app: this
 			}, givenProps);
 
 			if (this.getViewProps) {
@@ -69,10 +68,10 @@ function createApp (views) {
 
 		getViewNotFound: function () {
 			return (
-				<UI.View className="view">
+				<UI.View>
 					<UI.ViewContent>
 						<UI.Feedback
-							iconKey="ion-alert-circled"
+							iconName="ion-alert-circled"
 							iconType="danger"
 							text={'Sorry, the view <strong>"' + this.state.currentView + '"</strong> is not available.'}
 							actionText="Okay, take me home"
@@ -101,7 +100,6 @@ function createApp (views) {
 				viewTransition: this.getCSSTransition(transition)
 			};
 
-			newState[key + '_class'] = 'view';
 			newState[key + '_props'] = props || {};
 
 			xtend(newState, state);
