@@ -1,10 +1,12 @@
-var React = require('react/addons'),
-	Tappable = require('react-tappable');
+var React = require('react/addons');
+var Tappable = require('react-tappable');
+
+var classnames = require('classnames');
 
 module.exports = React.createClass({
 	propTypes: {
 		className: React.PropTypes.string,
-		iconKey: React.PropTypes.string,
+		iconName: React.PropTypes.string,
 		iconType: React.PropTypes.string,
 		header: React.PropTypes.string,
 		subheader: React.PropTypes.string,
@@ -12,28 +14,23 @@ module.exports = React.createClass({
 		actionText: React.PropTypes.string,
 		actionFn: React.PropTypes.func
 	},
-	getDefaultProps: function () {
-		return {
-			className: ''
-		};
-	},
-	render: function () {
-		var className = this.props.className ? ('view-feedback ' + this.props.className) : 'view-feedback';
 
-		var icon = this.props.iconKey ? <div className={'view-feedback-icon ' + this.props.iconKey + ' ' + this.props.iconType} /> : null;
+	render: function () {
+		var viewClassName = classnames('view-feedback', this.props.className);
+		var iconClassName = classnames('view-feedback-icon', this.props.iconName, this.props.iconType);
+
+		var icon = this.props.iconName ? <div className={iconClassName} /> : null;
 		var header = this.props.header ? <div className="view-feedback-header">{this.props.header}</div> : null;
 		var subheader = this.props.subheader ? <div className="view-feedback-subheader">{this.props.subheader}</div> : null;
 		var text = this.props.text ? <div className="view-feedback-text" dangerouslySetInnerHTML={{__html: this.props.text}} /> : null;
 		var action = this.props.actionText ? <Tappable onTap={this.props.actionFn} className="view-feedback-action">{this.props.actionText}</Tappable> : null;
 
-		return (
-			<div className={className}>
-				{icon}
-				{header}
-				{subheader}
-				{text}
-				{action}
-			</div>
-		);
+		return (<div className={viewClassName}>
+			{icon}
+			{header}
+			{subheader}
+			{text}
+			{action}
+		</div>);
 	}
 });
