@@ -13,14 +13,14 @@ module.exports = React.createClass({
 		placeholder: React.PropTypes.string,
 		ref: React.PropTypes.string,
 		alignTop: React.PropTypes.bool,
-		readonly: React.PropTypes.bool,
+		readOnly: React.PropTypes.bool,
 		disabled: React.PropTypes.bool,
 		first: React.PropTypes.bool
 	},
 	getDefaultProps: function () {
 		return {
 			type: 'text',
-			readonly: false
+			readOnly: false
 		};
 	},
 	render: function () {
@@ -32,9 +32,9 @@ module.exports = React.createClass({
 			'u-selectable': this.props.disabled
 		});
 
-		var props = blacklist(this.props, 'alignTop', 'children', 'first', 'readonly');
+		var props = blacklist(this.props, 'alignTop', 'children', 'first', 'readOnly');
 
-		var renderInput = this.props.readonly ? (
+		var renderInput = this.props.readOnly ? (
 			<div className="field u-selectable">{this.props.value}</div>
 		) : (
 			<input className="field" {...props}/>
