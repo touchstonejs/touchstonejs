@@ -63,19 +63,17 @@ function createApp (views) {
 		},
 
 		getViewNotFound: function () {
-			return (
-				<UI.View>
-					<UI.ViewContent>
-						<UI.Feedback
-							iconName="ion-alert-circled"
-							iconType="danger"
-							text={'Sorry, the view <strong>"' + this.state.currentView + '"</strong> is not available.'}
-							actionText="Okay, take me home"
-							actionFn={this.gotoDefaultView}
-						/>
-					</UI.ViewContent>
-				</UI.View>
-			);
+			return (<UI.View>
+				<UI.ViewContent>
+					<UI.Feedback
+						iconName="ion-alert-circled"
+						iconType="danger"
+						text={'Sorry, the view <strong>"' + this.state.currentView + '"</strong> is not available.'}
+						actionText="Okay, take me home"
+						actionFn={this.gotoDefaultView}
+					/>
+				</UI.ViewContent>
+			</UI.View>);
 		},
 
 		showView: function (key, transition, props, state) {
@@ -90,14 +88,12 @@ function createApp (views) {
 
 			console.log('Showing view |' + key + '| with transition |' + transition + '| and props ' + JSON.stringify(props));
 
-			var newState = {
+			var newState = xtend({
 				currentView: key,
 				currentViewProps: props || {},
 				previousView: this.state.currentView,
 				viewTransition: this.getCSSTransition(transition)
-			};
-
-			xtend(newState, state);
+			}, state);
 
 			this.setState(newState);
 		}
