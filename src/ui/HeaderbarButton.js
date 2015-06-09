@@ -1,44 +1,37 @@
-var React = require('react/addons'),
-	classnames = require('classnames'),
-	Tappable = require('react-tappable'),
-	Navigation = require('../mixins/Navigation');
+var React = require('react/addons');
+var Tappable = require('react-tappable');
+
+var classnames = require('classnames');
 
 module.exports = React.createClass({
 	displayName: 'HeaderbarButton',
-	mixins: [Navigation],
 	propTypes: {
 		className: React.PropTypes.string,
-		component: React.PropTypes.string,
-		showView: React.PropTypes.string,
-		viewTransition: React.PropTypes.string,
-		viewProps: React.PropTypes.object,
 		disabled: React.PropTypes.bool,
-		visible: React.PropTypes.bool,
-		primary: React.PropTypes.bool,
+		icon: React.PropTypes.string,
+		label: React.PropTypes.string,
 		onTap: React.PropTypes.func,
 		position: React.PropTypes.string,
-		label: React.PropTypes.string,
-		icon: React.PropTypes.string
+		primary: React.PropTypes.bool,
+		visible: React.PropTypes.bool
 	},
+
 	getDefaultProps: function () {
 		return {
 			visible: true,
 			disabled: false
 		};
 	},
+
 	render: function () {
-		var className = classnames(this.props.className, this.props.position, this.props.icon, {
-			'Headerbar-button': true,
+		var className = classnames('Headerbar-button', this.props.className, this.props.position, this.props.icon, {
 			'hidden': !this.props.visible,
 			'disabled': this.props.disabled,
 			'is-primary': this.props.primary
 		});
 
-		var label = this.props.label ? <div className="action-button-label">{this.props.label}</div> : null;
-		var action = this.props.showView ? this.showViewFn(this.props.showView, this.props.viewTransition, this.props.viewProps) : this.props.onTap;
-
 		return (
-			<Tappable onTap={action} className={className} component={this.props.component}>
+			<Tappable onTap={this.props.onTap} className={className}>
 				{this.props.label}
 				{this.props.children}
 			</Tappable>

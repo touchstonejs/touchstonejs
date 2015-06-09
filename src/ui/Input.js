@@ -14,6 +14,7 @@ module.exports = React.createClass({
 			type: 'text'
 		};
 	},
+
 	render: function () {
 		var className = classnames('field-item list-item', {
 			'is-first': this.props.first,
