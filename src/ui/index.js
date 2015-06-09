@@ -1,6 +1,4 @@
 module.exports = {
-	ActionButton: require('./ActionButton'),
-	ActionButtons: require('./ActionButtons'),
 	Alertbar: require('./Alertbar'),
 	Feedback: require('./Feedback'),
 	Footerbar: require('./Footerbar'),
