@@ -39,58 +39,6 @@ hr.dotted { border-top-style: dotted; }
     text-align: left;
 }
 
-// Feedback Message
-// ------------------------------
-
-.view-feedback {
-	.v-center();
-	padding-left: 10%;
-	padding-right: 10%;
-	text-align: center;
-	width: 100%;
-
-	// whilst technically centered, looks out-of-whack because of the headerbar
-	margin-top: -(@headerbar-height / 2);
-}
-.view-feedback-icon {
-	font-size: @ionicons-size-massive;
-
-	&.muted { color: @gray-light; }
-	&.primary { color: @app-primary; }
-	&.success { color: @app-success; }
-	&.warning { color: @app-warning; }
-	&.danger  { color: @app-danger; }
-}
-.view-feedback-header,
-.view-feedback-subheader {
-	font-weight: @font-weight-bold;
-	margin-bottom: .5em;
-}
-.view-feedback-header {
-	color: @gray;
-	font-size: 1.2em;
-}
-.view-feedback-subheader {
-	color: @gray-light;
-	font-size: .8em;
-	text-transform: uppercase;
-}
-.view-feedback-text {
-	color: @gray;
-}
-.view-feedback-action {
-	color: @link-color;
-	display: inline-block;
-	margin-top: 1em;
-	padding: 5px;
-
-	&.muted { color: @gray-light; }
-	&.primary { color: @app-primary; }
-	&.success { color: @app-success; }
-	&.warning { color: @app-warning; }
-	&.danger  { color: @app-danger; }
-}
-
 // Lists
 // ------------------------------
 
