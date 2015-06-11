@@ -81,7 +81,11 @@
 
 // React's CSSTransitionGroup requires an animation so we transition from .99 opacity to 1 with "artificial"
 
-// transition: none (default)
+// transition: instant (default)
+.view-transition-instant-enter { .animation( artificial 10ms ); }
+.view-transition-instant-leave { .animation( fadeOut 10ms ); }
+
+// !!WARNING!!: Deprecated and will be removed in the next version
 .view-transition-none-enter { .animation( artificial 10ms ); }
 .view-transition-none-leave { .animation( fadeOut 10ms ); }
 
