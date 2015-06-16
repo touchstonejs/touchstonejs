@@ -19,7 +19,7 @@
     "classnames": "^2.1.2",
     "gulp-babel": "^5.1.0",
     "react": "^0.13.3",
-    "react-tappable": "^0.5.0-beta",
+    "react-tappable": "^0.5.0",
     "xtend": "^4.0.0"
   },
   "devDependencies": {
