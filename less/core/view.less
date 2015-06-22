@@ -1,4 +1,4 @@
-// 
+//
 // Views
 // ==============================
 
@@ -53,7 +53,7 @@
 	pointer-events: none;
 
 	// translucent overlay
-	// provide visual feedback to the user that they cannot interact with the 
+	// provide visual feedback to the user that they cannot interact with the
 	// view whilst it's processing
 	&:after {
 		.animation( fadeIn 150ms );
@@ -85,20 +85,16 @@
 .view-transition-instant-enter { .animation( artificial 10ms ); }
 .view-transition-instant-leave { .animation( fadeOut 60ms ); }
 
-// !!WARNING!!: Deprecated and will be removed in the next version
-.view-transition-none-enter { .animation( artificial 10ms ); }
-.view-transition-none-leave { .animation( fadeOut 10ms ); }
-
 // transition: fade
 .view-transition-fade-enter { .animation( artificial 10ms ); }
 .view-transition-fade-leave { .animation( fadeOut 380ms ); }
 
-// transition: fade expand 
+// transition: fade expand
 
 .view-transition-fade-expand-enter { .animation( artificial 10ms ); }
 .view-transition-fade-expand-leave { .animation( fadeExpand 320ms ); }
 
-// transition: fade contract 
+// transition: fade contract
 
 .view-transition-fade-contract-enter { .animation( artificial 10ms ); }
 .view-transition-fade-contract-leave { .animation( fadeContract 320ms ); }
