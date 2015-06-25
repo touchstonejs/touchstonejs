@@ -2,7 +2,7 @@
   "name": "touchstonejs",
   "version": "0.3.2",
   "description": "A Mobile App Framework built with ReactJS",
-  "main": "index.js",
+  "main": "lib/index.js",
   "author": "Jed Watson",
   "license": "MIT",
   "repository": {
