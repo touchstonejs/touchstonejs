@@ -6,7 +6,6 @@ var React = require('react/addons');
 module.exports = React.createClass({
 	displayName: 'Textarea',
 	propTypes: {
-		className: React.PropTypes.string,
 		first: React.PropTypes.bool,
 		rows: React.PropTypes.number
 	},

@@ -8,7 +8,6 @@ module.exports = React.createClass({
 	displayName: 'Passcode',
 	propTypes: {
 		action: React.PropTypes.func,
-		className: React.PropTypes.string,
 		keyboardIsStowed: React.PropTypes.bool,
 		type: React.PropTypes.string,
 		helpText: React.PropTypes.string

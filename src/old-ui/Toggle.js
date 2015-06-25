@@ -6,7 +6,6 @@ module.exports = React.createClass({
 	displayName: 'Toggle',
 
 	propTypes: {
-		className: React.PropTypes.string,
 		onChange: React.PropTypes.func.isRequired,
 		options: React.PropTypes.array.isRequired,
 		type: React.PropTypes.string,

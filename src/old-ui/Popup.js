@@ -9,7 +9,6 @@ module.exports = React.createClass({
 	mixins: [Transition],
 
 	propTypes: {
-		className: React.PropTypes.string,
 		visible: React.PropTypes.bool
 	},
 

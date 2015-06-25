@@ -7,7 +7,6 @@ var alertTypes = ['default', 'primary', 'success', 'warning', 'danger'];
 module.exports = React.createClass({
 	displayName: 'Alertbar',
 	propTypes: {
-		className: React.PropTypes.string,
 		height: React.PropTypes.string,
 		pulse: React.PropTypes.bool,
 		type: React.PropTypes.oneOf(alertTypes)

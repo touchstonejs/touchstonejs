@@ -5,7 +5,6 @@ var classnames = require('classnames');
 
 module.exports = React.createClass({
 	propTypes: {
-		className: React.PropTypes.string,
 		iconName: React.PropTypes.string,
 		iconType: React.PropTypes.string,
 		header: React.PropTypes.string,

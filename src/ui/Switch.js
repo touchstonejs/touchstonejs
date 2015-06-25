@@ -6,7 +6,6 @@ module.exports = React.createClass({
 	displayName: 'Switch',
 
 	propTypes: {
-		className: React.PropTypes.string,
 		on: React.PropTypes.bool,
 		onTap: React.PropTypes.func,
 		type: React.PropTypes.string

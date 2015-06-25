@@ -4,7 +4,6 @@ var React = require('react/addons'),
 module.exports = React.createClass({
 	displayName: 'ItemMedia',
 	propTypes: {
-		className: React.PropTypes.string,
 		icon: React.PropTypes.string,
 		avatar: React.PropTypes.string,
 		thumbnail: React.PropTypes.string

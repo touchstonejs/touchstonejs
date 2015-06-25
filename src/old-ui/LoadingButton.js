@@ -7,7 +7,6 @@ module.exports = React.createClass({
 	displayName: 'LoadingButton',
 	mixins: [Navigation],
 	propTypes: {
-		className: React.PropTypes.string,
 		showView: React.PropTypes.string,
 		viewTransition: React.PropTypes.string,
 		viewProps: React.PropTypes.object,

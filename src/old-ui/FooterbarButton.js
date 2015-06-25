@@ -7,7 +7,6 @@ module.exports = React.createClass({
 	mixins: [Navigation],
 	displayName: 'ActionButton',
 	propTypes: {
-		className: React.PropTypes.string,
 		component: React.PropTypes.string,
 		showView: React.PropTypes.string,
 		viewTransition: React.PropTypes.string,

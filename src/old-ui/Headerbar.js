@@ -6,7 +6,6 @@ module.exports = React.createClass({
 	displayName: 'Headerbar',
 
 	propTypes: {
-		className: React.PropTypes.string,
 		height: React.PropTypes.string,
 		label: React.PropTypes.string,
 		fixed: React.PropTypes.bool,

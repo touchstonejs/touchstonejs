@@ -7,7 +7,6 @@ module.exports = React.createClass({
 
 	propTypes: {
 		alignTop: React.PropTypes.bool,
-		className: React.PropTypes.string,
 		disabled: React.PropTypes.bool,
 		first: React.PropTypes.bool,
 		label: React.PropTypes.string,

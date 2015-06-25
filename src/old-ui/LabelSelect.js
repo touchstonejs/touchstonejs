@@ -4,7 +4,6 @@ var React = require('react/addons'),
 module.exports = React.createClass({
 	displayName: 'LabelSelect',
 	propTypes: {
-		className: React.PropTypes.string,
 		label: React.PropTypes.string,
 		first: React.PropTypes.bool
 	},

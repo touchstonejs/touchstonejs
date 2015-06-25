@@ -5,7 +5,6 @@ module.exports = React.createClass({
 	displayName: 'ViewContent',
 	propTypes: {
 		id: React.PropTypes.string,
-		className: React.PropTypes.string,
 		height: React.PropTypes.string,
 		scrollable: React.PropTypes.bool,
 		grow: React.PropTypes.bool
