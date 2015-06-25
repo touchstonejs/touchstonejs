@@ -32,14 +32,16 @@ var ViewManager = React.createClass({
 		name: React.PropTypes.string
 	},
 	getDefaultProps () {
-		name: '__default'
+		return {
+			name: '__default'
+		};
 	},
 	getInitialState () {
 		return {
 			views: createViewsFromChildren(this.props.children),
 			currentView: this.props.defaultView,
 			options: {}
-		}
+		};
 	},
 	componentDidMount () {
 		this.context.app.viewManagers[this.props.name] = this;
@@ -70,7 +72,7 @@ var ViewManager = React.createClass({
 		this.setState({
 			currentView: viewKey,
 			options: options
-		}, function() {
+		}, () => {
 			delete this.activeTransitionOptions;
 			delete this.context.app.viewManagerInTransition;
 		});

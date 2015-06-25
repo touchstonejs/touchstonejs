@@ -18,13 +18,13 @@ function scrollToTop (el, options) {
 	var tween = new animation.Tween({ pos: from })
 		.to({ pos: 0 }, duration)
 		.easing(animation.Easing.Quadratic.Out)
-		.onUpdate(function() {
+		.onUpdate(function () {
 			el.scrollTop = this.pos;
 			if (options.onUpdate) {
 				options.onUpdate();
 			}
 		})
-		.onComplete(function() {
+		.onComplete(function () {
 			el.style.webkitOverflowScrolling = 'touch';
 			el.style.overflow = 'scroll';
 			if (options.onComplete) options.onComplete();
@@ -51,7 +51,7 @@ Mixins.ScrollContainerToTop = {
 	scrollContainerToTop () {
 		if (!this.isMounted() || !this.refs.scrollContainer) return;
 		this._scrollContainerAnimation = scrollToTop(React.findDOMNode(this.refs.scrollContainer), {
-			onComplete: () => { delete this._scrollContainerAnimation }
+			onComplete: () => { delete this._scrollContainerAnimation; }
 		});
 	}
 };
