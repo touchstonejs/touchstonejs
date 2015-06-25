@@ -19,6 +19,7 @@
     "classnames": "^2.1.2",
     "gulp-babel": "^5.1.0",
     "react": "^0.13.3",
+    "react-container": "^0.2.2",
     "react-tappable": "^0.5.2",
     "xtend": "^4.0.0"
   },
