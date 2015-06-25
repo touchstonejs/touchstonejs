@@ -2,14 +2,12 @@ var React = require('react/addons');
 var classnames = require('classnames');
 var ViewContent = require('./ViewContent');
 
-var alertTypes = ['default', 'primary', 'success', 'warning', 'danger'];
-
 module.exports = React.createClass({
 	displayName: 'Alertbar',
 	propTypes: {
 		height: React.PropTypes.string,
 		pulse: React.PropTypes.bool,
-		type: React.PropTypes.oneOf(alertTypes)
+		type: React.PropTypes.oneOf(['default', 'primary', 'success', 'warning', 'danger'])
 	},
 	getDefaultProps: function () {
 		return {
