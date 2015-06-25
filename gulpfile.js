@@ -32,7 +32,7 @@ gulp.task('build:site:css', function () {
 		.pipe(less())
 		.pipe(gulp.dest('site/public/build/css'))
 		.pipe(connect.reload());
-})
+});
 
 // Local HTTP server
 gulp.task('site', ['watch:site'], function () {
@@ -59,7 +59,7 @@ gulp.task('publish:tag', function (done) {
 	git.tag(v, message, function (err) {
 		if (err) throw err;
 
-		git.push('origin', v, done)
+		git.push('origin', v, done);
 	});
 });
 

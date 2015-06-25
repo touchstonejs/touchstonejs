@@ -9,7 +9,7 @@ export var Container = require('react-container');
 export var Mixins = require('./mixins');
 export var UI = require('./ui');
 
-export function createApp() {
+export function createApp () {
 	var app = {
 		navigationBars: {},
 		viewManagers: {},

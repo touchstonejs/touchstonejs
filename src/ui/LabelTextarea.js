@@ -1,4 +1,4 @@
-var blacklist = require('blacklist')
+var blacklist = require('blacklist');
 var classnames = require('classnames');
 var React = require('react/addons');
 
@@ -25,7 +25,7 @@ module.exports = React.createClass({
 			'u-selectable': this.props.disabled
 		});
 
-		var props = blacklist(this.props, 'children', 'className', 'disabled', 'first', 'label', 'readOnly')
+		var props = blacklist(this.props, 'children', 'className', 'disabled', 'first', 'label', 'readOnly');
 
 		var renderInput = this.props.readOnly ? (
 			<div className="field u-selectable">{this.props.value}</div>

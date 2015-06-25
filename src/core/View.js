@@ -6,7 +6,7 @@ var View = React.createClass({
 		name: React.PropTypes.string.isRequired
 	},
 	render () {
-		throw "TouchstoneJS <View> should not be rendered directly.";
+		throw new Error('TouchstoneJS <View> should not be rendered directly.');
 	}
 });
 
