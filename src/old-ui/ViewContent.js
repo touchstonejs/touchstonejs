@@ -4,6 +4,7 @@ var classnames = require('classnames');
 module.exports = React.createClass({
 	displayName: 'ViewContent',
 	propTypes: {
+		children: React.PropTypes.node,
 		id: React.PropTypes.string,
 		height: React.PropTypes.string,
 		scrollable: React.PropTypes.bool,

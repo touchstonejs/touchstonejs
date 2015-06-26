@@ -5,6 +5,7 @@ var ViewContent = require('./ViewContent');
 module.exports = React.createClass({
 	displayName: 'Alertbar',
 	propTypes: {
+		children: React.PropTypes.node,
 		height: React.PropTypes.string,
 		pulse: React.PropTypes.bool,
 		type: React.PropTypes.oneOf(['default', 'primary', 'success', 'warning', 'danger'])

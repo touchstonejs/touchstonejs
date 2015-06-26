@@ -6,6 +6,7 @@ module.exports = React.createClass({
 	displayName: 'LabelTextarea',
 
 	propTypes: {
+		children: React.PropTypes.node,
 		disabled: React.PropTypes.bool,
 		first: React.PropTypes.bool,
 		label: React.PropTypes.string,

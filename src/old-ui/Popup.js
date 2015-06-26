@@ -9,6 +9,7 @@ module.exports = React.createClass({
 	mixins: [Transition],
 
 	propTypes: {
+		children: React.PropTypes.node,
 		visible: React.PropTypes.bool
 	},
 

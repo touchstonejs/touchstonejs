@@ -7,6 +7,7 @@ module.exports = React.createClass({
 	displayName: 'LoadingButton',
 	mixins: [Navigation],
 	propTypes: {
+		children: React.PropTypes.node,
 		showView: React.PropTypes.string,
 		viewTransition: React.PropTypes.string,
 		viewProps: React.PropTypes.object,
@@ -21,7 +22,7 @@ module.exports = React.createClass({
 		return {
 			disabled: false,
 			loading: false
-		}
+		};
 	},
 	render: function () {
 		// Class Name

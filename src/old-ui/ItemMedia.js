@@ -4,17 +4,18 @@ var React = require('react/addons'),
 module.exports = React.createClass({
 	displayName: 'ItemMedia',
 	propTypes: {
-		icon: React.PropTypes.string,
 		avatar: React.PropTypes.string,
+		avatarInitials: React.PropTypes.string,
+		icon: React.PropTypes.string,
 		thumbnail: React.PropTypes.string
 	},
 
 	render: function () {
 		var className = classnames({
-			'item-media':   true,
-			'is-icon':      this.props.icon,
-			'is-avatar':    this.props.avatar || this.props.avatarInitials,
-			'is-thumbnail': this.props.thumbnail
+			'item-media':	true,
+			'is-icon':		this.props.icon,
+			'is-avatar':	this.props.avatar || this.props.avatarInitials,
+			'is-thumbnail':	this.props.thumbnail
 		}, this.props.className);
 
 		// media types

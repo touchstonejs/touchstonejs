@@ -4,8 +4,10 @@ var React = require('react/addons'),
 module.exports = React.createClass({
 	displayName: 'LabelSelect',
 	propTypes: {
+		first: React.PropTypes.bool,
 		label: React.PropTypes.string,
-		first: React.PropTypes.bool
+		options: React.PropTypes.array,
+		value: React.PropTypes.string
 	},
 	getDefaultProps: function () {
 		return {
