@@ -1,6 +1,6 @@
-var React = require('react/addons');
 var blacklist = require('blacklist');
 var classnames = require('classnames');
+var React = require('react/addons');
 
 module.exports = React.createClass({
 	displayName: 'LabelInput',
@@ -15,14 +15,14 @@ module.exports = React.createClass({
 		value: React.PropTypes.string
 	},
 
-	getDefaultProps: function () {
+	getDefaultProps () {
 		return {
 			type: 'text',
 			readOnly: false
 		};
 	},
 
-	render: function () {
+	render () {
 		var className = classnames(this.props.className, 'list-item', 'field-item', {
 			'align-top': this.props.alignTop,
 			'is-first': this.props.first,

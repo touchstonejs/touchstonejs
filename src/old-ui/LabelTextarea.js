@@ -1,7 +1,6 @@
-var React = require('react/addons');
-
 var blacklist = require('blacklist');
-var	classnames = require('classnames');
+var classnames = require('classnames');
+var React = require('react/addons');
 
 module.exports = React.createClass({
 	displayName: 'LabelTextarea',
@@ -11,25 +10,25 @@ module.exports = React.createClass({
 		disabled: React.PropTypes.bool,
 		first: React.PropTypes.bool,
 		label: React.PropTypes.string,
-		readonly: React.PropTypes.bool,
+		readOnly: React.PropTypes.bool,
 		value: React.PropTypes.string
 	},
 
-	getDefaultProps: function () {
+	getDefaultProps () {
 		return {
 			rows: 3
 		};
 	},
 
-	render: function () {
+	render () {
 		var className = classnames(this.props.className, 'list-item', 'field-item', 'align-top', {
 			'is-first': this.props.first,
 			'u-selectable': this.props.disabled
 		});
 
-		var props = blacklist(this.props, 'children', 'className', 'disabled', 'first', 'label', 'readonly');
+		var props = blacklist(this.props, 'children', 'className', 'disabled', 'first', 'label', 'readOnly');
 
-		var renderInput = this.props.readonly ? (
+		var renderInput = this.props.readOnly ? (
 			<div className="field u-selectable">{this.props.value}</div>
 		) : (
 			<textarea {...props} className="field" />

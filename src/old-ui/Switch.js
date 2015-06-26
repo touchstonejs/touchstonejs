@@ -1,7 +1,6 @@
+var classnames = require('classnames');
 var React = require('react');
 var Tappable = require('react-tappable');
-
-var classnames = require('classnames');
 
 module.exports = React.createClass({
 	displayName: 'Switch',
@@ -12,19 +11,21 @@ module.exports = React.createClass({
 		type: React.PropTypes.string
 	},
 
-	getDefaultProps: function () {
+	getDefaultProps () {
 		return {
 			type: 'default'
 		};
 	},
 
-	render: function () {
+	render () {
 		var className = classnames('switch', 'switch-' + this.props.type, { 'on': this.props.on });
 
-		return (<Tappable onTap={this.props.onTap} className={className} component="label">
-			<div className="track">
-				<div className="handle" />
-			</div>
-		</Tappable>);
+		return (
+			<Tappable onTap={this.props.onTap} className={className} component="label">
+				<div className="track">
+					<div className="handle" />
+				</div>
+			</Tappable>
+		);
 	}
 });
