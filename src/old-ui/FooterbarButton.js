@@ -7,19 +7,17 @@ module.exports = React.createClass({
 	mixins: [Navigation],
 	displayName: 'ActionButton',
 	propTypes: {
-		component: React.PropTypes.string,
-		showView: React.PropTypes.string,
-		viewTransition: React.PropTypes.string,
-		viewProps: React.PropTypes.object,
-		disabled: React.PropTypes.bool,
-		onTap: React.PropTypes.func,
 		active: React.PropTypes.bool,
+		disabled: React.PropTypes.bool,
+		icon: React.PropTypes.string,
 		label: React.PropTypes.string,
-		icon: React.PropTypes.string
+		onTap: React.PropTypes.func,
+		showView: React.PropTypes.string,
+		viewProps: React.PropTypes.object,
+		viewTransition: React.PropTypes.string,
 	},
 	getDefaultProps: function () {
 		return {
-			component: 'div',
 			disabled: false,
 			active: false
 		};
