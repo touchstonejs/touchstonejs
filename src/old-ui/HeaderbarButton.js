@@ -7,6 +7,7 @@ module.exports = React.createClass({
 	displayName: 'HeaderbarButton',
 	propTypes: {
 		children: React.PropTypes.node,
+		className: React.PropTypes.string,
 		disabled: React.PropTypes.bool,
 		icon: React.PropTypes.string,
 		label: React.PropTypes.string,

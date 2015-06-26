@@ -29,6 +29,7 @@ export var Tab = React.createClass({
 	},
 	propTypes: {
 		children: React.PropTypes.node,
+		navigatorValue: React.PropTypes.string,
 		onSelect: React.PropTypes.func,
 		value: React.PropTypes.string
 	},

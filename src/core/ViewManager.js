@@ -20,7 +20,8 @@ var ViewContainer = React.createClass({
 		children: React.PropTypes.node
 	},
 	render () {
-		return <div className={this.props.className}>{this.props.children}</div>;
+		var props = blacklist(this.props, 'children');
+		return <div {...props}>{this.props.children}</div>;
 	}
 });
 
@@ -34,6 +35,8 @@ var ViewManager = React.createClass({
 	propTypes: {
 		name: React.PropTypes.string,
 		children: React.PropTypes.node,
+		className: React.PropTypes.string,
+		defaultView: React.PropTypes.string,
 		onViewChange: React.PropTypes.func
 	},
 	getDefaultProps () {

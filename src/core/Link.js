@@ -9,6 +9,7 @@ var Link = React.createClass({
 		children: React.PropTypes.any,
 		options: React.PropTypes.object,
 		transition: React.PropTypes.string,
+		to: React.PropTypes.string,
 		viewProps: React.PropTypes.any
 	},
 

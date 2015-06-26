@@ -4,7 +4,7 @@ var React = require('react');
 function update () {
 	animation.update();
 	if (animation.getAll().length) {
-		requestAnimationFrame(update);
+		window.requestAnimationFrame(update);
 	}
 }
 

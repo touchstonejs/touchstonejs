@@ -6,16 +6,17 @@ module.exports = React.createClass({
 	propTypes: {
 		avatar: React.PropTypes.string,
 		avatarInitials: React.PropTypes.string,
+		className: React.PropTypes.string,
 		icon: React.PropTypes.string,
 		thumbnail: React.PropTypes.string
 	},
 
 	render () {
 		var className = classnames({
-			'item-media':	true,
-			'is-icon':		this.props.icon,
-			'is-avatar':	this.props.avatar || this.props.avatarInitials,
-			'is-thumbnail':	this.props.thumbnail
+			'item-media': true,
+			'is-icon': this.props.icon,
+			'is-avatar': this.props.avatar || this.props.avatarInitials,
+			'is-thumbnail': this.props.thumbnail
 		}, this.props.className);
 
 		// media types

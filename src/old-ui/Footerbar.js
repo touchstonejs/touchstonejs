@@ -6,6 +6,7 @@ module.exports = React.createClass({
 	displayName: 'Footerbar',
 	propTypes: {
 		children: React.PropTypes.node,
+		className: React.PropTypes.string,
 		height: React.PropTypes.string,
 		type: React.PropTypes.string
 	},

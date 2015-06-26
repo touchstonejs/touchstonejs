@@ -8,13 +8,15 @@ module.exports = React.createClass({
 	displayName: 'ActionButton',
 	propTypes: {
 		active: React.PropTypes.bool,
+		children: React.PropTypes.node,
+		className: React.PropTypes.string,
 		disabled: React.PropTypes.bool,
 		icon: React.PropTypes.string,
 		label: React.PropTypes.string,
 		onTap: React.PropTypes.func,
 		showView: React.PropTypes.string,
 		viewProps: React.PropTypes.object,
-		viewTransition: React.PropTypes.string,
+		viewTransition: React.PropTypes.string
 	},
 	getDefaultProps () {
 		return {
@@ -33,7 +35,7 @@ module.exports = React.createClass({
 		var action = this.props.showView ? this.showViewFn(this.props.showView, this.props.viewTransition, this.props.viewProps) : this.props.onTap;
 
 		return (
-			<Tappable className={className} component={this.props.component} onTap={action}>
+			<Tappable className={className} onTap={action}>
 				{label}
 				{this.props.children}
 			</Tappable>

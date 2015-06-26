@@ -7,6 +7,7 @@ module.exports = React.createClass({
 
 	propTypes: {
 		children: React.PropTypes.node,
+		className: React.PropTypes.string,
 		disabled: React.PropTypes.bool,
 		first: React.PropTypes.bool,
 		label: React.PropTypes.string,

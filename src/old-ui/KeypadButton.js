@@ -8,6 +8,7 @@ module.exports = React.createClass({
 	propTypes: {
 		action: React.PropTypes.func,
 		aux: React.PropTypes.bool,
+		className: React.PropTypes.string,
 		disabled: React.PropTypes.bool,
 		icon: React.PropTypes.string,
 		primaryLabel: React.PropTypes.string,

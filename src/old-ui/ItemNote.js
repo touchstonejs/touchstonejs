@@ -4,9 +4,10 @@ var React = require('react/addons'),
 module.exports = React.createClass({
 	displayName: 'ItemNote',
 	propTypes: {
-		type: React.PropTypes.string,
+		className: React.PropTypes.string,
+		icon: React.PropTypes.string,
 		label: React.PropTypes.string,
-		icon: React.PropTypes.string
+		type: React.PropTypes.string
 	},
 
 	getDefaultProps () {

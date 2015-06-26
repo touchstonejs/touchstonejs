@@ -7,6 +7,7 @@ module.exports = React.createClass({
 	displayName: 'Input',
 	propTypes: {
 		children: React.PropTypes.node,
+		className: React.PropTypes.string,
 		disabled: React.PropTypes.bool,
 		first: React.PropTypes.bool
 	},

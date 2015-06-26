@@ -11,8 +11,9 @@ module.exports = React.createClass({
 	displayName: 'Keypad',
 	propTypes: {
 		action: React.PropTypes.func,
-		stowed: React.PropTypes.bool,
+		className: React.PropTypes.string,
 		enableDel: React.PropTypes.bool,
+		stowed: React.PropTypes.bool,
 		type: React.PropTypes.oneOf(['black-translucent', 'white-translucent']),
 		wildkey: React.PropTypes.string
 	},

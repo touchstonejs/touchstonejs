@@ -8,15 +8,16 @@ module.exports = React.createClass({
 	mixins: [Navigation],
 	propTypes: {
 		children: React.PropTypes.node,
-		showView: React.PropTypes.string,
-		viewTransition: React.PropTypes.string,
-		viewProps: React.PropTypes.object,
+		className: React.PropTypes.string,
 		component: React.PropTypes.string,
-		onTap: React.PropTypes.func,
-		type: React.PropTypes.string,
 		disabled: React.PropTypes.bool,
+		label: React.PropTypes.string,
 		loading: React.PropTypes.bool,
-		label: React.PropTypes.string
+		onTap: React.PropTypes.func,
+		showView: React.PropTypes.string,
+		type: React.PropTypes.string,
+		viewProps: React.PropTypes.object,
+		viewTransition: React.PropTypes.string
 	},
 	getDefaultProps () {
 		return {

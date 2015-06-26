@@ -4,6 +4,7 @@ var React = require('react/addons'),
 module.exports = React.createClass({
 	displayName: 'LabelSelect',
 	propTypes: {
+		className: React.PropTypes.string,
 		first: React.PropTypes.bool,
 		label: React.PropTypes.string,
 		options: React.PropTypes.array,
@@ -38,7 +39,7 @@ module.exports = React.createClass({
 					{op.label}
 				</option>
 			);
-		}.bind(this));
+		});
 
 		return (
 			<label className={className}>
