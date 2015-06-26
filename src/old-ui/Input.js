@@ -6,6 +6,8 @@ var React = require('react/addons');
 module.exports = React.createClass({
 	displayName: 'Input',
 	propTypes: {
+		children: React.PropTypes.node,
+		disabled: React.PropTypes.bool,
 		first: React.PropTypes.bool
 	},
 

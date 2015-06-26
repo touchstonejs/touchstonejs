@@ -16,6 +16,9 @@ var ViewContainer = React.createClass({
 	statics: {
 		shouldFillVerticalSpace: true
 	},
+	propTypes: {
+		children: React.PropTypes.node
+	},
 	render () {
 		return <div className={this.props.className}>{this.props.children}</div>;
 	}
@@ -29,7 +32,9 @@ var ViewManager = React.createClass({
 		app: React.PropTypes.object.isRequired
 	},
 	propTypes: {
-		name: React.PropTypes.string
+		name: React.PropTypes.string,
+		children: React.PropTypes.node,
+		onViewChange: React.PropTypes.func
 	},
 	getDefaultProps () {
 		return {

@@ -6,6 +6,7 @@ module.exports = React.createClass({
 	displayName: 'Headerbar',
 
 	propTypes: {
+		children: React.PropTypes.node,
 		height: React.PropTypes.string,
 		label: React.PropTypes.string,
 		fixed: React.PropTypes.bool,
@@ -20,9 +21,11 @@ module.exports = React.createClass({
 			label = <div className="Headerbar-label">{this.props.label}</div>;
 		}
 
-		return (<div height={this.props.height} className={className}>
-			{this.props.children}
-			{label}
-		</div>);
+		return (
+			<div height={this.props.height} className={className}>
+				{this.props.children}
+				{label}
+			</div>
+		);
 	}
-})
+});

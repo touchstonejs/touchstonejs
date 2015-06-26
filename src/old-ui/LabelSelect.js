@@ -5,7 +5,9 @@ module.exports = React.createClass({
 	displayName: 'LabelSelect',
 	propTypes: {
 		label: React.PropTypes.string,
-		first: React.PropTypes.bool
+		first: React.PropTypes.bool,
+		options: React.PropTypes.array,
+		value: React.PropTypes.string
 	},
 	getDefaultProps: function () {
 		return {

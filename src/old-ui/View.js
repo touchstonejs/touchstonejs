@@ -6,6 +6,7 @@ module.exports = React.createClass({
 	displayName: 'View',
 
 	propTypes: {
+		children: React.PropTypes.node,
 		className: React.PropTypes.string
 	},
 
@@ -40,7 +41,7 @@ module.exports = React.createClass({
 			WebkitJustifyContent: 'space-between',
 			MozJustifyContent: 'space-between',
 			JustifyContent: 'space-between'
-		}
+		};
 
 		return <div className={className} style={inlineStyle}>{this.props.children}</div>;
 	}

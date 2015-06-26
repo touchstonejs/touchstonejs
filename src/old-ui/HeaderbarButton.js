@@ -6,6 +6,7 @@ var classnames = require('classnames');
 module.exports = React.createClass({
 	displayName: 'HeaderbarButton',
 	propTypes: {
+		children: React.PropTypes.node,
 		disabled: React.PropTypes.bool,
 		icon: React.PropTypes.string,
 		label: React.PropTypes.string,

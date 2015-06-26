@@ -4,6 +4,11 @@ var React = require('react');
 var Tappable = require('react-tappable');
 
 export var Navigator = React.createClass({
+	propTypes: {
+		children: React.PropTypes.node,
+		onChange: React.PropTypes.func,
+		value: React.PropTypes.string
+	},
 	render () {
 		return (
 			<div className="Tabs-Navigator">
@@ -21,6 +26,11 @@ export var Navigator = React.createClass({
 export var Tab = React.createClass({
 	contextTypes: {
 		tabNavigator: React.PropTypes.object
+	},
+	propTypes: {
+		children: React.PropTypes.node,
+		onSelect: React.PropTypes.func,
+		value: React.PropTypes.string
 	},
 	onSelect () {
 		var tab = blacklist(this.props, 'children');
@@ -40,6 +50,9 @@ export var Tab = React.createClass({
 });
 
 export var Label = React.createClass({
+	propTypes: {
+		children: React.PropTypes.node
+	},
 	render () {
 		return (
 			<div className="Tabs-Label">

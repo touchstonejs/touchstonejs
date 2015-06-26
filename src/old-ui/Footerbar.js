@@ -5,6 +5,7 @@ var React = require('react/addons'),
 module.exports = React.createClass({
 	displayName: 'Footerbar',
 	propTypes: {
+		children: React.PropTypes.node,
 		height: React.PropTypes.string,
 		type: React.PropTypes.string
 	},

@@ -6,6 +6,8 @@ var React = require('react/addons');
 module.exports = React.createClass({
 	displayName: 'Textarea',
 	propTypes: {
+		children: React.PropTypes.node,
+		disabled: React.PropTypes.bool,
 		first: React.PropTypes.bool,
 		rows: React.PropTypes.number
 	},
