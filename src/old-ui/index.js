@@ -1,6 +1,5 @@
 module.exports = {
 	Alertbar: require('./Alertbar'),
-	Feedback: require('./Feedback'),
 	Footerbar: require('./Footerbar'),
 	FooterbarButton: require('./FooterbarButton'),
 	Headerbar: require('./Headerbar'),
