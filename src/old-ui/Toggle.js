@@ -12,17 +12,17 @@ module.exports = React.createClass({
 		value: React.PropTypes.string
 	},
 
-	getDefaultProps: function () {
+	getDefaultProps () {
 		return {
 			type: 'primary'
 		};
 	},
 
-	onChange: function (value) {
+	onChange (value) {
 		this.props.onChange(value);
 	},
 
-	render: function () {
+	render () {
 		var componentClassName = classnames('Toggle', this.props.className, this.props.type);
 		var self = this;
 

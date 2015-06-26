@@ -11,14 +11,14 @@ module.exports = React.createClass({
 		grow: React.PropTypes.bool
 	},
 
-	getDefaultProps: function () {
+	getDefaultProps () {
 		return {
 			className: '',
 			height: ''
 		};
 	},
 
-	render: function () {
+	render () {
 		var className = classnames({
 			'ViewContent': true,
 			'springy-scrolling': this.props.scrollable

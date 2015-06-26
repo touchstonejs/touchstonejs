@@ -9,22 +9,22 @@ module.exports = React.createClass({
 		options: React.PropTypes.array,
 		value: React.PropTypes.string
 	},
-	getDefaultProps: function () {
+	getDefaultProps () {
 		return {
 			className: ''
 		};
 	},
-	getInitialState: function () {
+	getInitialState () {
 		return {
 			value: this.props.value
 		};
 	},
-	updateInputValue: function (event) {
+	updateInputValue (event) {
 		this.setState({
 			value: event.target.value
 		});
 	},
-	render: function () {
+	render () {
 		// Set Classes
 		var className = classnames(this.props.className, {
 			'list-item': true,

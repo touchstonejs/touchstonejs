@@ -16,13 +16,13 @@ module.exports = React.createClass({
 		viewProps: React.PropTypes.object,
 		viewTransition: React.PropTypes.string,
 	},
-	getDefaultProps: function () {
+	getDefaultProps () {
 		return {
 			disabled: false,
 			active: false
 		};
 	},
-	render: function () {
+	render () {
 		var className = classnames(this.props.className, this.props.icon, {
 			'Footerbar-button': true,
 			'active': this.props.active,

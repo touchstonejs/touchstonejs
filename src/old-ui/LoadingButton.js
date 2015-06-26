@@ -18,13 +18,13 @@ module.exports = React.createClass({
 		loading: React.PropTypes.bool,
 		label: React.PropTypes.string
 	},
-	getDefaultProps: function () {
+	getDefaultProps () {
 		return {
 			disabled: false,
 			loading: false
 		};
 	},
-	render: function () {
+	render () {
 		// Class Name
 		var className = classnames(this.props.className, this.props.type, {
 			'loading-button': true,

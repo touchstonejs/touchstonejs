@@ -9,7 +9,7 @@ module.exports = React.createClass({
 		spinning: React.PropTypes.bool
 	},
 
-	render: function () {
+	render () {
 		var className = classNames('Modal-icon', {
 			'is-spinning': this.props.spinning
 		}, this.props.name, this.props.type);

@@ -13,7 +13,7 @@ module.exports = React.createClass({
 		helpText: React.PropTypes.string
 	},
 
-	getDefaultProps: function () {
+	getDefaultProps () {
 		return {
 			className: '',
 			helpText: 'Enter your passcode',
@@ -21,7 +21,7 @@ module.exports = React.createClass({
 		};
 	},
 
-	getInitialState: function () {
+	getInitialState () {
 		return {
 			helpText: this.props.helpText,
 			keyboardIsStowed: true,
@@ -29,7 +29,7 @@ module.exports = React.createClass({
 		};
 	},
 
-	componentDidMount: function () {
+	componentDidMount () {
 		var self = this;
 
 		// slide the keyboard up after the view is shown
@@ -40,7 +40,7 @@ module.exports = React.createClass({
 		}, 400);
 	},
 
-	handlePasscode: function (keyCode) {
+	handlePasscode (keyCode) {
 		var passcode = this.state.passcode;
 
 		if (keyCode === 'delete') {
@@ -64,7 +64,7 @@ module.exports = React.createClass({
 		this.setState({ passcode: passcode });
 	},
 
-	render: function () {
+	render () {
 		var passcode = this.state.passcode;
 		var passcodeClassname = classnames('Passcode', this.props.type);
 		var passcodeFields = [0, 1, 2, 3].map(function (i) {

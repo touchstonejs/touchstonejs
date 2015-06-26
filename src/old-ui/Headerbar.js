@@ -13,7 +13,7 @@ module.exports = React.createClass({
 		type: React.PropTypes.string
 	},
 
-	render: function () {
+	render () {
 		var className = classnames('Headerbar', this.props.className, this.props.type, { 'fixed': this.props.fixed });
 
 		var label;

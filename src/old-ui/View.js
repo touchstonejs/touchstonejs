@@ -10,13 +10,13 @@ module.exports = React.createClass({
 		className: React.PropTypes.string
 	},
 
-	getDefaultProps: function () {
+	getDefaultProps () {
 		return {
 			className: ''
 		};
 	},
 
-	render: function () {
+	render () {
 		var className = classnames('View', this.props.className);
 
 		// react does not currently support duplicate properties (which we need for vendor-prefixed values)

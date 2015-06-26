@@ -13,11 +13,11 @@ module.exports = React.createClass({
 		onChange: React.PropTypes.func
 	},
 
-	onChange: function (value) {
+	onChange (value) {
 		this.props.onChange(value);
 	},
 
-	render: function () {
+	render () {
 		var self = this;
 		var options = this.props.options.map(function (op, i) {
 			var iconClassname = classnames('item-icon primary', op.icon);

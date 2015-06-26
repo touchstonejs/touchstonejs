@@ -12,13 +12,13 @@ module.exports = React.createClass({
 		rows: React.PropTypes.number
 	},
 
-	getDefaultProps: function () {
+	getDefaultProps () {
 		return {
 			rows: 3
 		};
 	},
 
-	render: function () {
+	render () {
 		var className = classnames('field-item list-item', {
 			'is-first': this.props.first,
 			'u-selectable': this.props.disabled

@@ -15,13 +15,13 @@ module.exports = React.createClass({
 		value: React.PropTypes.string
 	},
 
-	getDefaultProps: function () {
+	getDefaultProps () {
 		return {
-			action: function () {}
+			action () {}
 		};
 	},
 
-	render: function () {
+	render () {
 		var className = classnames('Keypad-button', {
 			'is-auxiliary': this.props.aux,
 			'disabled': this.props.disabled

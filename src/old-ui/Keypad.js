@@ -17,13 +17,13 @@ module.exports = React.createClass({
 		wildkey: React.PropTypes.string
 	},
 
-	getDefaultProps: function () {
+	getDefaultProps () {
 		return {
 			type: 'default'
 		};
 	},
 
-	render: function () {
+	render () {
 		var action = this.props.action;
 		var typeName = 'Keypad--' + this.props.type;
 		var keypadClassName = classnames(this.props.className, typeName, 'Keypad', {

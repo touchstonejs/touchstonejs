@@ -1,5 +1,5 @@
-var React = require('react/addons');
 var classnames = require('classnames');
+var React = require('react/addons');
 var ViewContent = require('./ViewContent');
 
 module.exports = React.createClass({
@@ -10,13 +10,13 @@ module.exports = React.createClass({
 		pulse: React.PropTypes.bool,
 		type: React.PropTypes.oneOf(['default', 'primary', 'success', 'warning', 'danger'])
 	},
-	getDefaultProps: function () {
+	getDefaultProps () {
 		return {
 			height: '30px',
 			type: 'default'
 		};
 	},
-	render: function () {
+	render () {
 		var className = classnames(this.props.className, this.props.type, {
 			'Alertbar': true,
 			'pulse': this.props.pulse

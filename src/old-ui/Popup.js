@@ -13,18 +13,18 @@ module.exports = React.createClass({
 		visible: React.PropTypes.bool
 	},
 
-	getDefaultProps: function () {
+	getDefaultProps () {
 		return {
 			transition: 'none'
 		};
 	},
 
-	renderBackdrop: function () {
+	renderBackdrop () {
 		if (!this.props.visible) return null;
 		return <div className="Modal-backdrop" />;
 	},
 
-	renderDialog: function () {
+	renderDialog () {
 		if (!this.props.visible) return null;
 
 		// Set classnames
@@ -35,7 +35,7 @@ module.exports = React.createClass({
 		</div>);
 	},
 
-	render: function () {
+	render () {
 		return (
 			<div className="Modal">
 				<ReactCSSTransitionGroup transitionName="Modal-dialog" component="div">
