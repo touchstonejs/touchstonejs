@@ -21,7 +21,7 @@
     "xtend": "^4.0.0"
   },
   "devDependencies": {
-    "babel-core": "^5.6.7",
+    "babel-core": "^5.6.15",
     "babel-plugin-object-assign": "^1.2.0",
     "del": "^1.2.0",
     "gulp": "^3.9.0",
