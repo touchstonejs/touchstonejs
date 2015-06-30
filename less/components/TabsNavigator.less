@@ -1,0 +1,78 @@
+// 
+// Tabs Navigator
+// ==============================
+
+
+
+
+// Base
+// ------------------------------
+
+.Tabs-Navigator {
+	.align-items(stretch);
+	.display-flex();
+	.retina-1px-border-top( rgba(0, 0, 0, 0.28) );
+	.justify-content(space-around);
+	.backface-visibility(hidden);
+	background-color: @footerbar-bg;
+	color: @footerbar-color;
+	height: @footerbar-height;
+	width: 100%;
+
+	// stack above the views
+	position: relative;
+	z-index: @view-transition-stack-top;
+}
+
+
+
+
+// Tab Item
+// ------------------------------
+
+.Tabs-Tab {
+	.align-items(center);
+	.display-flex();
+	.flex-flow(column nowrap);
+	.flex-grow(1);
+	.justify-content(center);
+	background: none transparent;
+	border: 0 none;
+	color: @footerbar-color;
+	cursor: pointer; // for piece of mind when developing on the desktop
+	line-height: 1; // remove unexpected vertical white-space
+	padding: 0 5px;
+	position: relative;
+	width: 100%; // make each button take equal width
+	-webkit-appearance: none;
+	
+	// when pressed
+	&.Tappable-active {
+		background-color: @footerbar-tab-bg-tapped;
+		color: @footerbar-tab-color-tapped;
+	}
+
+	// selected tab
+	&.is-selected {
+		background-color: @footerbar-tab-bg-selected;
+		color: @footerbar-tab-color-selected;
+	}
+}
+
+
+// label
+
+.Tabs-Label {
+	.text-overflow();
+	font-size: @font-size-xxs;
+}
+
+
+// icons
+
+.Tabs-Icon {
+	.ion();
+	font-size: 28px;
+
+}
+

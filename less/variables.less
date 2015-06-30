@@ -31,7 +31,7 @@
 // Scaffolding
 // ------------------------------
 
-@body-bg:                      #efeff4;
+@body-bg:                      #f6f6f7;
 @text-color:                   black;
 
 @link-color:                   @app-primary;
@@ -46,12 +46,13 @@
 @font-family-base:            @font-family-sans-serif;
 @font-weight-bold:            500;
 
-@font-size-tiny:              13px;
-@font-size-small:             15px;
+@font-size-xxs:               11px;
+@font-size-xs:                13px;
+@font-size-sm:                15px;
 @font-size-base:              17px;
-@font-size-large:             20px;
-@font-size-huge:              24px;
-@font-size-massive:           32px;
+@font-size-lg:                20px;
+@font-size-xl:                24px;
+@font-size-xxl:               32px;
 
 @line-height-base:            1.4;
 @line-height-computed:        floor((@font-size-base * @line-height-base));
@@ -117,11 +118,20 @@
 @padding-base-vertical:      12px;
 @padding-base-horizontal:    15px;
 
-// bars
+// tables
+
+@table-padding-vertical:   10px;
+@table-padding-horizontal: 12px;
+
+
+
+
+// Headerbar
+// ------------------------------
 
 @statusbar-height:           20px;
 
-@headerbar-bg:               #f6f6f7;
+@headerbar-bg:               #efeff4;
 @headerbar-color:            @gray-darker;
 @headerbar-height:           44px;
 @headerbar-button-color:     @app-primary;
@@ -131,13 +141,24 @@
 @headerbar-inverted-button-color:    white;
 @headerbar-inverted-button-color-disabled:    fade(white, 40%);
 
-@headerbar-field-gutter:     8px;
-@headerbar-field-height:     28px;
+@searchfield-gutter:     8px;
+@searchfield-height:     28px;
 
-// tables
 
-@table-padding-vertical:   10px;
-@table-padding-horizontal: 12px;
+
+
+// Footerbar
+// ------------------------------
+
+@footerbar-bg:                   @headerbar-bg;
+@footerbar-color:                @headerbar-color;
+@footerbar-height:               @headerbar-height;
+
+@footerbar-tab-bg-tapped:        transparent;
+@footerbar-tab-bg-selected:      transparent;
+@footerbar-tab-color-tapped:     inherit;
+@footerbar-tab-color-selected:   @app-primary;
+
 
 // Forms
 // ------------------------------

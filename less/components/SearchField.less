@@ -1,0 +1,90 @@
+// 
+// Search Field
+// ==============================
+
+
+
+
+// Base
+// ------------------------------
+
+.SearchField {
+	margin: @searchfield-gutter;
+	position: relative;
+}
+
+
+
+
+// Input
+// ------------------------------
+
+.SearchField__input {
+	.placeholder( @gray-light );
+	.transition( background-color 100ms linear );
+	background: rgba(0, 0, 0, 0.06);
+	border-radius: @border-radius-small;
+	border: 0;
+	color: inherit;
+	font-size: @font-size-sm;
+	height: @searchfield-height;
+	line-height: normal;
+	margin: 0;
+	outline: none;
+	padding: @searchfield-gutter (@searchfield-gutter * 3);
+	width: 100%;
+	-webkit-appearance: none;
+
+	&:active {
+		background: rgba(0, 0, 0, 0.12);
+	}
+}
+
+
+
+
+// Icons
+// ------------------------------
+
+
+// base
+
+.SearchField__icon {
+	.ion();
+	color: @gray-light;
+	font-size: @ionicons-size-base;
+	line-height: @searchfield-height;
+	padding: 0 @searchfield-gutter;
+	position: absolute;
+	top: 0;
+	
+	&::before {
+		color: inherit;
+	}
+}
+
+
+// search
+
+.SearchField__icon--search {
+	left: 0;
+	pointer-events: none;
+	
+	&::before {
+		content: @ionicon-var-ios-search-strong;
+	}
+}
+
+
+// clear
+
+.SearchField__icon--clear {
+	right: 0;
+	
+	&::before {
+		content: @ionicon-var-close-circled;
+	}
+	&.Tappable-active {
+		color: @gray-light;
+	}
+}

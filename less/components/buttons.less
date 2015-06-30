@@ -215,19 +215,19 @@ button {
 
 // create and hide the loading icon
 .loading-button-icon {
-	.loader(@font-size-huge, 500ms, @app-primary);
+	.loader(@font-size-xl, 500ms, @app-primary);
 	.transition-delay( 200ms );
 	// opacity: 0;
 
 	// variants
-	.loading-button.default &  { .loader(@font-size-huge, 500ms, @text-color); }
-	.loading-button.muted &    { .loader(@font-size-huge, 500ms, @app-muted); }
-	.loading-button.primary &  { .loader(@font-size-huge, 500ms, @app-primary); }
-	.loading-button.info &     { .loader(@font-size-huge, 500ms, @app-info); }
-	.loading-button.success &  { .loader(@font-size-huge, 500ms, @app-success); }
-	.loading-button.warning &  { .loader(@font-size-huge, 500ms, @app-warning); }
-	.loading-button.danger &   { .loader(@font-size-huge, 500ms, @app-danger); }
-	.loading-button.inverted & { .loader(@font-size-huge, 500ms, white); }
+	.loading-button.default &  { .loader(@font-size-xl, 500ms, @text-color); }
+	.loading-button.muted &    { .loader(@font-size-xl, 500ms, @app-muted); }
+	.loading-button.primary &  { .loader(@font-size-xl, 500ms, @app-primary); }
+	.loading-button.info &     { .loader(@font-size-xl, 500ms, @app-info); }
+	.loading-button.success &  { .loader(@font-size-xl, 500ms, @app-success); }
+	.loading-button.warning &  { .loader(@font-size-xl, 500ms, @app-warning); }
+	.loading-button.danger &   { .loader(@font-size-xl, 500ms, @app-danger); }
+	.loading-button.inverted & { .loader(@font-size-xl, 500ms, white); }
 }
 
 // change state
@@ -314,7 +314,7 @@ button {
 // label
 .action-button-label {
 	.text-overflow();
-	font-size: @font-size-small;
+	font-size: @font-size-sm;
 	font-weight: @font-weight-bold;
 }
 

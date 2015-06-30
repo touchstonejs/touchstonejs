@@ -1,0 +1,291 @@
+//
+// Navigation Bar
+// ==============================
+
+
+
+
+// Variables
+// ---------------------------
+
+@transition-distance:             125px; // 375/3 (375 = width of iPhone 6)
+@transition-duration:             320ms; // match the view transition duration | TODO: sync this with Touchstone's variables
+@headerbar-gutter:                9px;
+@left-arrow-width:                12px;
+@left-arrow-with-gutter:          @left-arrow-width + (@headerbar-gutter * 2);
+
+
+
+
+
+// Base
+// ---------------------------
+
+.NavigationBar {
+	.box-sizing(content-box); // allows us to set a fixed height whilst growing when padding is applied
+	.retina-1px-border-bottom( rgba(0, 0, 0, 0.28) );
+	background-color: @headerbar-bg;
+	line-height: @headerbar-height;
+	height: @headerbar-height;
+	position: relative;
+	z-index: @view-transition-stack-top + 1;
+
+	// make room for the iOS statusbar
+	.device--iPhone & {
+		padding-top: @statusbar-height;
+	}
+}
+
+
+
+
+// Buttons - Common
+// ---------------------------
+
+
+/*
+ * 1. force hardware accelaration - prepare for animation
+ *    removes antialising artefacts left by transform/animation
+ * 2. remove browser default styles from <button>
+ *    button is used to leverage the [disabled] attribute
+ * 3. stops overflow without having to apply overflow:hidden on the wrapper
+ * 4. position and stack the element for layout
+ **/
+
+.NavigationBarLeftButton,
+.NavigationBarRightButton {
+	.transition( opacity 80ms );
+	.translateZ(0); // 1
+	background: none; // 2
+	color: @headerbar-button-color;
+	border: none; // 2
+	bottom: 0;
+	line-height: @headerbar-height; // 3
+	height: @headerbar-height; // 3
+	outline: none; // 2
+	position: absolute; // 4
+	z-index: 2; // 4
+	-webkit-appearance: none; // 2
+
+	&[disabled] {
+		color: @headerbar-button-color-disabled;
+	}
+
+	&.Tappable-active {
+		opacity: .5;
+	}
+}
+
+
+
+
+// Left Button
+// ---------------------------
+
+// arrow and label position themselves
+
+.NavigationBarLeftButton {}
+
+
+
+
+// Left Icon / Back Chevron (child of left button)
+// ---------------------------
+
+// common
+
+.NavigationBarLeftArrow,
+.NavigationBarLeftIcon {
+	.translateZ(0);
+	bottom: 0;
+	left: 0;
+	line-height: inherit;
+	position: absolute;
+	text-align: center; // center the chevron
+	vertical-align: top;
+	width: @left-arrow-with-gutter;
+	z-index: 3; // should be the highest element in the navigation bar
+}
+
+// arrow
+
+.NavigationBarLeftArrow {
+	#gradient .horizontal(@headerbar-bg, fade(@headerbar-bg, 0%), 50%, 100%); // mask the label as it enters and leaves
+	.ionicon(inherit, @ionicon-var-chevron-left, @ionicons-size-large);
+	line-height: inherit;
+}
+
+// icon
+
+.NavigationBarLeftIcon {
+	display: none; // hide from iOS
+	font-size: @ionicons-size-large;
+}
+
+
+
+
+// Left Label
+// Child of Left Button
+// ---------------------------
+
+.NavigationBarLeftLabel {
+	.translateZ(0);
+	bottom: 0;
+	color: inherit;
+	display: inline-block;
+	left: @headerbar-gutter;
+	vertical-align: top;
+	line-height: @headerbar-height;
+	height: @headerbar-height;
+	position: absolute;
+
+	// FIXME: always offset the label to stop jank
+	// .has-arrow & {
+	// 	left: @left-arrow-with-gutter;
+	// }
+	left: @left-arrow-with-gutter;
+}
+
+
+
+
+// Title
+// ---------------------------
+
+.NavigationBarTitle {
+	bottom: 0;
+	font-weight: 500;
+	height: @headerbar-height;
+	left: 0;
+	line-height: @headerbar-height;
+	position: absolute;
+	text-align: center;
+	width: 100%;
+	z-index: 1;
+}
+
+
+
+
+// Right Button
+// ---------------------------
+
+.NavigationBarRightButton {
+	right: @headerbar-gutter;
+}
+
+
+
+
+// Right Icon
+// ---------------------------
+
+.NavigationBarRightIcon {
+	font-size: @ionicons-size-large;
+}
+
+
+
+
+// Animation
+// ---------------------------
+
+// 1. set common duration
+// 2. set common timing function
+// 3. disable user interaction during transitions
+
+.NavigationBarTransition-Instant-enter,
+.NavigationBarTransition-Instant-leave,
+.NavigationBarTransition-Fade-enter,
+.NavigationBarTransition-Fade-leave,
+.NavigationBarTransition-Forwards-enter,
+.NavigationBarTransition-Forwards-leave,
+.NavigationBarTransition-Backwards-enter,
+.NavigationBarTransition-Backwards-leave {
+	.animation-duration( @transition-duration ); // 1
+	.animation-timing-function( cubic-bezier(0.645, 0.045, 0.355, 1) ); // 2
+	pointer-events: none; // 3
+}
+
+// set transition types
+
+.NavigationBarTransition-Fade-enter {
+	.animation-name( fadeIn );
+}
+.NavigationBarTransition-Fade-leave {
+	.animation-name( fadeOut );
+}
+.NavigationBarTransition-Forwards-enter {
+	.animation-name( NavigationBarTransitionForwardsEnter );
+}
+.NavigationBarTransition-Forwards-leave {
+	.animation-name( NavigationBarTransitionForwardsLeave );
+}
+.NavigationBarTransition-Backwards-enter {
+	.animation-name( NavigationBarTransitionBackwardsEnter );
+}
+.NavigationBarTransition-Backwards-leave {
+	.animation-name( NavigationBarTransitionBackwardsLeave );
+}
+
+// instant is a special case. intentionally declared last
+
+.NavigationBarTransition-Instant-enter {
+	.animation( fadeIn 50ms linear );
+}
+.NavigationBarTransition-Instant-leave {
+	.animation( fadeOut 50ms linear );
+}
+
+
+// Describe animation keyframes
+
+// header element (forwards) - enter
+@-webkit-keyframes NavigationBarTransitionForwardsEnter {
+	from { opacity: 0; -webkit-transform: translate3d(@transition-distance, 0, 0); }
+	to   { opacity: 1; -webkit-transform: translate3d(0, 0, 0); }
+}
+@keyframes NavigationBarTransitionForwardsEnter {
+	from { opacity: 0; transform: translate3d(@transition-distance, 0, 0); }
+	to   { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+
+// header element (forwards) - leave
+@-webkit-keyframes NavigationBarTransitionForwardsLeave {
+	from { opacity: 1; -webkit-transform: translate3d(0, 0, 0); }
+	to   { opacity: 0; -webkit-transform: translate3d(-@transition-distance, 0, 0); }
+}
+@keyframes NavigationBarTransitionForwardsLeave {
+	from { opacity: 1; transform: translate3d(0, 0, 0); }
+	to   { opacity: 0; transform: translate3d(-@transition-distance, 0, 0); }
+}
+
+// header element (backwards) - enter
+@-webkit-keyframes NavigationBarTransitionBackwardsEnter {
+	from { opacity: 0; -webkit-transform: translate3d(-@transition-distance, 0, 0); }
+	to   { opacity: 1; -webkit-transform: translate3d(0, 0, 0); }
+}
+@keyframes NavigationBarTransitionBackwardsEnter {
+	from { opacity: 0; transform: translate3d(-@transition-distance, 0, 0); }
+	to   { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+
+// header element (backwards) - leave
+@-webkit-keyframes NavigationBarTransitionBackwardsLeave {
+	from { opacity: 1; -webkit-transform: translate3d(0, 0, 0); }
+	to   { opacity: 0; -webkit-transform: translate3d(@transition-distance, 0, 0); }
+}
+@keyframes NavigationBarTransitionBackwardsLeave {
+	from { opacity: 1; transform: translate3d(0, 0, 0); }
+	to   { opacity: 0; transform: translate3d(@transition-distance, 0, 0); }
+}
+
+
+
+
+
+
+
+
+
