@@ -15,6 +15,15 @@ export function createApp () {
 		viewManagers: {},
 		views: {}
 	};
+	app.transitionTo = (view, opts) {
+		var vm = '__default';
+		view = view.split(':');
+		if (view.length > 1) {
+			vm = view.shift();
+		}
+		view = view[0];
+		app.viewManagers[vm].transitionTo(view, opts);
+	};
 	return {
 		childContextTypes: {
 			app: React.PropTypes.object
