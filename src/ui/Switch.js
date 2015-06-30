@@ -6,6 +6,7 @@ module.exports = React.createClass({
 	displayName: 'Switch',
 
 	propTypes: {
+		disabled: React.PropTypes.bool,
 		on: React.PropTypes.bool,
 		onTap: React.PropTypes.func,
 		type: React.PropTypes.string
@@ -18,12 +19,15 @@ module.exports = React.createClass({
 	},
 
 	render () {
-		var className = classnames('switch', 'switch-' + this.props.type, { 'on': this.props.on });
+		var className = classnames('Switch', 'Switch--' + this.props.type, {
+			'is-disabled': this.props.disabled,
+			'is-on': this.props.on
+		});
 
 		return (
 			<Tappable onTap={this.props.onTap} className={className} component="label">
-				<div className="track">
-					<div className="handle" />
+				<div className="Switch__track">
+					<div className="Switch__handle" />
 				</div>
 			</Tappable>
 		);
