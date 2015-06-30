@@ -8,6 +8,7 @@ export var LabelTextarea = require('./LabelTextarea');
 export var NavigationBar = require('./NavigationBar');
 export var Popup = require('./Popup');
 export var PopupIcon = require('./PopupIcon');
+export var RadioList = require('./RadioList');
 export var Switch = require('./Switch');
 export var Tabs = require('./Tabs');
 export var Textarea = require('./Textarea');
