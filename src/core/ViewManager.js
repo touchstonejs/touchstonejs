@@ -120,7 +120,7 @@ var ViewManager = React.createClass({
 					transition = app.viewManagerInTransition.activeTransitionOptions.transition;
 				}
 				setTimeout(() => {
-					app.navigationBars[viewElement.type.navigationBar].updateWithTransition(viewElement.type.getNavigation(viewProps), transition);
+					app.navigationBars[viewElement.type.navigationBar].updateWithTransition(viewElement.type.getNavigation(viewProps, app), transition);
 				}, 0);
 			}
 			this.__lastRenderedView = viewKey;
