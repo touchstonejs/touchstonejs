@@ -5,7 +5,20 @@
 
 
 
-// Static
+// Manager
+// ------------------------------
+
+.ViewManager {
+	.square(100%);
+	background-color: black;
+	overflow: hidden;
+	position: relative;
+}
+
+
+
+
+// View
 // ------------------------------
 
 // setup
@@ -45,35 +58,6 @@
 	&:after {
 		top: -1px;
 	}
-}
-
-// disable user interaction
-
-.view-processing {
-	pointer-events: none;
-
-	// translucent overlay
-	// provide visual feedback to the user that they cannot interact with the
-	// view whilst it's processing
-	&:after {
-		.animation( fadeIn 150ms );
-		.fill-space(@statusbar-height,0,0,0);
-		background-color: rgba(255, 255, 255, 0.66);
-		content: "";
-		z-index: 2;
-	}
-}
-
-// add space for the statusbar in iOS
-
-.is-native-app .Headerbar {
-	padding-top: @statusbar-height;
-}
-
-// body
-
-.view-inner {
-	margin: @padding-base-vertical @padding-base-horizontal;
 }
 
 
