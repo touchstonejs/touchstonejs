@@ -43,9 +43,10 @@
   ],
   "scripts": {
     "build": "gulp build:lib",
-    "watch": "gulp watch:lib",
     "lint": "happiness",
-    "test": "npm run lint"
+    "test": "npm run lint",
+    "start": "npm run watch",
+    "watch": "gulp watch:lib"
   },
   "standard": {
     "ignore": [
