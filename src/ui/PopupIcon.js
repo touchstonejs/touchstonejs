@@ -10,7 +10,7 @@ module.exports = React.createClass({
 	},
 
 	render () {
-		var className = classNames('Modal-icon', {
+		var className = classNames('PopupIcon', {
 			'is-spinning': this.props.spinning
 		}, this.props.name, this.props.type);
 

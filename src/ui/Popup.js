@@ -20,14 +20,14 @@ module.exports = React.createClass({
 
 	renderBackdrop () {
 		if (!this.props.visible) return null;
-		return <div className="Modal-backdrop" />;
+		return <div className="Popup-backdrop" />;
 	},
 
 	renderDialog () {
 		if (!this.props.visible) return null;
 
 		// Set classnames
-		var dialogClassName = classnames('Modal-dialog', this.props.className);
+		var dialogClassName = classnames('Popup-dialog', this.props.className);
 
 		return (<div className={dialogClassName}>
 			{this.props.children}
@@ -36,11 +36,11 @@ module.exports = React.createClass({
 
 	render () {
 		return (
-			<div className="Modal">
-				<ReactCSSTransitionGroup transitionName="Modal-dialog" component="div">
+			<div className="Popup">
+				<ReactCSSTransitionGroup transitionName="Popup-dialog" component="div">
 					{this.renderDialog()}
 				</ReactCSSTransitionGroup>
-				<ReactCSSTransitionGroup transitionName="Modal-background" component="div">
+				<ReactCSSTransitionGroup transitionName="Popup-background" component="div">
 					{this.renderBackdrop()}
 				</ReactCSSTransitionGroup>
 			</div>
