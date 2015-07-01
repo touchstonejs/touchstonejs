@@ -12,8 +12,8 @@ module.exports = React.createClass({
 	},
 
 	render () {
-		var className = classNames('ListHeader', {
-			'ListHeader--sticky': this.props.sticky
+		var className = classNames('list-header', {
+			'sticky': this.props.sticky
 		}, this.props.className);
 
 		var props = blacklist(this.props, 'sticky');
