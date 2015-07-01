@@ -7,6 +7,7 @@ module.exports = React.createClass({
 
 	propTypes: {
 		className: React.PropTypes.string,
+		hasGutter: React.PropTypes.bool,
 		onChange: React.PropTypes.func.isRequired,
 		options: React.PropTypes.array.isRequired,
 		type: React.PropTypes.string,
@@ -24,7 +25,9 @@ module.exports = React.createClass({
 	},
 
 	render () {
-		var componentClassName = classnames('SegmentedControl', ('SegmentedControl--' + this.props.type), this.props.className);
+		var componentClassName = classnames('SegmentedControl', ('SegmentedControl--' + this.props.type), {
+			'SegmentedControl--has-gutter': this.props.hasGutter
+		}, this.props.className);
 		var self = this;
 
 		var options = this.props.options.map(function (op) {
