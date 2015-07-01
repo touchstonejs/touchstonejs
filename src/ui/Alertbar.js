@@ -1,6 +1,5 @@
 var React = require('react/addons');
 var classnames = require('classnames');
-var ViewContent = require('./ViewContent');
 var Transition = React.addons.CSSTransitionGroup;
 
 module.exports = React.createClass({
