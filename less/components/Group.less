@@ -1,23 +1,22 @@
 // 
-// Panels
+// Group
 // ==============================
 
 // base
 
-.panel {
+.Group {
 	.retina-1px-border-top-and-bottom( rgba(0,0,0,0.17) );
-	background-color: @panel-bg;
-	color: @panel-color;
+	background-color: @group-bg;
+	color: @group-color;
 	display: block;
 	margin-bottom: @gutter-lg;
 
-	.view-inner > & {
-		border-radius: @border-radius-base;
-		box-shadow: 0 2px 0 rgba(0, 0, 0, 0.06), 0 0 0 1px rgba(0, 0, 0, 0.06);
+	// provide a nice gutter between the first group and the header
+	&:first-child {
+		margin-top: @gutter-lg;
 	}
 
-	// add active state
-
+	// when you want the whole group to be tappable
 	&.Tappable-active {
 		.transition( background-color 10ms linear 10ms ); // delay the tap highlight, it may just be a scroll
 		background-color: @item-tap-bg;
@@ -28,16 +27,13 @@
 		.transition( background-color 200ms );
 	}
 }
-.panel--first {
-	margin-top: @gutter-lg;
-}
 
-// panel headings site above the panel
+// group headings
+// sits above the group, giving it a title
 
-.panel-header {
-	color: @panel-header-color;
+.GroupHeader {
+	color: @group-header-color;
 	font-size: 80%;
-	// font-weight: @font-weight-bold;
 	line-height: 1;
 	text-transform: uppercase;
 	
@@ -48,10 +44,11 @@
 	padding-right: @padding-base-horizontal;
 }
 
-// panel info sits below the panel, use if the panel needs further explanation
+// group footer
+// sits below the group, use if the group needs further explanation
 
-.panel-info {
-	color: @panel-header-color;
+.GroupFooter {
+	color: @group-footer-color;
 	font-size: 80%;
 	line-height: 1.1;
 	
@@ -63,18 +60,11 @@
 
 // body
 
-.panel-inner {
+.GroupBody {
 	padding: @padding-base-vertical @padding-base-horizontal;
 
 	& + & {
 		box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.1);
-		// border-top: 1px solid rgba(0, 0, 0, 0.1);
-	}
-	&.is-first {
-		.border-top-radius(@border-radius-base);
-	}
-	&.is-last {
-		.border-bottom-radius(@border-radius-base);
 	}
 }
 

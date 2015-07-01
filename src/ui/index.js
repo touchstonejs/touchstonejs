@@ -1,6 +1,10 @@
 export var Alertbar = require('./Alertbar');
 export var Button = require('./Button');
 export var ButtonGroup = require('./ButtonGroup');
+export var Group = require('./Group');
+export var GroupBody = require('./GroupBody');
+export var GroupFooter = require('./GroupFooter');
+export var GroupHeader = require('./GroupHeader');
 export var Input = require('./Input');
 export var ItemMedia = require('./ItemMedia');
 export var ItemNote = require('./ItemNote');
