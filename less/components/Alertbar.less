@@ -3,15 +3,10 @@
 // ==============================
 
 
-
-
-// Alert Bar
-// ------------------------------
-
-
 // base
 
 .Alertbar {
+	.translateZ(0);
 	color: white;
 	font-size: @font-size-sm;
 	font-weight: @font-weight-bold;
@@ -22,16 +17,6 @@
 	text-align: center;
 	top: 0;
 	width: 100%;
-}
-
-
-// animate in/out
-
-.Alertbar-enter {
-	.animation( alertbarEnter 240ms @view-transition-timing-function );
-}
-.Alertbar-leave {
-	.animation( alertbarLeave 240ms @view-transition-timing-function );
 }
 
 
@@ -53,7 +38,7 @@
 .Alertbar--danger   { background-color: @app-danger; }
 .Alertbar--primary  { background-color: @app-primary; }
 .Alertbar--success  { background-color: @app-success; }
-.Alertbar--warning  { background-color: @app-warning; }
+.Alertbar--warning  { background-color: @app-warning; color: fade(black, 85%) }
 
 
 // sit the text above the pulsing background
@@ -64,10 +49,19 @@
 }
 
 
+
+
 // Animation
 // ------------------------------
 
+// apply animation
 
+.Alertbar-enter {
+	.animation( alertbarEnter 240ms @view-transition-timing-function );
+}
+.Alertbar-leave {
+	.animation( alertbarLeave 240ms @view-transition-timing-function );
+}
 
 // slide up
 
