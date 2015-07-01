@@ -1,0 +1,51 @@
+// 
+// SegmentedC ontrol
+// ==============================
+
+// base
+
+.SegmentedControl {
+	.display-flex();
+	font-size: @font-size-xs;
+}
+
+// options
+
+.SegmentedControl__item {
+	.flex-grow(1);
+	background-color: white;
+	border: none;
+	box-shadow: 0 0 0 1px @link-color;
+	color: @link-color;
+	cursor: pointer;
+	display: table-cell;
+	line-height: @toggle-height;
+	text-align: center;
+
+	&:first-child { .border-left-radius( @border-radius-small ); }
+	&:last-child { .border-right-radius( @border-radius-small ); }
+
+	
+	// tapped state
+
+	&.Tappable-active {
+		background-color: @gray-lighter;
+	}
+}
+
+// variants
+
+.control-variant(@color) {
+	box-shadow: 0 0 0 1px @color;
+	color: @color;
+
+	&.is-selected {
+		background-color: @color;
+		color: white;
+	}
+}
+
+.SegmentedControl.default > .SegmentedControl__item  { .control-variant(@text-color); }
+.SegmentedControl.primary > .SegmentedControl__item  { .control-variant(@app-primary); }
+.SegmentedControl.muted > .SegmentedControl__item    { .control-variant(@gray-light); }
+
