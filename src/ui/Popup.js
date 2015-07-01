@@ -1,12 +1,10 @@
 var React = require('react/addons');
 var ReactCSSTransitionGroup = React.addons.CSSTransitionGroup;
-var Transition = require('../mixins/Transition');
 
 var classnames = require('classnames');
 
 module.exports = React.createClass({
 	displayName: 'Popup',
-	mixins: [Transition],
 
 	propTypes: {
 		children: React.PropTypes.node,
