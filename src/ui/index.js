@@ -1,5 +1,6 @@
 export var Alertbar = require('./Alertbar');
 export var Button = require('./Button');
+export var ButtonGroup = require('./ButtonGroup');
 export var Input = require('./Input');
 export var ItemMedia = require('./ItemMedia');
 export var ItemNote = require('./ItemNote');
