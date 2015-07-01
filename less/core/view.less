@@ -126,15 +126,15 @@
 .view-transition-show-from-top-leave,
 .view-transition-show-from-bottom-enter,
 .view-transition-show-from-bottom-leave {
-	.animation-duration( 380ms );
-	.animation-timing-function( cubic-bezier(0.77, 0, 0.175, 1) );
+	.animation-duration( @view-transition-duration );
+	.animation-timing-function( @view-transition-timing-function );
 }
 .view-transition-show-from-left-enter,
 .view-transition-show-from-left-leave,
 .view-transition-show-from-right-enter,
 .view-transition-show-from-right-leave {
-	.animation-duration( 320ms );
-	.animation-timing-function( cubic-bezier(0.645, 0.045, 0.355, 1) );
+	.animation-duration( @view-transition-duration );
+	.animation-timing-function( @view-transition-timing-function );
 }
 
 // blank state
@@ -179,15 +179,15 @@
 .view-transition-reveal-from-top-leave,
 .view-transition-reveal-from-bottom-enter,
 .view-transition-reveal-from-bottom-leave {
-	.animation-duration( 380ms );
-	.animation-timing-function( cubic-bezier(0.77, 0, 0.175, 1) );
+	.animation-duration( @view-transition-duration );
+	.animation-timing-function( @view-transition-timing-function );
 }
 .view-transition-reveal-from-left-enter,
 .view-transition-reveal-from-left-leave,
 .view-transition-reveal-from-right-enter,
 .view-transition-reveal-from-right-leave {
-	.animation-duration( 320ms );
-	.animation-timing-function( cubic-bezier(0.645, 0.045, 0.355, 1) );
+	.animation-duration( @view-transition-duration );
+	.animation-timing-function( @view-transition-timing-function );
 }
 
 // blank state

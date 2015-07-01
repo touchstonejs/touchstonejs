@@ -2,6 +2,9 @@
 // Variables
 // ==============================
 
+
+
+
 // Colors
 // ------------------------------
 
@@ -28,6 +31,9 @@
 @app-warning:                   @yellow;
 @app-danger:                    #e74c3c;
 
+
+
+
 // Scaffolding
 // ------------------------------
 
@@ -36,6 +42,9 @@
 
 @link-color:                   @app-primary;
 @link-hover-color:             lighten(@link-color, 10%);
+
+
+
 
 // Typography
 // ------------------------------
@@ -79,6 +88,9 @@
 @ionicons-size-massive:       64px;
 @ionicons-size-gargantuan:   128px;
 
+
+
+
 // Components
 // ------------------------------
 
@@ -107,12 +119,6 @@
 @item-thumbnail-size:         60px;
 @item-icon-size:              29px;
 
-// views
-
-@view-transition-stack-stable:  5;
-@view-transition-stack-top:    20;
-@view-transition-stack-bottom: 10;
-
 // spacing
 
 @padding-base-vertical:      12px;
@@ -129,22 +135,22 @@
 // Headerbar
 // ------------------------------
 
-@statusbar-height:           20px;
+@statusbar-height:                   20px;
 
-@headerbar-bg:               #efeff4;
-@headerbar-color:            @gray-darker;
-@headerbar-height:           44px;
-@headerbar-button-color:     @app-primary;
+@headerbar-bg:                       #efeff4;
+@headerbar-color:                    @gray-darker;
+@headerbar-height:                   44px;
+@headerbar-gutter:                   9px;
+@headerbar-button-color:             @app-primary;
 @headerbar-button-color-disabled:    #ccc;
 
-@headerbar-inverted-color:           white;
-@headerbar-inverted-button-color:    white;
-@headerbar-inverted-button-color-disabled:    fade(white, 40%);
+@headerbar-left-arrow-width:         12px;
+@headerbar-left-arrow-with-gutter:   @headerbar-left-arrow-width + (@headerbar-gutter * 2);
 
-@searchfield-gutter:         8px;
-@searchfield-height:         28px;
+@searchfield-gutter:                 @headerbar-gutter;
+@searchfield-height:                 28px;
 
-@segmentedcontrol-gutter:    8px;
+@segmentedcontrol-gutter:            @headerbar-gutter;
 
 
 
@@ -162,6 +168,8 @@
 @footerbar-tab-color-selected:   @app-primary;
 
 
+
+
 // Forms
 // ------------------------------
 
@@ -175,6 +183,9 @@
 @field-padding-vertical:      @padding-base-vertical;
 @field-padding-horizontal:    @padding-base-horizontal;
 
+
+
+
 // Layers
 // ------------------------------
 
@@ -183,6 +194,27 @@
 @zindex-tooltip:           1030;
 @zindex-modal-backdrop:    1040;
 @zindex-modal:             1050;
+
+
+
+
+// Views
+// -------------------------------
+
+// transitions
+
+@view-transition-distance:        125px; // TODO: 375/3 (375 = width of iPhone 6)
+@view-transition-duration:        320ms; // match the view transition duration | TODO: sync this with Touchstone's variables
+@view-transition-timing-function: cubic-bezier(.36, .66, .04, 1); // match the view transition duration | TODO: sync this with Touchstone's variables
+
+// stack
+
+@view-transition-stack-stable:  5;
+@view-transition-stack-top:    20;
+@view-transition-stack-bottom: 10;
+
+
+
 
 // Switch
 // -------------------------------

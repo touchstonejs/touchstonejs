@@ -5,19 +5,6 @@
 
 
 
-// Variables
-// ---------------------------
-
-@transition-distance:             125px; // 375/3 (375 = width of iPhone 6)
-@transition-duration:             320ms; // match the view transition duration | TODO: sync this with Touchstone's variables
-@headerbar-gutter:                9px;
-@left-arrow-width:                12px;
-@left-arrow-with-gutter:          @left-arrow-width + (@headerbar-gutter * 2);
-
-
-
-
-
 // Base
 // ---------------------------
 
@@ -103,7 +90,7 @@
 	position: absolute;
 	text-align: center; // center the chevron
 	vertical-align: top;
-	width: @left-arrow-with-gutter;
+	width: @headerbar-left-arrow-with-gutter;
 	z-index: 3; // should be the highest element in the navigation bar
 }
 
@@ -142,9 +129,9 @@
 
 	// FIXME: always offset the label to stop jank
 	// .has-arrow & {
-	// 	left: @left-arrow-with-gutter;
+	// 	left: @headerbar-left-arrow-with-gutter;
 	// }
-	left: @left-arrow-with-gutter;
+	left: @headerbar-left-arrow-with-gutter;
 }
 
 
@@ -203,8 +190,8 @@
 .NavigationBarTransition-Forwards-leave,
 .NavigationBarTransition-Backwards-enter,
 .NavigationBarTransition-Backwards-leave {
-	.animation-duration( @transition-duration ); // 1
-	.animation-timing-function( cubic-bezier(0.645, 0.045, 0.355, 1) ); // 2
+	.animation-duration( @view-transition-duration ); // 1
+	.animation-timing-function( @view-transition-timing-function ); // 2
 	pointer-events: none; // 3
 }
 
@@ -243,42 +230,42 @@
 
 // header element (forwards) - enter
 @-webkit-keyframes NavigationBarTransitionForwardsEnter {
-	from { opacity: 0; -webkit-transform: translate3d(@transition-distance, 0, 0); }
+	from { opacity: 0; -webkit-transform: translate3d(@view-transition-distance, 0, 0); }
 	to   { opacity: 1; -webkit-transform: translate3d(0, 0, 0); }
 }
 @keyframes NavigationBarTransitionForwardsEnter {
-	from { opacity: 0; transform: translate3d(@transition-distance, 0, 0); }
+	from { opacity: 0; transform: translate3d(@view-transition-distance, 0, 0); }
 	to   { opacity: 1; transform: translate3d(0, 0, 0); }
 }
 
 // header element (forwards) - leave
 @-webkit-keyframes NavigationBarTransitionForwardsLeave {
 	from { opacity: 1; -webkit-transform: translate3d(0, 0, 0); }
-	to   { opacity: 0; -webkit-transform: translate3d(-@transition-distance, 0, 0); }
+	to   { opacity: 0; -webkit-transform: translate3d(-@view-transition-distance, 0, 0); }
 }
 @keyframes NavigationBarTransitionForwardsLeave {
 	from { opacity: 1; transform: translate3d(0, 0, 0); }
-	to   { opacity: 0; transform: translate3d(-@transition-distance, 0, 0); }
+	to   { opacity: 0; transform: translate3d(-@view-transition-distance, 0, 0); }
 }
 
 // header element (backwards) - enter
 @-webkit-keyframes NavigationBarTransitionBackwardsEnter {
-	from { opacity: 0; -webkit-transform: translate3d(-@transition-distance, 0, 0); }
+	from { opacity: 0; -webkit-transform: translate3d(-@view-transition-distance, 0, 0); }
 	to   { opacity: 1; -webkit-transform: translate3d(0, 0, 0); }
 }
 @keyframes NavigationBarTransitionBackwardsEnter {
-	from { opacity: 0; transform: translate3d(-@transition-distance, 0, 0); }
+	from { opacity: 0; transform: translate3d(-@view-transition-distance, 0, 0); }
 	to   { opacity: 1; transform: translate3d(0, 0, 0); }
 }
 
 // header element (backwards) - leave
 @-webkit-keyframes NavigationBarTransitionBackwardsLeave {
 	from { opacity: 1; -webkit-transform: translate3d(0, 0, 0); }
-	to   { opacity: 0; -webkit-transform: translate3d(@transition-distance, 0, 0); }
+	to   { opacity: 0; -webkit-transform: translate3d(@view-transition-distance, 0, 0); }
 }
 @keyframes NavigationBarTransitionBackwardsLeave {
 	from { opacity: 1; transform: translate3d(0, 0, 0); }
-	to   { opacity: 0; transform: translate3d(@transition-distance, 0, 0); }
+	to   { opacity: 0; transform: translate3d(@view-transition-distance, 0, 0); }
 }
 
 
