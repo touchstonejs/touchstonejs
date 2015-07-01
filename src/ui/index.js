@@ -5,6 +5,7 @@ export var ItemNote = require('./ItemNote');
 export var LabelInput = require('./LabelInput');
 export var LabelSelect = require('./LabelSelect');
 export var LabelTextarea = require('./LabelTextarea');
+export var ListHeader = require('./ListHeader');
 export var NavigationBar = require('./NavigationBar');
 export var Popup = require('./Popup');
 export var PopupIcon = require('./PopupIcon');

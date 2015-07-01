@@ -1,0 +1,85 @@
+//
+// Components
+// ==============================
+
+/*
+ * 1. using flex; items will position their children into columns
+ *    content is "stretched" to fill available space
+ * 2. darken to provide feedback on tap
+ *    delay the tap highlight; it may just be a scroll
+ **/
+
+.ListItem {
+	.display-flex(); // 1
+	.align-items(center); // 1
+	.justify-content(space-between); // 1
+	background-color: rgba(255, 255, 255, 0.1);
+	margin-bottom: 2px;
+	padding: 1em;
+
+	// 2
+	&.Tappable-active {
+		.transition( background-color 10ms linear 40ms );
+		background-color: rgba(255, 255, 255, 0.05);
+	}
+
+	// remove bottom margin
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+// 1
+.ListItem__content {
+	.flex(1,1,0);
+	padding: 0 0.8em;
+}
+
+// Avatar
+// ------------------------------
+
+.ListItem__avatar {
+	.avatar(60px);
+}
+
+// Type
+// ------------------------------
+
+.ListItem__heading {
+	font-weight: 500;
+	margin-bottom: .4em;
+}
+
+.ListItem__text {
+	font-size: @font-size-sm;
+	line-height: 1.2;
+}
+
+// Headers
+// ------------------------------
+.ListHeader {
+	.retina-1px-border-top-and-bottom(rgba(0, 0, 0, 0.3));
+	background-color: darken(@body-bg, 3%);
+	font-size: @font-size-xs;
+	font-weight: 500;
+	line-height: 2.4;
+	padding-left: @font-size-base;
+	text-transform: uppercase;
+	z-index: 1;
+
+	.ListItem + & {
+		margin-top: -2px;
+	}
+}
+
+.ListHeader--sticky {
+	padding-top: 1px; // fix (sortof) jumpy bug with sticky positioning
+	position: -webkit-sticky;
+	top: -1px; // fix (sortof) jumpy bug with sticky positioning
+}
+
+// Disclosure Arrow
+// ------------------------------
+.ListItem__chevron {
+	.ionicon(inherit, @ionicon-var-chevron-right, @ionicons-size-base);
+}
