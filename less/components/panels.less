@@ -78,3 +78,40 @@
 	}
 }
 
+
+
+
+// Panel Buttons
+// ------------------------------
+
+// stacking options
+.panel-button--first {
+	margin-top: @gutter-lg;
+}
+.panel-button-bunched {
+	margin-bottom: @gutter-lg / 2;
+}
+
+// stack buttons horizontally
+
+.panel-button-group {
+	.display-flex();
+	.retina-1px-border-top-and-bottom( rgba(0,0,0,0.17) ); // move the button borders to the group
+	margin-bottom: @gutter-lg;
+
+	 > .panel-button {
+	 	border-left: 1px solid rgba(0,0,0,0.17);
+	 	margin: 0;
+
+	 	&:first-child {
+	 		border-left: none;
+	 	}
+
+	 	// remove the borders - they're handled by the group
+	 	&::before,
+	 	&::after {
+	 		display: none;
+	 	}
+	 }
+}
+
