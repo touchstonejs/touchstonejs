@@ -8,36 +8,85 @@
 // Alert Bar
 // ------------------------------
 
+
+// base
+
 .Alertbar {
 	color: white;
 	font-size: @font-size-sm;
 	font-weight: @font-weight-bold;
-	height: 30px;
-	line-height: 30px;
-	position: relative;
+	left: 0;
+	line-height: 1.1;
+	padding: @gutter-sm;
+	position: absolute;
 	text-align: center;
-
-	// variants
-
-	&.default  { background-color: @gray-light; }
-	
-	&.danger   { background-color: @app-danger; }
-	&.primary  { background-color: @app-primary; }
-	&.success  { background-color: @app-success; }
-	&.warning  { background-color: @app-warning; }
-
-	// overlay translucent for pulse
-	&.pulse::after {
-		.animation( pulse 2s linear infinite );
-		.fill-space();
-		background-color: black;
-		content: "";
-		opacity: 0;
-		z-index: 1;
-	}
+	top: 0;
+	width: 100%;
 }
+
+
+// animate in/out
+
+.Alertbar-enter {
+	.animation( alertbarEnter 240ms @view-transition-timing-function );
+}
+.Alertbar-leave {
+	.animation( alertbarLeave 240ms @view-transition-timing-function );
+}
+
+
+// overlay translucent for pulse
+
+.Alertbar--pulse::after {
+	.animation( pulse 2s linear infinite );
+	.fill-space();
+	background-color: black;
+	content: "";
+	opacity: 0;
+	z-index: 1;
+}
+
+
+// variants
+
+.Alertbar--default  { background-color: @gray-light; }
+.Alertbar--danger   { background-color: @app-danger; }
+.Alertbar--primary  { background-color: @app-primary; }
+.Alertbar--success  { background-color: @app-success; }
+.Alertbar--warning  { background-color: @app-warning; }
+
+
 // sit the text above the pulsing background
-.Alertbar-inner {
+
+.Alertbar__inner {
 	position: relative;
 	z-index: 2;
+}
+
+
+// Animation
+// ------------------------------
+
+
+
+// slide up
+
+@-webkit-keyframes alertbarEnter {
+	from {-webkit-transform: translate3d(0, -100%, 0); }
+	to { -webkit-transform: none; }
+}
+@keyframes alertbarEnter {
+	from {transform: translate3d(0, -100%, 0); }
+	to { transform: none; }
+}
+
+// slide down
+
+@-webkit-keyframes alertbarLeave {
+	from { -webkit-transform: none; }
+	to { -webkit-transform: translate3d(0, -100%, 0); }
+}
+@keyframes alertbarLeave {
+	from { transform: none; }
+	to {transform: translate3d(0, -100%, 0); }
 }

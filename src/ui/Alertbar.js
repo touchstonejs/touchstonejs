@@ -1,7 +1,7 @@
 var React = require('react/addons');
-
-var blacklist = require('blacklist');
 var classnames = require('classnames');
+var ViewContent = require('./ViewContent');
+var Transition = React.addons.CSSTransitionGroup;
 
 module.exports = React.createClass({
 	displayName: 'Alertbar',
@@ -9,7 +9,8 @@ module.exports = React.createClass({
 		children: React.PropTypes.node.isRequired,
 		className: React.PropTypes.string,
 		pulse: React.PropTypes.bool,
-		type: React.PropTypes.oneOf(['default', 'primary', 'success', 'warning', 'danger'])
+		type: React.PropTypes.oneOf(['default', 'primary', 'success', 'warning', 'danger']),
+		visible: React.PropTypes.bool
 	},
 
 	getDefaultProps () {
@@ -19,19 +20,17 @@ module.exports = React.createClass({
 	},
 
 	render () {
-		var { pulse } = this.props
-		var className = classnames('Alertbar', this.props.className, this.props.type, { 'pulse': pulse });
+		var className = classnames('Alertbar', ('Alertbar--' + this.props.type), {
+			'Alertbar--pulse': this.props.pulse
+		}, this.props.className);
 
-		if (pulse) {
-			var otherProps = blacklist(this.props, 'children')
+		var inner = this.props.pulse ? <div className="Alertbar__inner">{this.props.children}</div> : this.props.children;
+		var content = this.props.visible ? <div className={className}>{inner}</div> : null;
 
-			return (
-				<div className={className} {... otherProps}>
-					<div className="Alertbar__inner">{this.props.children}</div>
-				</div>
-			)
-		}
-
-		return <div className={className} {...this.props} />
+		return (
+			<Transition transitionName="Alertbar" className="Alertbar__testything" component="div">
+				{content}
+			</Transition>
+		);
 	}
 });
