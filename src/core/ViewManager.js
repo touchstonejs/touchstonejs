@@ -99,8 +99,8 @@ var ViewManager = React.createClass({
 		if (!view || !view.props.component) {
 			return (
 				<ErrorView>
-					<span className="ErrorView__heading">ViewManager: {this.props.name}</span>
-					<span className="ErrorView__text">Error: The Current View ({viewKey}) is invalid.</span>
+					<span className="ErrorView__heading">ViewManager: "{this.props.name}"</span>
+					<span className="ErrorView__text">The View "{viewKey}" is invalid.</span>
 				</ErrorView>
 			);
 		}
