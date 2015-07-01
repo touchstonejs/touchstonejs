@@ -24,7 +24,7 @@ module.exports = React.createClass({
 	},
 
 	render () {
-		var componentClassName = classnames('SegmentedControl', this.props.className, this.props.type);
+		var componentClassName = classnames('SegmentedControl', ('SegmentedControl--' + this.props.type), this.props.className);
 		var self = this;
 
 		var options = this.props.options.map(function (op) {
