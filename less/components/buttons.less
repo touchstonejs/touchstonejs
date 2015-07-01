@@ -115,7 +115,7 @@ button {
 	border: none;
 	color: @text-color;
 	display: block;
-	margin-bottom: @gutter-large;
+	margin-bottom: @gutter-lg;
 	height: @item-height;
 	line-height: @item-height;
 	padding: 0 @padding-base-horizontal;
@@ -148,7 +148,7 @@ button {
 
 	// stack panel buttons closer to one another when in a row
 	& + & {
-		margin-top: -(@gutter-large / 2);
+		margin-top: -(@gutter-lg / 2);
 	}
 
 	// add active state
@@ -174,17 +174,17 @@ button {
 
 // stacking options
 .panel-button--first {
-	margin-top: @gutter-large;
+	margin-top: @gutter-lg;
 }
 .panel-button-bunched {
-	margin-bottom: @gutter-large / 2;
+	margin-bottom: @gutter-lg / 2;
 }
 
 // stack buttons horizontally
 
 .panel-button-group {
 	.display-flex();
-	margin-bottom: @gutter-large;
+	margin-bottom: @gutter-lg;
 
 	 > .panel-button {
 	 	border-left: 1px solid darken(@body-bg, 10%);
