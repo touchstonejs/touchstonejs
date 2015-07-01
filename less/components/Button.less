@@ -10,6 +10,7 @@
 
 .Button {
 	.retina-1px-border-top-and-bottom( rgba(0,0,0,0.17) );
+	.transition( color 160ms ); // animate variation if disabled state changed while visible
 	background-color: white;
 	border: none;
 	color: @text-color;
@@ -38,8 +39,7 @@
 
 	// add disabled state
 	&[disabled] {
-		color: @gray !important;
-		opacity: .66;
+		color: @gray-light;
 		pointer-events: none;
 	}
 
