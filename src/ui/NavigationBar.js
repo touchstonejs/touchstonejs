@@ -59,7 +59,6 @@ var NavigationBar = React.createClass({
 	},
 	update (state) {
 		state = newState(state);
-		// console.info('Updating NavigationBar ' + this.props.name, state);
 		this.setState(newState(state));
 	},
 	updateWithTransition (state, transition) {
@@ -125,7 +124,6 @@ var NavigationBar = React.createClass({
 	renderTitle () {
 		var title = this.state.title ? <span key={Date.now()} className="NavigationBarTitle">{this.state.title}</span> : null;
 		var transitionName = 'NavigationBarTransition-Instant';
-		console.log('navbar direction:', this.state.direction)
 		if (this.state.fade) {
 			transitionName = 'NavigationBarTransition-Fade';
 		} else if (this.state.direction > 0) {
