@@ -63,15 +63,20 @@ var NavigationBar = React.createClass({
 		this.setState(newState(state));
 	},
 	updateWithTransition (state, transition) {
+		var direction = {
+			'reveal-from-right': -1,
+			'show-from-left': -1,
+			'show-from-right': 1,
+			'reveal-from-left': 1,
+		}
+
 		state = newState(state);
-		if (transition === ('show-from-right' || 'reveal-from-left')) {
-			state.direction = 1;
-		} else if (transition === ('reveal-from-right' || 'show-from-left')) {
-			state.direction = -1;
-		} else if (transition === 'fade') {
+		state.direction = direction[transition] || 0;
+
+		if (transition === 'fade' || transition === 'fade-contract' || transition === 'fade-expand') {
 			state.fade = true;
 		}
-		// console.info('Updating NavigationBar ' + this.props.name + ' with transition ' + transition, state);
+		
 		this.setState(state);
 	},
 
@@ -120,6 +125,7 @@ var NavigationBar = React.createClass({
 	renderTitle () {
 		var title = this.state.title ? <span key={Date.now()} className="NavigationBarTitle">{this.state.title}</span> : null;
 		var transitionName = 'NavigationBarTransition-Instant';
+		console.log('navbar direction:', this.state.direction)
 		if (this.state.fade) {
 			transitionName = 'NavigationBarTransition-Fade';
 		} else if (this.state.direction > 0) {

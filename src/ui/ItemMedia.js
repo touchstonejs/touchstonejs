@@ -13,23 +13,23 @@ module.exports = React.createClass({
 
 	render () {
 		var className = classnames({
-			'item-media': true,
-			'is-icon': this.props.icon,
-			'is-avatar': this.props.avatar || this.props.avatarInitials,
-			'is-thumbnail': this.props.thumbnail
+			'Item__media': true,
+			'Item__media--icon': this.props.icon,
+			'Item__media--avatar': this.props.avatar || this.props.avatarInitials,
+			'Item__media--thumbnail': this.props.thumbnail
 		}, this.props.className);
 
 		// media types
 		var icon = this.props.icon ? (
-			<div className={'item-icon ' + this.props.icon} />
+			<div className={'Item__media__icon ' + this.props.icon} />
 		) : null;
 		var avatar = this.props.avatar || this.props.avatarInitials ? (
-			<div className="item-avatar">
+			<div className="Item__media__avatar">
 				{this.props.avatar ? <img src={this.props.avatar} /> : this.props.avatarInitials}
 			</div>
 		) : null;
 		var thumbnail = this.props.thumbnail ? (
-			<div className="item-thumbnail">
+			<div className="Item__media__thumbnail">
 				<img src={this.props.thumbnail} />
 			</div>
 		) : null;

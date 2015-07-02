@@ -1,5 +1,5 @@
-var React = require('react/addons'),
-	classnames = require('classnames');
+var classnames = require('classnames');
+var React = require('react/addons');
 
 module.exports = React.createClass({
 	displayName: 'ItemNote',
@@ -9,24 +9,22 @@ module.exports = React.createClass({
 		label: React.PropTypes.string,
 		type: React.PropTypes.string
 	},
-
 	getDefaultProps () {
 		return {
 			type: 'default'
 		};
 	},
-
 	render () {
-		var className = classnames({
-			'item-note': true
-		}, this.props.type, this.props.className);
+		var className = classnames('Item__note', (
+			'Item__note--' + this.props.type
+		), this.props.className);
 
 		// elements
 		var label = this.props.label ? (
-			<div className="item-note-label">{this.props.label}</div>
+			<div className="Item__note__label">{this.props.label}</div>
 		) : null;
 		var icon = this.props.icon ? (
-			<div className={'item-note-icon ' + this.props.icon} />
+			<div className={'Item__note__icon ' + this.props.icon} />
 		) : null;
 
 		return (

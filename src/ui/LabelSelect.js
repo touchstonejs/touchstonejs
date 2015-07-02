@@ -1,10 +1,12 @@
-var React = require('react/addons'),
-	classnames = require('classnames');
+var Item = require('./Item');
+var ItemInner = require('./ItemInner');
+var FieldLabel = require('./FieldLabel');
+var FieldControl = require('./FieldControl');
+var React = require('react/addons');
 
 module.exports = React.createClass({
 	displayName: 'LabelSelect',
 	propTypes: {
-		className: React.PropTypes.string,
 		first: React.PropTypes.bool,
 		label: React.PropTypes.string,
 		options: React.PropTypes.array,
@@ -26,12 +28,6 @@ module.exports = React.createClass({
 		});
 	},
 	render () {
-		// Set Classes
-		var className = classnames(this.props.className, {
-			'list-item': true,
-			'is-first': this.props.first
-		});
-
 		// Map Options
 		var options = this.props.options.map(function (op) {
 			return (
@@ -42,19 +38,19 @@ module.exports = React.createClass({
 		});
 
 		return (
-			<label className={className}>
-				<div className="item-inner">
-					<div className="field-label">{this.props.label}</div>
-					<div className="field-control">
+			<Item alignTop={this.props.alignTop} selectable={this.props.disabled} className={this.props.className} component="label">
+				<ItemInner>
+					<FieldLabel>{this.props.label}</FieldLabel>
+					<FieldControl>
 						<select value={this.state.value} onChange={this.updateInputValue} className="select-field">
 							{options}
 						</select>
 						<div className="select-field-indicator">
 							<div className="select-field-indicator-arrow" />
 						</div>
-					</div>
-				</div>
-			</label>
+					</FieldControl>
+				</ItemInner>
+			</Item>
 		);
 	}
 });

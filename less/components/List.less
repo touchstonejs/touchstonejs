@@ -2,19 +2,25 @@
 // List
 // ==============================
 
-// item
 
-.list-item {
+
+
+// Item
+// ------------------------------
+
+.Item {
 	.display-flex();
+	background: none;
+	border: none;
 	color: @item-color;
-	// line-height: @font-size-base + 3;
 	line-height: 1;
-	// overflow: hidden;
+	outline: none;
+	padding: 0 0 0 @padding-base-horizontal; // create the ios-style gap on the left
 	position: relative;
+	text-align: left;
+	width: 100%;
 	z-index: 1;
-
-	// create the ios-style gap on the left
-	padding-left: @padding-base-horizontal;
+	-webkit-appearance: none;
 
 	// stop changes on various states when developing on desktop
 	&:hover,
@@ -27,8 +33,8 @@
 	// add active state
 
 	&.Tappable-active {
-		.transition( background-color 10ms linear 10ms ); // delay the tap highlight, it may just be a scroll
-		background-color: @item-tap-bg;
+		.transition( background-color 10ms linear 40ms ); // delay the tap highlight, it may just be a scroll
+		background-color: @item-bg-tap;
 	}
 
 	// transition in and out of tap bg highlight
@@ -39,7 +45,7 @@
 
 // provide the little arrow indicating a view will be shown on tap
 
-.list-item.is-tappable:after {
+.Item--has-disclosure-arrow::after {
 	.pseudo-ionicon(#ccc, @ionicon-var-chevron-right, @ionicons-size-base);
 	.align-items(center);
 	.display-flex();
@@ -51,7 +57,7 @@
 
 // align the interior
 
-.item-inner {
+.Item__inner {
 	.display-flex();
 	.align-items(center);
 	.justify-content(space-between);
@@ -70,106 +76,96 @@
 	}
 
 	// hide the last item's border
-	.list-item:last-child & {
+	.Item:last-child & {
 		border-bottom: none;
 	}
 
 	// force borders when desired
-	.list-item.has-border-bottom & {
+	.Item.has-border-bottom & {
 		border-bottom: 1px solid @item-divider-color;
 	}
-	.list-item.has-border-top & {
+	.Item.has-border-top & {
 		border-top: 1px solid @item-divider-color;
 	}
 
 	// add gap between media and content
-	.item-media + & {
+	.Item__media + & {
 		margin-left: @field-padding-horizontal;
 	}
 
 	// enforce border when explicitly defined
-	.list-item.has-border-bottom & {
+	.Item.has-border-bottom & {
 		.retina-1px-border-bottom(@item-divider-color);
 	}
-	.list-item.has-border-top & {
+	.Item.has-border-top & {
 		.retina-1px-border-top(@item-divider-color);
 	}
 }
 
 // wrap item content so text cropping works
 
-.item-content {
+.Item__content {
 	.flex(1, 0, 0);
-
-	&.row-children {
-		.display-flex();
-	}
 }
 
 // text
 
-.item-title {
+.Item__title {
 	.text-overflow();
 
 	// make room for descenders to stop the being cropped
 	margin-bottom: -1px;
 	padding-bottom: 1px;
 }
-.item-subtitle {
+.Item__subtitle {
 	.text-overflow();
 	color: @gray;
 	font-size: 85%;
 	font-weight: 300;
 	
-	// make room for descenders to stop the being cropped
+	// make room for descenders to stop them being cropped
 	margin-bottom: -1px;
 	padding-bottom: 1px;
 }
 
-// center align elements
 
-.center-align-left,
-.center-align-right {
-	.display-flex();
-	.align-items(center);
-	height: 100%;
-	position: absolute;
-	top: 0;
-}
-.center-align-left {
-	left: @padding-base-horizontal;
-}
-.center-align-right {
-	right: @padding-base-horizontal;
-}
+
 
 // Item Notes
 // ------------------------------
 
-.item-note {
+
+// base
+
+.Item__note {
 	.display-flex();
 	white-space: nowrap;
-
-	// variants
-	&.default {
-		color: #999;
-		
-		.item-note-icon {
-			color: #ccc;
-		}
-	}
-	&.primary { color: @app-primary; }
-	&.dark { color: @text-color; }
-
 }
+
+
+// variants
+
+.Item__note--default {
+	color: @gray-light;
+	
+	.Item__note__icon {
+		color: #ccc;
+	}
+}
+.Item__note--danger  { color: @app-danger; }
+.Item__note--info    { color: @app-info; }
+.Item__note--primary { color: @app-primary; }
+.Item__note--success { color: @app-success; }
+.Item__note--warning { color: @app-warning; }
 
 // one line
-.item-note-label {
-	white-space: nowrap;
-}
+
+.Item__note__label { white-space: nowrap; }
+
 
 // provide some space for the icon and get the size right
-.item-note-icon {
+
+.Item__note__icon {
 	margin-left: (@padding-base-horizontal / 2);
 
 	&:before {
@@ -177,22 +173,28 @@
 	}
 }
 
+
+
+
 // Item Media
 // ------------------------------
 
-.item-media {
+
+// base
+
+.Item__media {
 	.display-flex();
 	.flex-wrap(nowrap);
 	.align-items(center);
-
-	&.is-avatar    { .square(@item-avatar-size); }
-	&.is-icon      { width: @item-icon-size; }
-	&.is-thumbnail { .square(@item-thumbnail-size); }
 }
+.Item__media--avatar    { .square(@item-avatar-size); }
+.Item__media--icon      { width: @item-icon-size; }
+.Item__media--thumbnail { .square(@item-thumbnail-size); }
 
-// Icons
 
-.item-icon {
+// icons
+
+.Item__media__icon {
 	.inline-align();
 	.square(@item-icon-size);
 	border-radius: @border-radius-base;
@@ -235,32 +237,31 @@
 
 // icon variants
 
-.item-icon.primary-inverted {
+.Item__media__icon.primary-inverted {
 	background-color: @app-primary;
 	color: white;
 }
-.item-icon.primary {
+.Item__media__icon.primary {
 	color: @app-primary;
 }
-.item-icon.default {
+.Item__media__icon.default {
 	background-color: @body-bg;
 	color: @text-color;
 }
 
 // loading
 
-.item-icon.ion-load-a:before,
-.item-icon.ion-load-b:before,
-.item-icon.ion-load-c:before,
-.item-icon.ion-load-d:before {
+.Item__media__icon.ion-load-a:before,
+.Item__media__icon.ion-load-b:before,
+.Item__media__icon.ion-load-c:before,
+.Item__media__icon.ion-load-d:before {
 	.animation( spin 1s linear infinite );
 }
 
 // Avatars
 // ------------------------------
 
-.list-avatar, // deprecated, remove in next major version
-.item-avatar {
+.Item__media__avatar {
 	.inline-align();
 	.square(@item-avatar-size);
 	.translateY(-50%);
@@ -285,7 +286,7 @@
 // Thumbnails
 // ------------------------------
 
-.item-thumbnail {
+.Item__media__thumbnail {
 	.square(@item-thumbnail-size);
 	margin-top: @padding-base-vertical;
 

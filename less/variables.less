@@ -115,9 +115,10 @@
 
 // items
 
+@item-bg:                     @group-bg;
+@item-bg-tap:                 #d9d9d9;
 @item-color:                  @text-color;
 @item-divider-color:          mix(black, @body-bg, 20%);
-@item-tap-bg:                 #d9d9d9;
 @item-height:                 44px;
 @item-avatar-size:            40px;
 @item-thumbnail-size:         60px;
@@ -208,8 +209,8 @@
 // transitions
 
 @view-transition-distance:        125px; // TODO: 375/3 (375 = width of iPhone 6)
-@view-transition-duration:        320ms; // match the view transition duration | TODO: sync this with Touchstone's variables
-@view-transition-timing-function: cubic-bezier(.36, .66, .04, 1); // match the view transition duration | TODO: sync this with Touchstone's variables
+@view-transition-duration:        500ms; // emulate iOS
+@view-transition-timing-function: cubic-bezier(.36, .66, .04, 1); // emulate iOS
 
 // stack
 
