@@ -32,13 +32,14 @@
 
 	// add active state
 
-	&.Tappable-active {
+	.Tappable-active > & {
 		.transition( background-color 10ms linear 40ms ); // delay the tap highlight, it may just be a scroll
 		background-color: @item-bg-tap;
 	}
 
 	// transition in and out of tap bg highlight
-	&.Tappable-inactive {
+
+	.Tappable-inactive > & {
 		.transition( background-color 200ms );
 	}
 }
@@ -179,10 +180,6 @@
 
 .Item__note__icon {
 	margin-left: (@padding-base-horizontal / 2);
-
-	&:before {
-		font-size: @ionicons-size-large;
-	}
 }
 
 
