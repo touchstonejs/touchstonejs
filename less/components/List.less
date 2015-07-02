@@ -139,7 +139,19 @@
 
 .Item__note {
 	.display-flex();
+	position: relative;
 	white-space: nowrap;
+
+
+	// create a larger (but hidden) tappable area
+	&:before {
+		bottom: -@field-padding-vertical;
+		content: " ";
+		left: -@field-padding-horizontal;
+		position: absolute;
+		right: -@field-padding-horizontal;
+		top: -@field-padding-vertical;
+	}
 }
 
 
