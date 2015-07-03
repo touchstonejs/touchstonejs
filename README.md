@@ -1,4 +1,4 @@
-# Touchstone
+# Touchstonejs
 
 [![Build Status](https://travis-ci.org/touchstonejs/touchstonejs.png?branch=master)](https://travis-ci.org/touchstonejs/touchstonejs)
 
