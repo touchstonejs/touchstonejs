@@ -1,7 +1,7 @@
 var React = require('react');
 
 var Home = React.createClass({
-	render: function() {
+	render () {
 		return (
 			<div>
 				<div className="intro-wrapper">
@@ -9,7 +9,7 @@ var Home = React.createClass({
 						<div className="intro">
 							<div className="demo">
 								<div className="demo-viewport">
-									<iframe src="http://demo.touchstonejs.io" width="375" height="667" frameborder="0" />
+									<iframe src="http://demo.touchstonejs.io" width="375" height="667" frameBorder="0" />
 								</div>
 							</div>
 							<div className="intro-content">
@@ -18,7 +18,7 @@ var Home = React.createClass({
 								<h4>React.js powered UI framework for<br/>developing beautiful hybrid mobile apps.</h4>
 								<p>Docs, examples and getting started guide coming soon.<br />Get notified when we launch</p>
 								<div className="subscribe-form">
-									<form action="//touchstonejs.us1.list-manage.com/subscribe/post?u=92d124e53e280584bf5005518&id=e59f569ed3" method="post" novalidate>
+									<form action="//touchstonejs.us1.list-manage.com/subscribe/post?u=92d124e53e280584bf5005518&id=e59f569ed3" method="post" noValidate>
 										<div className="InputGroup">
 											<div className="InputGroup_section InputGroup_section--grow">
 												<input type="email" name="EMAIL" placeholder="Email address" className="FormInput" />
@@ -106,7 +106,7 @@ $ npm start
 							<h2>Examples &amp; references</h2>
 							<ul className="examples-references">
 								<li>
-									<img src="/images/ei8ht.png" alt="EI8HT Wallet" title="EI8HT Wallet"  className="app-logo" />
+									<img src="/images/ei8ht.png" alt="EI8HT Wallet" title="EI8HT Wallet" className="app-logo" />
 									<h5>Ei8ht Bitcoin Wallet</h5>
 									<p>The best way to safely send and receive Bitcoin</p>
 									<div className="app-links">
@@ -115,7 +115,7 @@ $ npm start
 									<img src="/images/app-ei8ht.png" className="app-screenshot" />
 								</li>
 								<li>
-									<img src="/images/react-europe.png" alt="ReactEurope" title="ReactEurope"  className="app-logo" />
+									<img src="/images/react-europe.png" alt="ReactEurope" title="ReactEurope" className="app-logo" />
 									<h5>React Europe</h5>
 									<p>Open source conference / attendance app</p>
 									<div className="app-links">
@@ -124,7 +124,7 @@ $ npm start
 									<img src="/images/app-react-europe.png" className="app-screenshot" />
 								</li>
 								<li>
-									<img src="/images/touchstone-starter.png" alt="Touchstone Starter" title="Touchstone Starter"  className="app-logo" />
+									<img src="/images/touchstone-starter.png" alt="Touchstone Starter" title="Touchstone Starter" className="app-logo" />
 									<h5>Touchstone Starter</h5>
 									<p>A great place to start to know TouchstoneJS</p>
 									<div className="app-links">

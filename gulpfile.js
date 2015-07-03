@@ -38,7 +38,7 @@ gulp.task('watch:lib', ['build:lib'], function () {
 // Site
 gulp.task('clean:site', function (done) { del(['site/__dist'], done); });
 
-gulp.task('build:site:files', function() {
+gulp.task('build:site:files', function () {
 	return gulp.src([
 			SITE_FILES
 		], {
@@ -48,20 +48,20 @@ gulp.task('build:site:files', function() {
 		.pipe(gulp.dest(SITE_BUILD_PATH));
 });
 
-gulp.task('build:site:js', function() {
+gulp.task('build:site:js', function () {
 	browserify('site/site.js')
 		.transform(babelify.configure({
 			plugins: [require('babel-plugin-object-assign')]
 		}))
 		.bundle()
-		.on('error', function(e) {
+		.on('error', function (e) {
 			gutil.log('Browserify Error', e);
 		})
 		.pipe(source('site.js'))
 		.pipe(gulp.dest(SITE_BUILD_PATH));
 });
 
-gulp.task('build:site:less', function() {
+gulp.task('build:site:less', function () {
 	return gulp.src('site/site.less')
 		.pipe(less())
 		.pipe(gulp.dest(SITE_BUILD_PATH));

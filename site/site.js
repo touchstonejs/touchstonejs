@@ -17,7 +17,7 @@ var App = React.createClass({
 			</div>
 		);
 	}
-})
+});
 
 var basepath = (window.location.pathname.slice(0, 10) === '/elemental') ? '/elemental' : '';
 
