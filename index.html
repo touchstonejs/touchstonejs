@@ -1,100 +1,24 @@
 <!doctype html>
-<html>
 <head>
-	<title>TouchstoneJS • ReactJS powered UI framework for developing beautiful hybrid mobile apps</title>
 	<meta charset="utf-8" />
+	<title>TouchstoneJS - React.js powered UI framework for developing beautiful hybrid mobile apps.</title>
 	<meta name="format-detection" content="telephone=no" />
 	<meta name="msapplication-tap-highlight" content="no" />
-	
-	<!-- full screen -->
-	<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-	
-	<!-- styles -->
-	<link rel="stylesheet" href="build/css/site.css">
+	<meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width">
+	<meta name="keywords" content="react,reactjs,react component,component,mobile,css,framework,control,ui,javascript">
+	<meta name="description" content="React.js powered UI framework for developing beautiful hybrid mobile apps.">
+	<meta property="og:locale" content="en-us">
+	<meta property="og:title" content="TouchstoneJS">
+	<meta property="og:description" content="A beautiful mobile UI framework powered by React.js">
+	<meta property="og:url" content="https://touchstonejs.github.io/touchstonejs">
+	<meta property="og:site_name" content="TouchstoneJS">
+	<meta property="og:type" content="article">
+	<link rel="shortcut icon" href="./images/favicon.ico">
+	<link rel="stylesheet" href="site.css">
 </head>
 <body>
-	<header class="header">
-		<div class="inner">
-			<img src="logo.svg" alt="TouchstoneJS" class="header-brand" width="200" height="200" />
-			<h1>React.js powered UI framework for developing beautiful hybrid mobile apps.</h1>
-			<p>
-				Docs, examples and getting started guide coming soon.
-				<br />
-				Get notified when we launch:</p>
-			<form action="//touchstonejs.us1.list-manage.com/subscribe/post?u=92d124e53e280584bf5005518&amp;id=e59f569ed3" method="post" class="header-form" target="_blank" novalidate>
-				<div class="header-form-field">
-					<input type="email" name="EMAIL" placeholder="Enter your email address" class="header-form-input" />
-				</div>
-				<div style="position: absolute; width: 1px; height: 1px; overflow: hidden; opacity: 0.01">
-					<input type="text" name="b_92d124e53e280584bf5005518_e59f569ed3" tabindex="-1" value="">
-				</div>
-				<button type="submit" class="header-form-button">Notify Me</button>
-			</form>
-		</div>
-		<div class="header-links">
-			<div class="inner">
-				<ul class="header-links-list">
-					<li class="header-links-label">Follow our progress:</li>
-					<li><a href="https://twitter.com/touchstonejs">
-						<i class="ion-social-twitter"></i>
-						<span class="header-link">Twitter</span>
-					</li></a>
-					<li><a href="https://github.com/jedwatson/touchstonejs" target="_blank">
-						<i class="ion-social-github"></i>
-						<span class="header-link">Github</span>
-					</li></a>
-					<li><a href="http://demo.touchstonejs.io" target="_blank">
-						<i class="ion-monitor"></i>
-						<span class="header-link">Demo</span>
-					</li></a>
-			</div>
-		</div>
-	</header>
-	<section class="roadmap">
-		<div class="inner">
-			<div class="preview">
-				<iframe src="http://demo.touchstonejs.io" width="302" height="535" frameborder="0"></iframe>
-			</div>
-			<section class="roadmap-list-wrapper">
-				<h2>Roadmap</h2>
-				<ul class="roadmap-list">
-					<li class="roadmap-item ion-ios7-checkmark done">Core app framework</li>
-					<li class="roadmap-item ion-ios7-checkmark done">Navigation framework</li>
-					<li class="roadmap-item ion-ios7-checkmark done">View transitions (CSS)</li>
-					<li class="roadmap-item ion-ios7-checkmark done">List controls</li>
-					<li class="roadmap-item ion-ios7-checkmark done">Form components</li>
-					<li class="roadmap-item ion-ios7-checkmark done">Header and navigation UI</li>
-					<li class="roadmap-item ion-ios7-checkmark done">Native touch behaviours</li>
-					<li class="roadmap-item ion-ios7-checkmark done">Custom keypad</li>
-					<li class="roadmap-item ion-ios7-checkmark done">Browserify build process</li>
-					<li class="roadmap-item ion-ios7-checkmark done">Working prototype</li>
-					<li class="roadmap-item ion-ios7-checkmark-outline">Retain scroll position</li>
-					<li class="roadmap-item ion-ios7-checkmark-outline">Pull to reload</li>
-					<li class="roadmap-item ion-ios7-checkmark-outline">Dynamic headerbar</li>
-					<li class="roadmap-item ion-ios7-checkmark-outline">View nesting</li>
-					<li class="roadmap-item ion-ios7-checkmark-outline">Partial view transitions</li>
-					<li class="roadmap-item ion-ios7-checkmark-outline">Gesture navigation</li>
-					<li class="roadmap-item ion-ios7-checkmark-outline">Cross-platform themes</li>
-					<li class="roadmap-item ion-ios7-checkmark-outline">Landscape mode</li>
-					<li class="roadmap-item ion-ios7-checkmark-outline">Project generator</li>
-				</ul>
-			</section>
-		</div>
-	</section>
-	<footer class="footer">
-		<div class="inner">
-			<div class="footer-buttons">
-				<div class="footer-button">Follow our progress</div>
-				<a href="https://twitter.com/touchstonejs" class="footer-button">Twitter</a>
-				<a href="https://github.com/jedwatson/touchstonejs" target="_blank" class="footer-button">Github</a>
-				<a href="http://demo.touchstonejs.io" target="_blank" class="footer-button">Demo</a>
-			</div>
-			<div class="footer-brand">
-				<div class="footer-button">Open source (MIT).</div>
-				<a href="http://www.thinkmill.com.au" target="_blank">Made by Thinkmill</a>
-			</div>
-		</div>
-	</footer>
+	<div id="site"></div>
+	<script src="site.js"></script>
 	<script>
 		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -103,5 +27,5 @@
 		ga('create', 'UA-57521145-1', 'auto');
 		ga('send', 'pageview');
 	</script>
+	<script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
 </body>
-</html>
