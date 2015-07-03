@@ -19,23 +19,8 @@ gulp.task('watch:lib', ['build:lib'], function () {
 	gulp.watch('src/**/*', ['build:lib']);
 });
 
-// Build/Clean/Watch site
-gulp.task('build:site', ['build:site:css']);
-gulp.task('clean:site', function (done) { del(['site/public/build'], done); });
-gulp.task('watch:site', ['build:site:css'], function () {
-	gulp.watch(['site/src/less/**/*'], ['build:site:css']);
-});
-
-// Build CSS
-gulp.task('build:site:css', function () {
-	return gulp.src('site/src/less/site.less')
-		.pipe(less())
-		.pipe(gulp.dest('site/public/build/css'))
-		.pipe(connect.reload());
-});
-
 // Local HTTP server
-gulp.task('site', ['watch:site'], function () {
+gulp.task('site', function () {
 	connect.server({
 		root: 'site/public',
 		port: 8000,
