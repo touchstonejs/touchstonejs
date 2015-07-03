@@ -1,5 +1,10 @@
-Touchstone
-==========
+# Touchstone
+
+[![Build Status](https://travis-ci.org/touchstonejs/touchstonejs.png?branch=master)](https://travis-ci.org/touchstonejs/touchstonejs)
+
+[![NPM](https://nodei.co/npm/touchstonejs.png)](https://nodei.co/npm/touchstonejs/)
+[![js-happiness-style](https://cdn.rawgit.com/jedwatson/happiness/master/badge.svg)](https://github.com/jedwatson/happiness)
+
 
 Mobile App Framework powered by React.
 
@@ -14,7 +19,7 @@ See the [touchstone-starter](https://github.com/Thinkmill/touchstone-starter) pr
 An online demo is available at [demo.touchstonejs.io](http://demo.touchstonejs.io).
 
 
-# License
+### License
 
 MIT. Copyright (c) 2015 Jed Watson
 
