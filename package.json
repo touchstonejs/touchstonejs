@@ -24,20 +24,22 @@
     "less"
   ],
   "scripts": {
-    "build": "gulp build:lib",
+    "build": "gulp clean:lib && gulp build:lib",
+    "build:site": "gulp clean:site && NODE_ENV=productin gulp build:site",
     "lint": "happiness",
-    "start": "npm run watch",
+    "start": "gulp site",
     "test": "npm run lint",
     "watch": "gulp watch:lib"
   },
   "standard": {
     "ignore": [
-      "**/lib/**"
+      "**/lib/**",
+      "**/__build/**"
     ]
   },
   "dependencies": {
     "blacklist": "^1.1.2",
-    "classnames": "^2.1.2",
+    "classnames": "^2.1.3",
     "react": "^0.13.3",
     "react-container": "^0.2.2",
     "react-tappable": "^0.5.2",
@@ -46,7 +48,10 @@
   "devDependencies": {
     "babel-core": "^5.6.15",
     "babel-plugin-object-assign": "^1.2.0",
+    "babelify": "^6.1.2",
+    "browserify": "^10.2.4",
     "del": "^1.2.0",
+    "elemental": "^0.1.1",
     "gulp": "^3.9.0",
     "gulp-babel": "^5.1.0",
     "gulp-bump": "^0.3.1",
@@ -54,6 +59,9 @@
     "gulp-gh-pages": "^0.5.2",
     "gulp-git": "^1.2.4",
     "gulp-less": "^3.0.3",
-    "happiness": "^1.0.6"
+    "gutil": "^1.6.4",
+    "happiness": "^1.0.7",
+    "react-router": "^0.13.3",
+    "vinyl-source-stream": "^1.1.0"
   }
 }
