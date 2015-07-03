@@ -22673,7 +22673,7 @@ var Home = React.createClass({
 							React.createElement(
 								"div",
 								{ className: "demo-viewport" },
-								React.createElement("iframe", { src: "http://demo.touchstonejs.io", width: "375", height: "667", frameborder: "0" })
+								React.createElement("iframe", { src: "http://touchstonejs.github.io/touchstonejs-starter", width: "375", height: "667", frameborder: "0" })
 							)
 						),
 						React.createElement(
