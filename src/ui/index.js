@@ -2,7 +2,6 @@ export var Alertbar = require('./Alertbar');
 export var Button = require('./Button');
 export var ButtonGroup = require('./ButtonGroup');
 export var FieldControl = require('./FieldControl');
-export var FieldItem = require('./FieldItem');
 export var FieldLabel = require('./FieldLabel');
 export var Group = require('./Group');
 export var GroupBody = require('./GroupBody');
