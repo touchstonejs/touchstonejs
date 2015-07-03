@@ -30,27 +30,27 @@ var NavigationBar = React.createClass({
 	contextTypes: {
 		app: React.PropTypes.object
 	},
-	
+
 	propTypes: {
 		name: React.PropTypes.string
 	},
-	
+
 	getInitialState () {
 		return newState(this.props);
 	},
-	
+
 	componentDidMount () {
 		if (this.props.name) {
 			this.context.app.navigationBars[this.props.name] = this;
 		}
 	},
-	
+
 	componentWillUnmount () {
 		if (this.props.name) {
 			delete this.context.app.navigationBars[this.props.name];
 		}
 	},
-	
+
 	componentWillReceiveProps (nextProps) {
 		this.setState(newState(nextProps));
 		if (nextProps.name !== this.props.name) {
@@ -62,12 +62,12 @@ var NavigationBar = React.createClass({
 			}
 		}
 	},
-	
+
 	update (state) {
 		state = newState(state);
 		this.setState(newState(state));
 	},
-	
+
 	updateWithTransition (state, transition) {
 		var direction = {
 			'reveal-from-right': -1,
@@ -82,7 +82,7 @@ var NavigationBar = React.createClass({
 		if (transition === 'fade' || transition === 'fade-contract' || transition === 'fade-expand') {
 			state.fade = true;
 		}
-		
+
 		this.setState(state);
 	},
 
@@ -98,7 +98,7 @@ var NavigationBar = React.createClass({
 			</Tappable>
 		);
 	},
-	
+
 	renderLeftArrow () {
 		var transitionName = 'NavigationBarTransition-Instant';
 		if (this.state.fade || this.state.direction) {
@@ -113,7 +113,7 @@ var NavigationBar = React.createClass({
 			</Transition>
 		);
 	},
-	
+
 	renderLeftLabel () {
 		var transitionName = 'NavigationBarTransition-Instant';
 		if (this.state.fade) {
@@ -130,7 +130,7 @@ var NavigationBar = React.createClass({
 			</Transition>
 		);
 	},
-	
+
 	renderTitle () {
 		var title = this.state.title ? <span key={Date.now()} className="NavigationBarTitle">{this.state.title}</span> : null;
 		var transitionName = 'NavigationBarTransition-Instant';
@@ -148,7 +148,7 @@ var NavigationBar = React.createClass({
 			</Transition>
 		);
 	},
-	
+
 	renderRightButton () {
 		var transitionName = 'NavigationBarTransition-Instant';
 		if (this.state.fade || this.state.direction) {
@@ -166,7 +166,7 @@ var NavigationBar = React.createClass({
 			</Transition>
 		);
 	},
-	
+
 	renderRightIcon () {
 		if (!this.state.rightIcon) return null;
 
@@ -174,11 +174,11 @@ var NavigationBar = React.createClass({
 
 		return <span className={className} />;
 	},
-	
+
 	renderRightLabel () {
 		return this.state.rightLabel ? <span key={Date.now()} className="NavigationBarRightLabel">{this.state.rightLabel}</span> : null;
 	},
-	
+
 	render () {
 		return (
 			<div className="NavigationBar">
@@ -189,27 +189,5 @@ var NavigationBar = React.createClass({
 		);
 	}
 });
-
-/*
-function createController () {
-	var state = newState();
-	var listeners = [];
-	return {
-		update (ns) {
-			state = newState(ns);
-			listeners.forEach(fn => fn());
-		},
-		getState () {
-			return state;
-		},
-		addListener (fn) {
-			listeners.push(fn);
-		},
-		removeListener (fn) {
-			listeners = listeners.filter(i => fn !== i);
-		}
-	};
-}
-*/
 
 export default NavigationBar;
