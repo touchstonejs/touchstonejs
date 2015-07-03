@@ -20,7 +20,8 @@
   ],
   "main": "lib/index.js",
   "files": [
-    "lib/"
+    "lib/",
+    "less"
   ],
   "scripts": {
     "build": "gulp build:lib",
