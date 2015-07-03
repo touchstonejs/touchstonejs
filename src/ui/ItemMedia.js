@@ -1,5 +1,5 @@
-var React = require('react/addons'),
-	classnames = require('classnames');
+var React = require('react/addons');
+var classnames = require('classnames');
 
 module.exports = React.createClass({
 	displayName: 'ItemMedia',
