@@ -17,7 +17,6 @@ export var ItemTitle = require('./ItemTitle');
 export var LabelInput = require('./LabelInput');
 export var LabelSelect = require('./LabelSelect');
 export var LabelTextarea = require('./LabelTextarea');
-export var LinkItem = require('./LinkItem');
 export var ListHeader = require('./ListHeader');
 export var NavigationBar = require('./NavigationBar');
 export var Popup = require('./Popup');

@@ -1,9 +1,10 @@
 var classnames = require('classnames');
+var Item = require('./Item');
 var ItemInner = require('./ItemInner');
 var ItemNote = require('./ItemNote');
 var ItemTitle = require('./ItemTitle');
-var LinkItem = require('./LinkItem');
 var React = require('react');
+var Tappable = require('react-tappable');
 
 module.exports = React.createClass({
 	displayName: 'RadioList',
@@ -33,13 +34,15 @@ module.exports = React.createClass({
 			}
 
 			return (
-				<LinkItem key={'option-' + i} onTap={onChange}>
-					{icon}
-					<ItemInner>
-						<ItemTitle>{op.label}</ItemTitle>
-						{checkMark}
-					</ItemInner>
-				</LinkItem>
+				<Tappable key={'option-' + i} onTap={onChange}>
+					<Item key={'option-' + i} onTap={onChange}>
+						{icon}
+						<ItemInner>
+							<ItemTitle>{op.label}</ItemTitle>
+							{checkMark}
+						</ItemInner>
+					</Item>
+				</Tappable>
 			);
 		});
 
