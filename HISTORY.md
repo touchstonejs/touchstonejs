@@ -2,6 +2,10 @@
 
 Please be aware that TouchstoneJS is still under heavy initial development, and the features / API are liable to change rapidly and possibly break things.
 
+## v0.4.0 - v0.4.2 / 2015-07-03
+
+* massive update, live published from #reacteurope. see touchstone-starter for changes.
+
 ## v0.3.2 / 2015-05-30
 
 * updated build, there were issues with the last release :/
