@@ -18,8 +18,7 @@
     "react": "^0.13.3",
     "react-container": "^0.2.2",
     "react-tappable": "^0.5.2",
-    "tween.js": "^0.14.0",
-    "xtend": "^4.0.0"
+    "tween.js": "^0.14.0"
   },
   "devDependencies": {
     "babel-core": "^5.6.15",
