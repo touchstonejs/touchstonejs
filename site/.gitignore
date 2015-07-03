@@ -4,5 +4,9 @@
 # Dependency directory
 node_modules
 
-# Build folder
+# Build directories
+site
+lib
+
+# Site temp directory
 .publish
