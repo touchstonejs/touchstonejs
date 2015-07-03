@@ -3,6 +3,13 @@ var React = require('react/addons');
 var Tappable = require('react-tappable');
 var Transition = React.addons.CSSTransitionGroup;
 
+const DIRECTIONS = {
+	'reveal-from-right': -1,
+	'show-from-left': -1,
+	'show-from-right': 1,
+	'reveal-from-left': 1
+};
+
 var defaultControllerState = {
 	direction: 0,
 	fade: false,
@@ -64,20 +71,14 @@ var NavigationBar = React.createClass({
 	},
 
 	update (state) {
+		// FIXME: what is happening here
 		state = newState(state);
 		this.setState(newState(state));
 	},
 
 	updateWithTransition (state, transition) {
-		var direction = {
-			'reveal-from-right': -1,
-			'show-from-left': -1,
-			'show-from-right': 1,
-			'reveal-from-left': 1,
-		}
-
 		state = newState(state);
-		state.direction = direction[transition] || 0;
+		state.direction = DIRECTIONS[transition] || 0;
 
 		if (transition === 'fade' || transition === 'fade-contract' || transition === 'fade-expand') {
 			state.fade = true;

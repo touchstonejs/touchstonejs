@@ -6,7 +6,7 @@ var classNames = require('classnames');
 module.exports = React.createClass({
 	displayName: 'ListHeader',
 
-	propsTypes: {
+	propTypes: {
 		className: React.PropTypes.string,
 		sticky: React.PropTypes.bool
 	},

@@ -15,7 +15,7 @@ module.exports = React.createClass({
 	getDefaultProps () {
 		return {
 			type: 'default'
-		}
+		};
 	},
 
 	render () {

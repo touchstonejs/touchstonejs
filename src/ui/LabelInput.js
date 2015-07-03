@@ -1,11 +1,10 @@
-var blacklist = require('blacklist');
-var classnames = require('classnames');
-var Item = require('./Item');
-var ItemContent = require('./ItemContent');
-var ItemInner = require('./ItemInner');
-var FieldLabel = require('./FieldLabel');
 var FieldControl = require('./FieldControl');
+var FieldLabel = require('./FieldLabel');
+var Item = require('./Item');
+var ItemInner = require('./ItemInner');
 var React = require('react/addons');
+
+var blacklist = require('blacklist');
 
 module.exports = React.createClass({
 	displayName: 'LabelInput',
@@ -22,17 +21,16 @@ module.exports = React.createClass({
 
 	getDefaultProps () {
 		return {
-			type: 'text',
 			readOnly: false
 		};
 	},
 
 	render () {
-		var props = blacklist(this.props, 'alignTop', 'children', 'first', 'readOnly');
+		var inputProps = blacklist(this.props, 'alignTop', 'children', 'first', 'readOnly');
 		var renderInput = this.props.readOnly ? (
 			<div className="field u-selectable">{this.props.value}</div>
 		) : (
-			<input className="field" {...props}/>
+			<input className="field" type="text" {... inputProps}/>
 		);
 
 		return (

@@ -1,7 +1,8 @@
-var blacklist = require('blacklist');
-var classnames = require('classnames');
 var React = require('react/addons');
 var Tappable = require('react-tappable');
+
+var blacklist = require('blacklist');
+var classnames = require('classnames');
 
 module.exports = React.createClass({
 	displayName: 'Button',
@@ -14,15 +15,15 @@ module.exports = React.createClass({
 	getDefaultProps () {
 		return {
 			type: 'default'
-		}
+		};
 	},
 
 	render () {
-		var className = classnames('Button', ('Button--' + this.props.type), this.props.className);
-		var props = blacklist(this.props, 'className');
+		var className = classnames('Button', 'Button--' + this.props.type, this.props.className);
+		var props = blacklist(this.props, 'type');
 
 		return (
-			<Tappable className={className} {...props} component="button" />
+			<Tappable {...props} className={className} component="button" />
 		);
 	}
 });
