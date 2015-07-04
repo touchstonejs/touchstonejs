@@ -9,7 +9,7 @@ var Home = React.createClass({
 						<div className="intro">
 							<div className="demo">
 								<div className="demo-viewport">
-									<iframe src="http://demo.touchstonejs.io" width="375" height="667" frameBorder="0" />
+									<iframe src="//touchstonejs.github.io/touchstonejs-starter" width="375" height="667" frameBorder="0" />
 								</div>
 							</div>
 							<div className="intro-content">
@@ -30,7 +30,7 @@ var Home = React.createClass({
 									</form>
 								</div>
 								<div className="social-links">
-									<a href="http://demo.touchstonejs.io" className="visible-xs visible-sm" target="_blank">
+									<a href="https://touchstonejs.github.io/touchstonejs-starter" className="visible-xs visible-sm" target="_blank">
 										<img src="/images/iphone.svg" />
 										<span className="social-link-text">View demo</span>
 									</a>
