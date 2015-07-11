@@ -9,7 +9,18 @@
 // ------------------------------
 
 .SearchField {
-	margin: @gutter-sm;
+	.display-flex();
+}
+
+
+
+
+// Field
+// ------------------------------
+
+.SearchField__field {
+	.flex(1,1,0);
+	padding: @gutter-sm;
 	position: relative;
 }
 
@@ -21,7 +32,6 @@
 
 .SearchField__input {
 	.placeholder( @gray-light );
-	.transition( background-color 100ms linear );
 	background: rgba(0, 0, 0, 0.06);
 	border-radius: @border-radius-small;
 	border: 0;
@@ -31,12 +41,31 @@
 	line-height: normal;
 	margin: 0;
 	outline: none;
-	padding: @gutter-sm (@gutter-sm * 3);
+	padding: @gutter-sm (@ionicons-size-base + (@gutter-sm * 2));
 	width: 100%;
 	-webkit-appearance: none;
+}
 
-	&:active {
-		background: rgba(0, 0, 0, 0.12);
+
+
+
+// Placeholder
+// ------------------------------
+
+.SearchField__placeholder {
+	.transition( all @view-transition-duration @view-transition-timing-function );
+	color: @gray-light;
+	font-size: @font-size-sm;
+	line-height: @searchfield-height;
+	left: 0;
+	pointer-events: none;
+	position: absolute;
+	right: 0;
+	text-align: center;
+	white-space: nowrap;
+
+	.is-focused & {
+		right: 100%;
 	}
 }
 
@@ -51,12 +80,11 @@
 
 .SearchField__icon {
 	.ion();
-	color: @gray-light;
+	color: #8e8e93;
 	font-size: @ionicons-size-base;
 	line-height: @searchfield-height;
 	padding: 0 @gutter-sm;
-	position: absolute;
-	top: 0;
+	width: @ionicons-size-base + (@gutter-sm * 2);
 	
 	&::before {
 		color: inherit;
@@ -68,10 +96,11 @@
 
 .SearchField__icon--search {
 	left: 0;
+	margin-left: @gutter-sm;
 	pointer-events: none;
 	
 	&::before {
-		content: @ionicon-var-ios-search-strong;
+		content: @ionicon-var-ios-search;
 	}
 }
 
@@ -79,12 +108,36 @@
 // clear
 
 .SearchField__icon--clear {
-	right: 0;
+	position: absolute;
+	padding: @gutter-sm;
+	top: 0;
+	right: @gutter-sm;
 	
 	&::before {
 		content: @ionicon-var-close-circled;
 	}
 	&.Tappable-active {
-		color: @gray-light;
+		color: @app-primary;
+	}
+}
+
+
+
+
+// Cancel
+// ------------------------------
+
+.SearchField__cancel {
+	.transition( all @view-transition-duration @view-transition-timing-function );
+	color: @app-primary;
+	line-height: @searchfield-height;
+	max-width: 0;
+	padding: @gutter-sm 0;
+	overflow: hidden;
+	white-space: nowrap;
+
+	&.is-visible {
+		margin-right: @gutter-sm;
+		max-width: 68px;
 	}
 }

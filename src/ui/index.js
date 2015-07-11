@@ -22,6 +22,7 @@ export var NavigationBar = require('./NavigationBar');
 export var Popup = require('./Popup');
 export var PopupIcon = require('./PopupIcon');
 export var RadioList = require('./RadioList');
+export var SearchField = require('./SearchField');
 export var SegmentedControl = require('./SegmentedControl');
 export var Switch = require('./Switch');
 export var Tabs = require('./Tabs');
