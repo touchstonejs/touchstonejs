@@ -60,12 +60,16 @@
 	left: 0;
 	pointer-events: none;
 	position: absolute;
-	right: 0;
 	text-align: center;
 	white-space: nowrap;
+	width: 100%;
 
 	.is-focused & {
-		right: 100%;
+		width: 100px; // the width of "Search..." fix?
+	}
+	.has-value & {
+		.transition( none );
+		width: (@ionicons-size-base + (@gutter-sm * 2));
 	}
 }
 

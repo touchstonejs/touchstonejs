@@ -30,6 +30,11 @@ module.exports = React.createClass({
 		this.props.onClear();
 	},
 
+	handleCancel () {
+		this.refs.input.getDOMNode().blur();
+		this.props.onCancel();
+	},
+
 	handleChange (e) {
 		this.props.onChange(e.target.value)
 	},
@@ -55,12 +60,13 @@ module.exports = React.createClass({
 		var className = classnames('SearchField__cancel', {
 			'is-visible': this.state.isFocused || this.props.value
 		});
-		return <Tappable className={className} onTap={this.props.onCancel}>Cancel</Tappable>;
+		return <Tappable className={className} onTap={this.handleCancel}>Cancel</Tappable>;
 	},
 
 	render () {
 		var className = classnames('SearchField', {
-			'is-focused': this.state.isFocused || this.props.value
+			'is-focused': this.state.isFocused,
+			'has-value': this.props.value
 		});
 		var props = blacklist(this.props, 'className', 'placeholder', 'type');
 
