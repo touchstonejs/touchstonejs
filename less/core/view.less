@@ -45,17 +45,17 @@
 .springy-scrolling {
 	position: relative;
 
-	&:before,
-	&:after {
+	&::before,
+	&::after {
 		.square(1px;);
 		content: "";
 		position: absolute;
 	}
 
-	&:before {
+	&::before {
 		bottom: -1px;
 	}
-	&:after {
+	&::after {
 		top: -1px;
 	}
 }

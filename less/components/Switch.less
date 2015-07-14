@@ -43,7 +43,7 @@
 	top: @switch-border-width + @switch-hit-area-expansion;
 	width: @switch-handle-width;
 
-	&:before {
+	&::before {
 		// used to create a larger (but hidden) hit area to slide the handle
 		content: " ";
 		left: ( (@switch-handle-width / 2) * -1) - 8;

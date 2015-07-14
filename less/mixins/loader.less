@@ -9,8 +9,8 @@
 	margin: auto;
 	position: relative;
 
-	&:before,
-	&:after {
+	&::before,
+	&::after {
 		.square( @size );
 		content: "";
 		border-radius: 50%;
@@ -20,7 +20,7 @@
 		position: absolute;
 		top: 0;
 	}
-	&:after {
+	&::after {
 		.animation( spin @duration linear infinite );
 		border-color: transparent;
 		border-top-color: @color;

@@ -7,7 +7,7 @@
 .retina-1px-border-top(@color) {
 	position: relative;
 
-	&:after {
+	&::after {
 		.size(100%,1px);
 		background-color: @color;
 		top: -1px;
@@ -18,7 +18,7 @@
 	
 	// simulate a 1px border on retina screens
 	@media (-webkit-min-device-pixel-ratio: 2) {
-		&:after {
+		&::after {
 			.scaleY(0.5);
 			.transform-origin(0 0);
 		}
@@ -30,7 +30,7 @@
 .retina-1px-border-bottom(@color) {
 	position: relative;
 
-	&:after {
+	&::after {
 		.size(100%,1px);
 		background-color: @color;
 		bottom: -1px;
@@ -41,7 +41,7 @@
 	
 	// simulate a 1px border on retina screens
 	@media (-webkit-min-device-pixel-ratio: 2) {
-		&:after {
+		&::after {
 			.scaleY(0.5);
 			.transform-origin(0 0);
 		}
@@ -53,31 +53,31 @@
 .retina-1px-border-top-and-bottom(@color) {
 	position: relative;
 
-	&:after,
-	&:before {
+	&::after,
+	&::before {
 		.size(100%,1px);
 		background-color: @color;
 		content: " ";
 		left: 0;
 		position: absolute;
 	}
-	&:before {
+	&::before {
 		top: -1px;
 	}
-	&:after {
+	&::after {
 		bottom: -1px;
 	}
 
 	// simulate a 1px border on retina screens
 	@media (-webkit-min-device-pixel-ratio: 2) {
-		&:after,
-		&:before {
+		&::after,
+		&::before {
 			.scaleY(0.5);
 		}
-		&:before {
+		&::before {
 			.transform-origin(0 bottom);
 		}
-		&:after {
+		&::after {
 			.transform-origin(0 top);
 		}
 	}

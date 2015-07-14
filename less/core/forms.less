@@ -64,7 +64,7 @@ label.item-content {
 	position: relative;
 
 	// increase the tappable area
-	&:after {
+	&::after {
 		.fill-space();
 		content: " ";
 		margin: -@padding-base-vertical -@padding-base-horizontal;
@@ -79,7 +79,7 @@ label.item-content {
 	z-index: 2; // above the label
 
 	// increase the tappable area
-	&:after {
+	&::after {
 		.fill-space();
 		content: " ";
 		margin: -@padding-base-vertical -@padding-base-horizontal;
@@ -156,20 +156,20 @@ label.item-content {
 .select-field-indicator-arrow {
 	top: 50%;
 
-	&:before,
-	&:after {
+	&::before,
+	&::after {
 		.square(0);
 		border: @indicator-arrow-size solid transparent;
 		content: "";
 		position: absolute;
 		right: @indicator-arrow-size / 2;
 	}
-	&:before {
+	&::before {
 		border-bottom-color: currentColor;
 		border-top-width: 0;
 		margin-top: -(@indicator-arrow-size + @indicator-arrow-gap);
 	}
-	&:after {
+	&::after {
 		border-top-color: currentColor;
 		border-bottom-width: 0;
 		margin-bottom: -(@indicator-arrow-size + @indicator-arrow-gap);
