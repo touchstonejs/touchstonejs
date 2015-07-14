@@ -147,7 +147,7 @@
 .view-transition-show-from-bottom-enter,
 .view-transition-show-from-left-enter {
 	pointer-events: none; // disable user interaction whilst views are transitioning
-	z-index: @view-transition-stack-top;
+	z-index: @zindex-view-top;
 }
 
 .view-transition-reveal-from-top-leave,
@@ -155,7 +155,7 @@
 .view-transition-reveal-from-bottom-leave,
 .view-transition-reveal-from-left-leave {
 	pointer-events: none; // disable user interaction whilst views are transitioning
-	z-index: @view-transition-stack-bottom;
+	z-index: @zindex-view-bottom;
 }
 
 // common animation components
@@ -200,7 +200,7 @@
 .view-transition-reveal-from-bottom-enter,
 .view-transition-reveal-from-left-enter {
 	pointer-events: none; // disable user interaction whilst views are transitioning
-	z-index: @view-transition-stack-bottom;
+	z-index: @zindex-view-bottom;
 }
 
 .view-transition-reveal-from-top-leave,
@@ -208,7 +208,7 @@
 .view-transition-reveal-from-bottom-leave,
 .view-transition-reveal-from-left-leave {
 	pointer-events: none; // disable user interaction whilst views are transitioning
-	z-index: @view-transition-stack-top;
+	z-index: @zindex-view-top;
 }
 
 // common animation components
