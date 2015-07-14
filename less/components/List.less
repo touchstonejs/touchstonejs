@@ -65,48 +65,31 @@
 	.retina-1px-border-bottom(@item-divider-color);
 	// border-bottom: 1px solid @item-divider-color;
 	min-height: @item-height;
-	padding: @field-padding-vertical @field-padding-horizontal @field-padding-vertical 0;
+	padding-right: @field-padding-horizontal;
 	width: 100%;
-
-	// alternative alignment (applied to the "list-item")
-	.align-children-top > & {
-		.align-items(flex-start);
-	}
-	.align-children-bottom > & {
-		.align-items(flex-end);
-	}
-
-	// hide the last item's border
-	.Item:last-child & {
-		border-bottom: none;
-	}
-
-	// force borders when desired
-	.Item.has-border-bottom & {
-		border-bottom: 1px solid @item-divider-color;
-	}
-	.Item.has-border-top & {
-		border-top: 1px solid @item-divider-color;
-	}
 
 	// add gap between media and content
 	.Item__media + & {
 		margin-left: @field-padding-horizontal;
 	}
+}
 
-	// enforce border when explicitly defined
-	.Item.has-border-bottom & {
-		.retina-1px-border-bottom(@item-divider-color);
-	}
-	.Item.has-border-top & {
-		.retina-1px-border-top(@item-divider-color);
-	}
+
+// alternate alignment (defaults to center)
+
+.Item--align-top > .Item__inner {
+	.align-items(flex-start);
+}
+.Item--align-bottom > .Item__inner {
+	.align-items(flex-end);
 }
 
 // wrap item content so text cropping works
 
 .Item__content {
 	.flex(1, 0, 0);
+	padding-bottom: @field-padding-vertical / 2;
+	padding-top: @field-padding-vertical / 2;
 }
 
 // text
@@ -121,7 +104,7 @@
 .Item__subtitle {
 	.text-overflow();
 	color: @gray;
-	font-size: 85%;
+	font-size: @font-size-xs;
 	font-weight: 300;
 	
 	// make room for descenders to stop them being cropped
