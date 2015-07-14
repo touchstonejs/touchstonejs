@@ -9,7 +9,7 @@ module.exports = React.createClass({
 		className: React.PropTypes.string
 	},
 	render () {
-		var className = classnames('GroupFooter', this.props.className);
+		var className = classnames('Group__footer', this.props.className);
 		var props = blacklist(this.props, 'className');
 
 		return (

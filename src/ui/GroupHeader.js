@@ -9,7 +9,7 @@ module.exports = React.createClass({
 		className: React.PropTypes.string
 	},
 	render () {
-		var className = classnames('GroupHeader', this.props.className);
+		var className = classnames('Group__header', this.props.className);
 		var props = blacklist(this.props, 'className');
 
 		return (
