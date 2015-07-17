@@ -10,7 +10,7 @@ module.exports = React.createClass({
 	displayName: 'RadioList',
 
 	propTypes: {
-		options: React.PropTypes.array,
+		options: React.PropTypes.array.isRequired,
 		value: React.PropTypes.oneOfType([React.PropTypes.string, React.PropTypes.number]),
 		icon: React.PropTypes.string,
 		onChange: React.PropTypes.func

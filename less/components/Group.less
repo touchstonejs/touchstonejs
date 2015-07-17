@@ -2,18 +2,24 @@
 // Group
 // ==============================
 
+
 // base for spacing
 
 .Group {
 	margin-bottom: @gutter-lg;
-
-	// provide a nice gutter between the first group and the header
-	&:first-child {
-		margin-top: @gutter-lg;
-	}
 }
 
+
+// provide a nice gutter between the first group and the header
+
+.Group--has-gutter-top,
+.Group:first-child {
+	margin-top: @gutter-lg;
+}
+
+
 // headings and footers - common
+
 .Group__header,
 .Group__footer {
 	color: @group-header-color;
@@ -21,6 +27,7 @@
 	padding-left: @padding-base-horizontal;
 	padding-right: @padding-base-horizontal;
 }
+
 
 // group headings
 // sits above the group, giving it a title
@@ -31,6 +38,7 @@
 	text-transform: uppercase;
 }
 
+
 // group footer
 // sits below the group, use if the group needs further explanation
 
@@ -38,6 +46,7 @@
 	line-height: 1.1;
 	margin-top: @group-gutter;
 }
+
 
 // background of the group
 

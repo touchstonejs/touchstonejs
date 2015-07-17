@@ -17,7 +17,8 @@
 	position: relative;
 	z-index: @zindex-navigationbar;
 
-	// make room for the iOS statusbar
+	// make room for the iOS statusbar (iPhone will be deprecated in 1.0.0)
+	.device--iOS &,
 	.device--iPhone & {
 		padding-top: @statusbar-height;
 	}
