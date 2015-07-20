@@ -26,7 +26,7 @@ module.exports = React.createClass({
 			<div className={className}>
 				<div className="item-inner">
 					<label className="item-content">
-						<input className="field" {...inputProps} />
+						<input className="field" {...inputProps} ref="input" />
 					</label>
 					{this.props.children}
 				</div>
