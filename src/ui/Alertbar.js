@@ -5,6 +5,7 @@ var Transition = React.addons.CSSTransitionGroup;
 module.exports = React.createClass({
 	displayName: 'Alertbar',
 	propTypes: {
+		animated: React.PropTypes.bool,
 		children: React.PropTypes.node.isRequired,
 		className: React.PropTypes.string,
 		pulse: React.PropTypes.bool,
@@ -20,16 +21,19 @@ module.exports = React.createClass({
 
 	render () {
 		var className = classnames('Alertbar', ('Alertbar--' + this.props.type), {
+			'Alertbar--animated': this.props.animated,
 			'Alertbar--pulse': this.props.pulse
 		}, this.props.className);
 
-		var inner = this.props.pulse ? <div className="Alertbar__inner">{this.props.children}</div> : this.props.children;
-		var content = this.props.visible ? <div className={className}>{inner}</div> : null;
+		var pulseWrap = this.props.pulse ? <div className="Alertbar__inner">{this.props.children}</div> : this.props.children;
+		var animatedBar = this.props.visible ? <div className={className}>{pulseWrap}</div> : null;
 
-		return (
-			<Transition transitionName="Alertbar" className="Alertbar__testything" component="div">
-				{content}
+		var component = this.props.animated ?(
+			<Transition transitionName="Alertbar" component="div">
+				{animatedBar}
 			</Transition>
-		);
+		) : <div className={className}>{pulseWrap}</div>;
+
+		return component;
 	}
 });

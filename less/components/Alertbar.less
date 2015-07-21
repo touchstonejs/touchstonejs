@@ -1,4 +1,4 @@
-// 
+//
 // Alertbar
 // ==============================
 
@@ -13,7 +13,6 @@
 	left: 0;
 	line-height: 1.1;
 	padding: @gutter-sm;
-	position: absolute;
 	text-align: center;
 	top: 0;
 	width: 100%;
@@ -33,6 +32,14 @@
 }
 
 
+// sit the text above the pulsing background
+
+.Alertbar__inner {
+	position: relative;
+	z-index: 2;
+}
+
+
 // variants
 
 .Alertbar--danger   { background-color: @app-danger; }
@@ -43,18 +50,19 @@
 .Alertbar--warning  { background-color: @app-warning; }
 
 
-// sit the text above the pulsing background
-
-.Alertbar__inner {
-	position: relative;
-	z-index: 2;
-}
-
-
 
 
 // Animation
 // ------------------------------
+
+
+// prepare for animation
+
+.Alertbar--animated {
+	margin: 0;
+	position: absolute;
+}
+
 
 // apply animation
 
