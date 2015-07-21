@@ -8,7 +8,7 @@ module.exports = React.createClass({
 	propTypes: {
 		className: React.PropTypes.string,
 		equalWidthSegments: React.PropTypes.bool,
-		hasDarkBg: React.PropTypes.bool,
+		isInline: React.PropTypes.bool,
 		hasGutter: React.PropTypes.bool,
 		onChange: React.PropTypes.func.isRequired,
 		options: React.PropTypes.array.isRequired,
@@ -28,7 +28,7 @@ module.exports = React.createClass({
 
 	render () {
 		var componentClassName = classnames('SegmentedControl', ('SegmentedControl--' + this.props.type), {
-			'SegmentedControl--has-dark-bg': this.props.hasDarkBg,
+			'SegmentedControl--inline': this.props.isInline,
 			'SegmentedControl--has-gutter': this.props.hasGutter,
 			'SegmentedControl--equal-widths': this.props.equalWidthSegments
 		}, this.props.className);

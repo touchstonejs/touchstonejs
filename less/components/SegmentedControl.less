@@ -17,8 +17,8 @@
 
 // with dark background
 
-.SegmentedControl--has-dark-bg {
-	background-color: rgba(0, 0, 0, 0.1);
+.SegmentedControl--inline {
+	.display-inline-flex();
 }
 
 // with equal widths
@@ -37,8 +37,9 @@
 	box-shadow: 0 0 0 1px @link-color;
 	color: @link-color;
 	cursor: pointer;
-	display: table-cell;
 	line-height: @segmented-control-height;
+	padding-left: 1em;
+	padding-right: 1em;
 	text-align: center;
 
 	&:first-child { .border-left-radius( @border-radius-small ); }
