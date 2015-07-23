@@ -7,6 +7,7 @@ export var Group = require('./Group');
 export var GroupBody = require('./GroupBody');
 export var GroupFooter = require('./GroupFooter');
 export var GroupHeader = require('./GroupHeader');
+export var GroupInner = require('./GroupInner');
 export var Item = require('./Item');
 export var ItemContent = require('./ItemContent');
 export var ItemInner = require('./ItemInner');
