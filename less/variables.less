@@ -144,18 +144,40 @@
 // Headerbar
 // ------------------------------
 
-@statusbar-height:                   20px;
+@statusbar-height:                        20px;
 
-@headerbar-bg:                       #efeff4;
-@headerbar-color:                    @gray-darker;
-@headerbar-height:                   44px;
-@headerbar-button-color:             @app-primary;
-@headerbar-button-color-disabled:    #ccc;
+@headerbar-bg:                            #efeff4;
+@headerbar-color:                         @gray-darker;
+@headerbar-height:                        44px;
+@headerbar-button-color:                  @app-primary;
+@headerbar-button-color-disabled:         #ccc;
 
-@headerbar-left-arrow-width:         12px;
-@headerbar-left-arrow-with-gutter:   @headerbar-left-arrow-width + (@gutter-sm * 2);
+@headerbar-left-arrow-width:              12px;
+@headerbar-left-arrow-with-gutter:        @headerbar-left-arrow-width + (@gutter-sm * 2);
 
-@searchfield-height:                 28px;
+
+
+
+// Search Field
+// ------------------------------
+
+@searchfield-height:                      28px;
+
+@searchfield-bg:                          transparent;
+@searchfield-input-bg:                    rgba(0, 0, 0, 0.06);
+@searchfield-input-color:                 @text-color;
+@searchfield-placeholder-color:           #8e8e93;
+@searchfield-icon-color:                  @searchfield-placeholder-color;
+@searchfield-icon-pressed-color:          @app-primary;
+@searchfield-cancel-color:                @app-primary;
+
+@searchfield-dark-bg:                     #c9c9ce;
+@searchfield-dark-input-bg:               white;
+@searchfield-dark-input-color:            @text-color;
+@searchfield-dark-placeholder-color:      @searchfield-placeholder-color;
+@searchfield-dark-icon-color:             @searchfield-icon-color;
+@searchfield-dark-icon-pressed-color:     @searchfield-icon-pressed-color;
+@searchfield-dark-cancel-color:           @searchfield-cancel-color;
 
 
 

@@ -35,7 +35,6 @@
 	background: rgba(0, 0, 0, 0.06);
 	border-radius: @border-radius-small;
 	border: 0;
-	color: inherit;
 	font-size: @font-size-sm;
 	height: @searchfield-height;
 	line-height: normal;
@@ -43,7 +42,7 @@
 	outline: none;
 	padding: @gutter-sm (@ionicons-size-base + (@gutter-sm * 2));
 	width: 100%;
-	-webkit-appearance: none;
+	-webkit-appearance: none !important; // important required for iPad whilst using iOS 8.4
 }
 
 
@@ -55,7 +54,6 @@
 .SearchField__placeholder {
 	.transition( all @view-transition-duration @view-transition-timing-function );
 	.translateZ(0);
-	color: @gray-light;
 	font-size: @font-size-sm;
 	line-height: @searchfield-height;
 	left: 0;
@@ -85,7 +83,6 @@
 
 .SearchField__icon {
 	.ion();
-	color: #8e8e93;
 	font-size: @ionicons-size-base;
 	line-height: @searchfield-height;
 	padding: 0 @gutter-sm;
@@ -121,9 +118,6 @@
 	&::before {
 		content: @ionicon-var-close-circled;
 	}
-	&.Tappable-active {
-		color: @app-primary;
-	}
 }
 
 
@@ -135,7 +129,6 @@
 .SearchField__cancel {
 	.transition( all @view-transition-duration @view-transition-timing-function );
 	.translateZ(0);
-	color: @app-primary;
 	line-height: @searchfield-height;
 	max-width: 0;
 	padding: @gutter-sm 0;
@@ -145,5 +138,61 @@
 	&.is-visible {
 		margin-right: @gutter-sm;
 		max-width: 68px;
+	}
+}
+
+
+
+
+// Variants
+// ------------------------------
+
+
+// default
+
+.SearchField--default {
+	background-color: @searchfield-bg;
+
+	.SearchField__input {
+		background-color: @searchfield-input-bg;
+		color: @searchfield-input-color;
+	}
+	.SearchField__placeholder {
+		color: @searchfield-placeholder-color;
+	}
+	.SearchField__icon {
+		color: @searchfield-icon-color;
+
+		&.Tappable-active {
+			color: @searchfield-icon-pressed-color;
+		}
+	}
+	.SearchField__cancel {
+		color: @searchfield-cancel-color;
+	}
+}
+
+
+// dark
+
+.SearchField--dark {
+	background-color: @searchfield-dark-bg;
+
+	.SearchField__input {
+		background-color: @searchfield-dark-input-bg;
+		color: @searchfield-dark-input-color;
+	}
+	.SearchField__placeholder {
+		color: @searchfield-dark-placeholder-color;
+	}
+	.SearchField__icon {
+		color: @searchfield-dark-icon-color;
+
+		&.Tappable-active {
+			color: @searchfield-dark-icon-pressed-color;
+		}
+	}
+	.SearchField__cancel {
+		color: @searchfield-dark-cancel-color;
 	}
 }
