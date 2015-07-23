@@ -56,7 +56,10 @@ module.exports = React.createClass({
 
 	handleSubmit (e) {
 		e.preventDefault();
-		let input = React.findDOMNode(this.refs.input)
+		
+		let input = this.refs.input.getDOMNode();
+		
+		input.blur();
 		this.props.onSubmit(input.value);
 	},
 
