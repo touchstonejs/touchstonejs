@@ -25,6 +25,30 @@
 	}
 }
 
+// left
+
+.retina-1px-border-left(@color) {
+	position: relative;
+
+	&::after {
+		background-color: @color;
+		bottom: 0;
+		content: " ";
+		left: 0;
+		position: absolute;
+		top: 0;
+		width: 1px;
+	}
+	
+	// simulate a 1px border on retina screens
+	@media (-webkit-min-device-pixel-ratio: 2) {
+		&::after {
+			.scaleX(0.5);
+			.transform-origin(0 0);
+		}
+	}
+}
+
 // bottom
 
 .retina-1px-border-bottom(@color) {
@@ -48,7 +72,30 @@
 	}
 }
 
-// both
+// right
+
+.retina-1px-border-right(@color) {
+	position: relative;
+
+	&::after {
+		.size(1px,100%);
+		background-color: @color;
+		right: 0;
+		content: " ";
+		right: 0;
+		position: absolute;
+	}
+	
+	// simulate a 1px border on retina screens
+	@media (-webkit-min-device-pixel-ratio: 2) {
+		&::after {
+			.scaleX(0.5);
+			.transform-origin(0 0);
+		}
+	}
+}
+
+// top and bottom
 
 .retina-1px-border-top-and-bottom(@color) {
 	position: relative;
