@@ -67,7 +67,7 @@ module.exports = React.createClass({
 		var className = classnames('SearchField', {
 			'is-focused': this.state.isFocused,
 			'has-value': this.props.value
-		});
+		}, this.props.className);
 		var props = blacklist(this.props, 'className', 'placeholder', 'type');
 
 		return (
