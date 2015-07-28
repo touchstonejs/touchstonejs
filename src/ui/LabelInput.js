@@ -25,8 +25,8 @@ module.exports = React.createClass({
 		};
 	},
 	
-	createId () {
-		return '_' + Math.random().toString(36).substr(2, 9);
+	createUEID () {
+		return Math.floor(Math.random() * Date.now()).toString(36);
 	},
 	
 	moveCursorToEnd () {
@@ -52,7 +52,7 @@ module.exports = React.createClass({
 
 	render () {
 		var indentifiedByUserInput = this.props.id || this.props.htmlFor;
-		var uniqueId = indentifiedByUserInput ? indentifiedByUserInput : this.createId();
+		var uniqueId = indentifiedByUserInput ? indentifiedByUserInput : this.createUEID();
 		
 		var inputProps = blacklist(this.props, 'alignTop', 'children', 'first', 'readOnly');
 		var renderInput = this.props.readOnly ? (
