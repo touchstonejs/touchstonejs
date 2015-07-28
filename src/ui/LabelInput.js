@@ -28,6 +28,27 @@ module.exports = React.createClass({
 	createId () {
 		return '_' + Math.random().toString(36).substr(2, 9);
 	},
+	
+	moveCursorToEnd () {
+		var target = this.refs.focusTarget.getDOMNode();
+		var endOfString = 0;
+		
+		if (this.props.value) {
+			endOfString = this.props.value.length
+		} else if (this.props.defaultValue) {
+			endOfString = this.props.defaultValue.length
+		}
+		
+		target.setSelectionRange(endOfString, endOfString);
+	},
+	
+	handleFocus () {
+		this.moveCursorToEnd();
+		
+		if (this.props.onFocus) {
+			this.props.onFocus();
+		}
+	},
 
 	render () {
 		var indentifiedByUserInput = this.props.id || this.props.htmlFor;
@@ -37,7 +58,7 @@ module.exports = React.createClass({
 		var renderInput = this.props.readOnly ? (
 			<div className="field u-selectable">{this.props.value}</div>
 		) : (
-			<input className="field" type="text" {... inputProps} id={uniqueId} />
+			<input ref="focusTarget" className="field" type="text" onFocus={this.handleFocus} {... inputProps} id={uniqueId} />
 		);
 
 		return (
