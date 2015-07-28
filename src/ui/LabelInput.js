@@ -24,19 +24,26 @@ module.exports = React.createClass({
 			readOnly: false
 		};
 	},
+	
+	createId () {
+		return '_' + Math.random().toString(36).substr(2, 9);
+	},
 
 	render () {
+		var indentifiedByUserInput = this.props.id || this.props.htmlFor;
+		var uniqueId = indentifiedByUserInput ? indentifiedByUserInput : this.createId();
+		
 		var inputProps = blacklist(this.props, 'alignTop', 'children', 'first', 'readOnly');
 		var renderInput = this.props.readOnly ? (
 			<div className="field u-selectable">{this.props.value}</div>
 		) : (
-			<input className="field" type="text" {... inputProps}/>
+			<input className="field" type="text" {... inputProps} id={uniqueId} />
 		);
 
 		return (
 			<Item alignTop={this.props.alignTop} selectable={this.props.disabled} className={this.props.className} component="label">
 				<ItemInner>
-					<FieldLabel>{this.props.label}</FieldLabel>
+					<FieldLabel htmlFor={uniqueId}>{this.props.label}</FieldLabel>
 					<FieldControl>
 						{renderInput}
 						{this.props.children}
