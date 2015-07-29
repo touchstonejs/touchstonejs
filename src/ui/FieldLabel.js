@@ -13,7 +13,7 @@ module.exports = React.createClass({
 		var props = blacklist(this.props, 'className');
 
 		return (
-			<label className={className} {...props} />
+			<div className={className} {...props} />
 		);
 	}
 });

@@ -1,10 +1,22 @@
-var FieldControl = require('./FieldControl');
-var FieldLabel = require('./FieldLabel');
-var Item = require('./Item');
-var ItemInner = require('./ItemInner');
-var React = require('react/addons');
+import blacklist from 'blacklist';
+import FieldControl from './FieldControl';
+import FieldLabel from './FieldLabel';
+import Item from './Item';
+import ItemInner from './ItemInner';
+import React from 'react/addons';
+import Tappable from 'react-tappable';
 
-var blacklist = require('blacklist');
+// Many input types DO NOT support setSelectionRange.
+// Email will show an error on most desktop browsers but works on
+// mobile safari + WKWebView, which is really what we care about
+const SELECTABLE_INPUT_TYPES = {
+	'email': true,
+	'password': true,
+	'search': true,
+	'tel': true,
+	'text': true,
+	'url': true
+};
 
 module.exports = React.createClass({
 	displayName: 'LabelInput',
@@ -25,21 +37,15 @@ module.exports = React.createClass({
 		};
 	},
 	
-	createUEID () {
-		return Math.floor(Math.random() * Date.now()).toString(36);
-	},
-	
 	moveCursorToEnd () {
 		var target = this.refs.focusTarget.getDOMNode();
-		var endOfString = 0;
+		var endOfString = target.value.length;
 		
-		if (this.props.value) {
-			endOfString = this.props.value.length
-		} else if (this.props.defaultValue) {
-			endOfString = this.props.defaultValue.length
+		console.count('focus ' + target.type);
+		
+		if (SELECTABLE_INPUT_TYPES.hasOwnProperty(target.type)) {
+			target.setSelectionRange(endOfString, endOfString);
 		}
-		
-		target.setSelectionRange(endOfString, endOfString);
 	},
 	
 	handleFocus () {
@@ -52,19 +58,18 @@ module.exports = React.createClass({
 
 	render () {
 		var indentifiedByUserInput = this.props.id || this.props.htmlFor;
-		var uniqueId = indentifiedByUserInput ? indentifiedByUserInput : this.createUEID();
 		
 		var inputProps = blacklist(this.props, 'alignTop', 'children', 'first', 'readOnly');
 		var renderInput = this.props.readOnly ? (
 			<div className="field u-selectable">{this.props.value}</div>
 		) : (
-			<input ref="focusTarget" className="field" type="text" onFocus={this.handleFocus} {... inputProps} id={uniqueId} />
+			<input ref="focusTarget" className="field" type="text" {... inputProps} />
 		);
 
 		return (
 			<Item alignTop={this.props.alignTop} selectable={this.props.disabled} className={this.props.className} component="label">
 				<ItemInner>
-					<FieldLabel htmlFor={uniqueId}>{this.props.label}</FieldLabel>
+					<Tappable onTap={this.handleFocus} className="FieldLabel">{this.props.label}</Tappable>
 					<FieldControl>
 						{renderInput}
 						{this.props.children}

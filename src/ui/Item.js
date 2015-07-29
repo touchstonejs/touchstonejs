@@ -1,5 +1,6 @@
-var React = require('react/addons');
-var classnames = require('classnames');
+import blacklist from 'blacklist';
+import React from 'react/addons';
+import classnames from 'classnames';
 
 module.exports = React.createClass({
 	displayName: 'Item',
@@ -9,12 +10,25 @@ module.exports = React.createClass({
 		className: React.PropTypes.string,
 		showDisclosureArrow: React.PropTypes.bool
 	},
+	
+	getDefaultProps () {
+		return {
+			component: 'div'
+		}
+	},
 
 	render () {
-		var className = classnames('Item', {
+		var componentClass = classnames('Item', {
 			'Item--has-disclosure-arrow': this.props.showDisclosureArrow
 		}, this.props.className);
-
-		return <div { ...this.props } className={className} />;
+		
+		var props = blacklist(this.props, 'children', 'className', 'showDisclosureArrow');
+		props.className = componentClass;
+		
+		return React.createElement(
+			this.props.component,
+			props,
+			this.props.children
+		);
 	}
 });

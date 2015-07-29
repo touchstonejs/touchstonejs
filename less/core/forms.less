@@ -20,7 +20,19 @@ input::-webkit-input-placeholder { line-height: normal; }
 
 .FieldLabel {
 	color: @field-label-color;
+	position: relative;
 	width: 35%;
+	position: relative;
+
+	// increase tappable area
+	&:after {
+		bottom: -@padding-base-vertical;
+		content: "";
+		left: -@padding-base-horizontal;
+		position: absolute;
+		right: 0;
+		top: -@padding-base-vertical;
+	}
 }
 
 .FieldControl {
