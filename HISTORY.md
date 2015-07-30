@@ -2,6 +2,23 @@
 
 Please be aware that TouchstoneJS is still under heavy initial development, and the features / API are liable to change rapidly and possibly break things.
 
+## v0.5.0 / 2015/07-30
+
+This release fixes a major ongoing issue we've been having with view transitions not being correctly run in "certain" browsers. See [#73](https://github.com/touchstonejs/touchstonejs/issues/73) and commit [52f6eb5](https://github.com/touchstonejs/touchstonejs/commit/52f6eb5066602782c2a4e0f01a02b439b6bd589a).
+
+Other fixes and addtions:
+
+* added; `SearchField` UI Component
+* fixed; a lot of cleanup in the less files, including variables, consolidation and colour tweaks
+* added; `Alertbar` Component can be static, and is properly animated now
+* added; `SegmentedControl` Component can be inline now. Also, long labels are cropped
+* added; retina left and right border mixins `.retina-1px-border-[left|right](@color)`
+* fixed; proper caret handling on labelled inputs, and better handling of labelled item field focus
+
+Breaking changes:
+
+* updated; `Group` now needs to be a wrapper; `GroupBody` applies the background colour, also use the `GroupInner` component
+
 ## v0.4.0 - v0.4.2 / 2015-07-03
 
 * massive update, live published from #reacteurope. see touchstone-starter for changes.
