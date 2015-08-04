@@ -23,6 +23,7 @@ module.exports = React.createClass({
 
 	propTypes: {
 		alignTop: React.PropTypes.bool,
+		autoFocus: React.PropTypes.bool,
 		children: React.PropTypes.node,
 		className: React.PropTypes.string,
 		disabled: React.PropTypes.bool,
@@ -30,29 +31,20 @@ module.exports = React.createClass({
 		readOnly: React.PropTypes.bool,
 		value: React.PropTypes.string
 	},
-
-	getDefaultProps () {
-		return {
-			readOnly: false
-		};
+	
+	componentDidMount () {
+		if (this.props.autoFocus) {
+			this.moveCursorToEnd();
+		}
 	},
 	
 	moveCursorToEnd () {
 		var target = this.refs.focusTarget.getDOMNode();
 		var endOfString = target.value.length;
 		
-		console.count('focus ' + target.type);
-		
 		if (SELECTABLE_INPUT_TYPES.hasOwnProperty(target.type)) {
+			target.focus();
 			target.setSelectionRange(endOfString, endOfString);
-		}
-	},
-	
-	handleFocus () {
-		this.moveCursorToEnd();
-		
-		if (this.props.onFocus) {
-			this.props.onFocus();
 		}
 	},
 
@@ -69,7 +61,7 @@ module.exports = React.createClass({
 		return (
 			<Item alignTop={this.props.alignTop} selectable={this.props.disabled} className={this.props.className} component="label">
 				<ItemInner>
-					<Tappable onTap={this.handleFocus} className="FieldLabel">{this.props.label}</Tappable>
+					<Tappable onTap={this.moveCursorToEnd} className="FieldLabel">{this.props.label}</Tappable>
 					<FieldControl>
 						{renderInput}
 						{this.props.children}
