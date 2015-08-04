@@ -1,19 +1,22 @@
-var FieldControl = require('./FieldControl');
-var FieldLabel = require('./FieldLabel');
-var Item = require('./Item');
-var ItemInner = require('./ItemInner');
-var React = require('react/addons');
+import React from 'react/addons';
+
+import FieldControl from './FieldControl';
+import FieldLabel from './FieldLabel';
+import Item from './Item';
+import ItemInner from './ItemInner';
 
 module.exports = React.createClass({
 	displayName: 'LabelSelect',
 	propTypes: {
-		alignTop: React.PropTypes.bool,
 		className: React.PropTypes.string,
 		disabled: React.PropTypes.bool,
-		first: React.PropTypes.bool,
 		label: React.PropTypes.string,
-		options: React.PropTypes.array,
-		value: React.PropTypes.string
+		onChange: React.PropTypes.func.isRequired,
+		options: React.PropTypes.array.isRequired,
+		value: React.PropTypes.oneOfType([
+			React.PropTypes.number,
+			React.PropTypes.string,
+		]),
 	},
 
 	getDefaultProps () {
@@ -21,36 +24,26 @@ module.exports = React.createClass({
 			className: ''
 		};
 	},
-
-	getInitialState () {
-		return {
-			value: this.props.value
-		};
-	},
-
-	updateInputValue (event) {
-		this.setState({
-			value: event.target.value
-		});
-	},
-
-	render () {
-		// Map Options
-		var options = this.props.options.map(op => {
+	
+	renderOptions () {
+		return this.props.options.map(op => {
 			return (
 				<option key={'option-' + op.value} value={op.value}>
 					{op.label}
 				</option>
 			);
 		});
+	},
+
+	render () {
 
 		return (
-			<Item alignTop={this.props.alignTop} selectable={this.props.disabled} className={this.props.className} component="label">
+			<Item className={this.props.className} component="label">
 				<ItemInner>
 					<FieldLabel>{this.props.label}</FieldLabel>
 					<FieldControl>
-						<select value={this.state.value} onChange={this.updateInputValue} className="select-field">
-							{options}
+						<select disabled={this.props.disabled} value={this.props.value} onChange={this.props.onChange} className="select-field">
+							{this.renderOptions()}
 						</select>
 						<div className="select-field-indicator">
 							<div className="select-field-indicator-arrow" />
