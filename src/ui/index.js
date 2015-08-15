@@ -1,6 +1,8 @@
 export var Alertbar = require('./Alertbar');
 export var Button = require('./Button');
 export var ButtonGroup = require('./ButtonGroup');
+export var DatePicker = require('./DatePicker');
+export var DatePickerPopup = require('./DatePickerPopup');
 export var FieldControl = require('./FieldControl');
 export var FieldLabel = require('./FieldLabel');
 export var Group = require('./Group');
@@ -18,6 +20,7 @@ export var ItemTitle = require('./ItemTitle');
 export var LabelInput = require('./LabelInput');
 export var LabelSelect = require('./LabelSelect');
 export var LabelTextarea = require('./LabelTextarea');
+export var LabelValue = require('./LabelValue');
 export var ListHeader = require('./ListHeader');
 export var NavigationBar = require('./NavigationBar');
 export var Popup = require('./Popup');

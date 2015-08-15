@@ -1,0 +1,185 @@
+
+.DatePicker.Popup-dialog {
+	margin: 0;
+	width: 90%;
+	max-width: 320px;
+	min-width: 280px;
+	height: 340px;
+	padding: 0;
+	border-radius: 0px;
+	background-color: #fff;
+}
+
+.date-picker {
+	.user-select(none);
+	.box-sizing(border-box);
+	background-color: #fff;
+	text-align: center;
+	min-width: 280px;
+
+	.top-bar {
+		color: @app-primary;
+		font-size: @font-size-h4;
+		padding-top: 0;
+		position: relative;
+		height: 44px;
+		.top-bar-title {
+			display: inline-block;
+			cursor: default;
+			padding: 0px 15px;
+			line-height: 44px;
+
+			&.Tappable-active {
+				background-color: @gray-lighter;
+			}
+		}
+
+		.left-arrow, .right-arrow {
+			position: absolute;
+			cursor: pointer;
+			top: 0px;
+			width: 44px;
+			line-height: 44px;
+
+			&.Tappable-active {
+				background-color: @gray-lighter;
+			}
+		}
+
+		.left-arrow {
+			left: 0;
+		}
+
+		.left-arrow::after {
+			.pseudo-ionicon(#ccc, @ionicon-var-chevron-left, @ionicons-size-base);
+			color: @app-primary;
+		}
+
+		.right-arrow {
+			right: 0;
+		}
+
+		.right-arrow::after {
+			.pseudo-ionicon(#ccc, @ionicon-var-chevron-right, @ionicons-size-base);
+			color: @app-primary;
+		}
+	}
+
+	.week-names-container {
+		padding: 0px 10px;
+		.box-sizing(border-box);
+
+		.week-name {
+			display: inline-block;
+			font-size: @font-size-h6;
+			font-weight: bold;
+			padding: 8px 0;
+			cursor: default;
+			width: 36px;
+			margin-bottom: 5px;
+			margin-left: calc(~"16.67% - 272px / 6 + 2px");
+
+			&:nth-child(7n + 1), &:nth-child(7n + 7) {
+				color: @gray;
+			}
+
+			&:nth-child(7n + 1) {
+				margin-left: 0px;
+			}
+		}
+	}
+
+	.days-container {
+		padding: 0 10px;
+		.box-sizing(border-box);
+
+		.day {
+			font-size: @font-size-h6;
+			display: inline-block;
+			.box-sizing(border-box);
+			cursor: default;
+			width: 36px;
+			height: 36px;
+			border-radius: 18px;
+			line-height: 36px;
+			margin-bottom: 5px;
+			margin-left: calc(~"16.67% - 272px / 6 + 2px");
+
+			&:nth-child(7n + 1), &:nth-child(7n + 7) {
+				color: @gray;
+			}
+
+			&:nth-child(7n + 1) {
+				margin-left: 0px;
+			}
+
+			&.in-previous-month, &.in-next-month {
+				color: #ccc;  //No proper gray variable.
+			}
+
+			&.is-today {
+				color: red;
+			}
+
+			&.is-current {
+				color: #fff;
+				background-color: @app-primary;
+			}
+
+			&.Tappable-active {
+				background-color: @gray-lighter;
+			}
+		}
+	}
+
+	.month-names-container {
+		padding:20px;
+		.box-sizing(border-box);
+
+		.month-name {
+			.box-sizing(border-box);
+			display: inline-block;
+			width: 25%;
+			font-size: @font-size-h6;
+			margin-top: 5px;
+			padding: 8px 0;
+			cursor: default;
+
+			&.is-current {
+				color: #fff;
+				background-color: @app-primary;
+			}
+
+			&.Tappable-active {
+				background-color: @gray-lighter;
+			}
+		}
+	}
+
+	.years-container {
+		padding: 20px;
+		.box-sizing(border-box);
+
+		.year {
+			display: inline-block;
+			width: 25%;
+			font-size: @font-size-h6;
+			margin-top: 5px;
+			padding: 8px 0;
+			cursor: default;
+
+			&:first-child, &:last-child {
+				color: @gray-light;
+			}
+
+			&.is-current {
+				color: #fff;
+				background-color: @app-primary;
+			}
+
+			&.Tappable-active {
+				background-color: @gray-lighter;
+			}
+		}
+	}
+}
