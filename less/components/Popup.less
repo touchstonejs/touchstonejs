@@ -12,23 +12,20 @@
 	background-color: fade(white, 95%);
 	border-radius: @border-radius-large;
 	left: 50%;
-	margin: -60px 0 0 -60px;
+	top: 50%;
+	.transform(translate(-50%, -50%));
 	padding: 15px;
 	position: absolute;
 	text-align: center;
-	top: 50%;
 	width: 120px;
 	z-index: @zindex-popup;
-
-	&.default {
-		.translateY(-50%);
-		margin-left: -135px;
-		left: 50%;
-		top: 50%;
-		width: 270px;
-	}
 }
 .Popup-dialog-enter {
+	// fix animation issue on iOS.
+	visibility: hidden;
+}
+.Popup-dialog-enter-active {
+	visibility: visible;
 	.animation-name( popupDialogEnter );
 	.animation-duration( 280ms );
 	.animation-timing-function( cubic-bezier(0.680, -0.550, 0.265, 1.550) );
@@ -101,21 +98,21 @@
 // dialog
 
 @-webkit-keyframes popupDialogEnter {
-	from { opacity: 0; -webkit-transform: scale( .8 ); }
-	to { opacity: 1; -webkit-transform: scale( 1 ); }
+	from { opacity: 0; -webkit-transform: translate(-50%, -50%) scale( .8 ); }
+	to { opacity: 1; -webkit-transform: translate(-50%, -50%) scale( 1 ); }
 }
 @keyframes popupDialogEnter {
-	from { opacity: 0; transform: scale( .8 ); }
-	to { opacity: 1; transform: scale( 1 ); }
+	from { opacity: 0; transform: translate(-50%, -50%) scale( .8 ); }
+	to { opacity: 1; transform: translate(-50%, -50%) scale( 1 ); }
 }
 
 @-webkit-keyframes popupDialogLeave {
-	from { opacity: 1; -webkit-transform: scale( 1 ); }
-	to { opacity: 0; -webkit-transform: scale( .8 ); }
+	from { opacity: 1; -webkit-transform: translate(-50%, -50%) scale( 1 ); }
+	to { opacity: 0; -webkit-transform: translate(-50%, -50%) scale( .8 ); }
 }
 @keyframes popupDialogLeave {
-	from { opacity: 1; transform: scale( 1 ); }
-	to { opacity: 0; transform: scale( .8 ); }
+	from { opacity: 1; transform: translate(-50%, -50%) scale( 1 ); }
+	to { opacity: 0; transform: translate(-50%, -50%) scale( .8 ); }
 }
 
 
