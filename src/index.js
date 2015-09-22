@@ -13,7 +13,6 @@ export function createApp () {
 	var app = {
 		navigationBars: {},
 		viewManagers: {},
-		views: {},
 		transitionTo (view, opts) {
 			var vm = '__default';
 			view = view.split(':');
