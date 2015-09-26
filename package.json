@@ -50,7 +50,7 @@
     "babel-plugin-object-assign": "^1.2.1",
     "babelify": "^6.3.0",
     "browserify": "^11.2.0",
-    "del": "^1.2.0",
+    "del": "^2.0.2",
     "elemental": "^0.1.1",
     "gulp": "^3.9.0",
     "gulp-babel": "^5.2.1",

@@ -30,13 +30,13 @@ gulp.task('build:lib', function () {
 		.pipe(gulp.dest('lib'));
 });
 
-gulp.task('clean:lib', function (done) { del(['lib'], done); });
+gulp.task('clean:lib', function () { return del(['lib']); });
 gulp.task('watch:lib', ['build:lib'], function () {
 	gulp.watch('src/**/*', ['build:lib']);
 });
 
 // Site
-gulp.task('clean:site', function (done) { del(['site/__dist'], done); });
+gulp.task('clean:site', function () { return del(['site/__dist']); });
 
 gulp.task('build:site:files', function () {
 	return gulp.src([
