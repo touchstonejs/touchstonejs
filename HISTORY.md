@@ -1,12 +1,19 @@
 # TouchstoneJS
 
-Please be aware that TouchstoneJS is still under heavy initial development, and the features / API are liable to change rapidly and possibly break things.
+## v0.6.0 / 2015-09-26
 
-## v0.5.0 / 2015/07-30
+* added; new `DatePicker` component
+* added; `NavigationBar` supports `className` prop
+* added; `Input` and `LabelInput` components support `autoFocus` prop
+* improved; `Popup` component
+* improved; `LabelSelect` component no longer manages state
+* improved; `.views` are no longer exposed
+
+## v0.5.0 / 2015-07-30
 
 This release fixes a major ongoing issue we've been having with view transitions not being correctly run in "certain" browsers. See [#73](https://github.com/touchstonejs/touchstonejs/issues/73) and commit [52f6eb5](https://github.com/touchstonejs/touchstonejs/commit/52f6eb5066602782c2a4e0f01a02b439b6bd589a).
 
-Other fixes and addtions:
+Other fixes and additions:
 
 * added; `SearchField` UI Component
 * fixed; a lot of cleanup in the less files, including variables, consolidation and colour tweaks
