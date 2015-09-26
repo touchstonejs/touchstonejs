@@ -24,8 +24,9 @@
     "less"
   ],
   "scripts": {
-    "build": "gulp clean:lib && gulp build:lib",
-    "build:site": "gulp clean:site && NODE_ENV=productin gulp build:site",
+    "build": "gulp clean:lib && NODE_ENV=production gulp build:lib",
+    "build:dev": "gulp clean:lib && gulp build:lib",
+    "build:site": "gulp clean:site && NODE_ENV=production gulp build:site",
     "lint": "happiness",
     "start": "gulp site",
     "test": "npm run lint",
