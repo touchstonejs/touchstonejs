@@ -1,6 +1,5 @@
 import blacklist from 'blacklist';
 import FieldControl from './FieldControl';
-import FieldLabel from './FieldLabel';
 import Item from './Item';
 import ItemInner from './ItemInner';
 import React from 'react/addons';
@@ -31,17 +30,17 @@ module.exports = React.createClass({
 		readOnly: React.PropTypes.bool,
 		value: React.PropTypes.string
 	},
-	
+
 	componentDidMount () {
 		if (this.props.autoFocus) {
 			this.moveCursorToEnd();
 		}
 	},
-	
+
 	moveCursorToEnd () {
 		var target = this.refs.focusTarget.getDOMNode();
 		var endOfString = target.value.length;
-		
+
 		if (SELECTABLE_INPUT_TYPES.hasOwnProperty(target.type)) {
 			target.focus();
 			target.setSelectionRange(endOfString, endOfString);
@@ -49,8 +48,6 @@ module.exports = React.createClass({
 	},
 
 	render () {
-		var indentifiedByUserInput = this.props.id || this.props.htmlFor;
-		
 		var inputProps = blacklist(this.props, 'alignTop', 'children', 'first', 'readOnly');
 		var renderInput = this.props.readOnly ? (
 			<div className="field u-selectable">{this.props.value}</div>

@@ -15,8 +15,8 @@ module.exports = React.createClass({
 		options: React.PropTypes.array.isRequired,
 		value: React.PropTypes.oneOfType([
 			React.PropTypes.number,
-			React.PropTypes.string,
-		]),
+			React.PropTypes.string
+		])
 	},
 
 	getDefaultProps () {
@@ -24,7 +24,7 @@ module.exports = React.createClass({
 			className: ''
 		};
 	},
-	
+
 	renderOptions () {
 		return this.props.options.map(op => {
 			return (

@@ -28,7 +28,7 @@ module.exports = React.createClass({
 		var pulseWrap = this.props.pulse ? <div className="Alertbar__inner">{this.props.children}</div> : this.props.children;
 		var animatedBar = this.props.visible ? <div className={className}>{pulseWrap}</div> : null;
 
-		var component = this.props.animated ?(
+		var component = this.props.animated ? (
 			<Transition transitionName="Alertbar" component="div">
 				{animatedBar}
 			</Transition>

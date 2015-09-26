@@ -26,17 +26,17 @@ module.exports = React.createClass({
 		children: React.PropTypes.node,
 		disabled: React.PropTypes.bool
 	},
-	
+
 	componentDidMount () {
 		if (this.props.autoFocus) {
 			this.moveCursorToEnd();
 		}
 	},
-	
+
 	moveCursorToEnd () {
 		var target = this.refs.focusTarget.getDOMNode();
 		var endOfString = target.value.length;
-		
+
 		if (SELECTABLE_INPUT_TYPES.hasOwnProperty(target.type)) {
 			target.focus();
 			target.setSelectionRange(endOfString, endOfString);

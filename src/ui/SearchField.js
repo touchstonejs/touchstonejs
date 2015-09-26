@@ -1,15 +1,15 @@
-var blacklist = require('blacklist');
 var classnames = require('classnames');
 var React = require('react/addons');
 var Tappable = require('react-tappable');
-
 
 module.exports = React.createClass({
 	displayName: 'SearchField',
 	propTypes: {
 		className: React.PropTypes.string,
+		onCancel: React.PropTypes.func,
 		onChange: React.PropTypes.func,
 		onClear: React.PropTypes.func,
+		onSubmit: React.PropTypes.func,
 		placeholder: React.PropTypes.string,
 		type: React.PropTypes.oneOf(['default', 'dark']),
 		value: React.PropTypes.string
@@ -18,14 +18,14 @@ module.exports = React.createClass({
 	getInitialState () {
 		return {
 			isFocused: false
-		}
+		};
 	},
 
 	getDefaultProps () {
 		return {
 			type: 'default',
 			value: ''
-		}
+		};
 	},
 
 	handleClear () {
@@ -39,7 +39,7 @@ module.exports = React.createClass({
 	},
 
 	handleChange (e) {
-		this.props.onChange(e.target.value)
+		this.props.onChange(e.target.value);
 	},
 
 	handleBlur (e) {
@@ -56,9 +56,9 @@ module.exports = React.createClass({
 
 	handleSubmit (e) {
 		e.preventDefault();
-		
+
 		let input = this.refs.input.getDOMNode();
-		
+
 		input.blur();
 		this.props.onSubmit(input.value);
 	},
@@ -80,7 +80,6 @@ module.exports = React.createClass({
 			'is-focused': this.state.isFocused,
 			'has-value': this.props.value
 		}, this.props.className);
-		var props = blacklist(this.props, 'className', 'placeholder', 'type');
 
 		return (
 			<form onSubmit={this.handleSubmit} action="javascript:;" className={className}>

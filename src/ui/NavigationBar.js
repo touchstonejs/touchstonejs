@@ -183,7 +183,7 @@ var NavigationBar = React.createClass({
 
 	render () {
 		return (
-			<div className={classNames("NavigationBar", this.props.className)}>
+			<div className={classNames('NavigationBar', this.props.className)}>
 				{this.renderLeftButton()}
 				{this.renderTitle()}
 				{this.renderRightButton()}
