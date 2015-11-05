@@ -1,5 +1,5 @@
 import blacklist from 'blacklist';
-import React from 'react/addons';
+import React from 'react';
 
 import Item from './Item';
 import ItemContent from './ItemContent';

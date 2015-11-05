@@ -1,8 +1,7 @@
 var blacklist = require('blacklist');
 var classNames = require('classnames');
 var ErrorView = require('./ErrorView');
-var React = require('react/addons');
-var Transition = React.addons.CSSTransitionGroup;
+var Transition = require('react-addons-css-transition-group');
 
 function createViewsFromChildren (children) {
 	var views = {};
@@ -142,7 +141,7 @@ var ViewManager = React.createClass({
 			transitionName = 'view-transition-' + this.state.options.transition;
 		}
 		return (
-			<Transition transitionName={transitionName} transitionEnter={true} transitionLeave={true} className={className} component="div">
+			<Transition transitionLeaveTimeout={500} transitionEnterTimeout={500} transitionName={transitionName} transitionEnter={true} transitionLeave={true} className={className} component="div">
 				{viewContainer}
 			</Transition>
 		);

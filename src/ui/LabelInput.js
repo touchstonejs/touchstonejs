@@ -2,7 +2,7 @@ import blacklist from 'blacklist';
 import FieldControl from './FieldControl';
 import Item from './Item';
 import ItemInner from './ItemInner';
-import React from 'react/addons';
+import React from 'react';
 import Tappable from 'react-tappable';
 
 // Many input types DO NOT support setSelectionRange.
