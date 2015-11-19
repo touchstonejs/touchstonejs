@@ -1,5 +1,5 @@
 var blacklist = require('blacklist');
-var React = require('react/addons');
+var React = require('react');
 var Popup = require('./Popup');
 var DatePicker = require('./DatePicker');
 var classnames = require('classnames');
