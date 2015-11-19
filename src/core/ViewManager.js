@@ -1,8 +1,8 @@
+var React = require('react');
 var blacklist = require('blacklist');
 var classNames = require('classnames');
 var ErrorView = require('./ErrorView');
-var React = require('react/addons');
-var Transition = React.addons.CSSTransitionGroup;
+var Transition = require('react-addons-css-transition-group');
 
 function createViewsFromChildren (children) {
 	var views = {};

@@ -1,7 +1,7 @@
 import FieldControl from './FieldControl';
 import Item from './Item';
 import ItemInner from './ItemInner';
-import React from 'react/addons';
+import React from 'react';
 import classnames from 'classnames';
 
 module.exports = React.createClass({

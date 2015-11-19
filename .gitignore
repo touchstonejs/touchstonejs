@@ -16,9 +16,9 @@ results
 
 npm-debug.log
 
-lib/
 node_modules/
 site/__build
+-lib/
 
 *.iml
 *.ipr

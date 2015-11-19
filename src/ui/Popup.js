@@ -1,5 +1,5 @@
-var React = require('react/addons');
-var ReactCSSTransitionGroup = React.addons.CSSTransitionGroup;
+var React = require('react');
+var ReactCSSTransitionGroup = require('react-addons-css-transition-group');
 
 var classnames = require('classnames');
 
@@ -37,10 +37,10 @@ module.exports = React.createClass({
 	render () {
 		return (
 			<div className="Popup">
-				<ReactCSSTransitionGroup transitionName="Popup-dialog" component="div">
+				<ReactCSSTransitionGroup transitionEnterTimeout={400} transitionName="Popup-dialog" component="div">
 					{this.renderDialog()}
 				</ReactCSSTransitionGroup>
-				<ReactCSSTransitionGroup transitionName="Popup-background" component="div">
+				<ReactCSSTransitionGroup transitionEnterTimeout={400} transitionName="Popup-background" component="div">
 					{this.renderBackdrop()}
 				</ReactCSSTransitionGroup>
 			</div>
