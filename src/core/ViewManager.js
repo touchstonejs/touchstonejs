@@ -1,4 +1,5 @@
 var blacklist = require('blacklist');
+var React = require('react');
 var classNames = require('classnames');
 var ErrorView = require('./ErrorView');
 var Transition = require('react-addons-css-transition-group');
