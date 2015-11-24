@@ -1,5 +1,4 @@
 var animation = require('tween.js');
-var ReactDOM = require('react-dom');
 
 function update () {
 	animation.update();
@@ -50,7 +49,7 @@ Mixins.ScrollContainerToTop = {
 	},
 	scrollContainerToTop () {
 		if (!this.isMounted() || !this.refs.scrollContainer) return;
-		this._scrollContainerAnimation = scrollToTop(ReactDOM.findNode(this.refs.scrollContainer), {
+		this._scrollContainerAnimation = scrollToTop(this.refs.scrollContainer, {
 			onComplete: () => { delete this._scrollContainerAnimation; }
 		});
 	}
