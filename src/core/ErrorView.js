@@ -1,5 +1,5 @@
-var React = require('react');
-var Container = require('react-container');
+import React from 'react';
+import Container from 'react-container';
 
 var ErrorView = React.createClass({
 

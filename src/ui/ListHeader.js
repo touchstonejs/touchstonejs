@@ -1,7 +1,6 @@
-var React = require('react');
-
-var blacklist = require('blacklist');
-var classNames = require('classnames');
+import blacklist from 'blacklist';
+import classNames from 'classnames';
+import React from 'react';
 
 module.exports = React.createClass({
 	displayName: 'ListHeader',

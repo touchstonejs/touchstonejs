@@ -1,5 +1,5 @@
-var React = require('react');
-var classNames = require('classnames');
+import classNames from 'classnames';
+import React from 'react';
 
 module.exports = React.createClass({
 	displayName: 'PopupIcon',

@@ -1,6 +1,6 @@
-var blacklist = require('blacklist');
-var classnames = require('classnames');
-var React = require('react');
+import blacklist from 'blacklist';
+import classnames from 'classnames';
+import React from 'react';
 
 module.exports = React.createClass({
 	displayName: 'ItemContent',

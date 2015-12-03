@@ -1,5 +1,5 @@
-var classnames = require('classnames');
-var React = require('react');
+import classnames from 'classnames';
+import React from 'react';
 
 module.exports = React.createClass({
 	displayName: 'ItemNote',

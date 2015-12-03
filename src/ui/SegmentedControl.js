@@ -1,6 +1,6 @@
-var React = require('react');
-var classnames = require('classnames');
-var Tappable = require('react-tappable');
+import classnames from 'classnames';
+import React from 'react';
+import Tappable from 'react-tappable';
 
 module.exports = React.createClass({
 	displayName: 'SegmentedControl',

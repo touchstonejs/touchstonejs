@@ -1,6 +1,6 @@
-var React = require('react');
-var Tappable = require('react-tappable');
-var classnames = require('classnames');
+import classnames from 'classnames';
+import React from 'react';
+import Tappable from 'react-tappable';
 
 var i18n = {
 	// TODO: use real i18n strings.

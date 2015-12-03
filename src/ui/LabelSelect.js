@@ -1,9 +1,8 @@
-import React from 'react';
-
 import FieldControl from './FieldControl';
 import FieldLabel from './FieldLabel';
 import Item from './Item';
 import ItemInner from './ItemInner';
+import React from 'react';
 
 module.exports = React.createClass({
 	displayName: 'LabelSelect',
@@ -36,7 +35,6 @@ module.exports = React.createClass({
 	},
 
 	render () {
-
 		return (
 			<Item className={this.props.className} component="label">
 				<ItemInner>

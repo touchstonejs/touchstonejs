@@ -1,7 +1,7 @@
-var blacklist = require('blacklist');
-var React = require('react');
-var Tappable = require('react-tappable');
-var Transitions = require('../mixins/Transitions');
+import blacklist from 'blacklist';
+import React from 'react';
+import Tappable from 'react-tappable';
+import Transitions from '../mixins/Transitions';
 
 var Link = React.createClass({
 	mixins: [Transitions],

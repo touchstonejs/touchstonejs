@@ -1,5 +1,5 @@
-var React = require('react');
-var classnames = require('classnames');
+import classnames from 'classnames';
+import React from 'react';
 
 module.exports = React.createClass({
 	displayName: 'ItemMedia',

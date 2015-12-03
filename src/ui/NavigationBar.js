@@ -1,7 +1,7 @@
-var classNames = require('classnames');
-var React = require('react');
-var Tappable = require('react-tappable');
-var ReactCSSTransitionGroup = require('react-addons-css-transition-group');
+import classNames from 'classnames';
+import React from 'react';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import Tappable from 'react-tappable';
 
 const DIRECTIONS = {
 	'reveal-from-right': -1,

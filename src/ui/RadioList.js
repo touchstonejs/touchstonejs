@@ -1,10 +1,10 @@
-var classnames = require('classnames');
-var Item = require('./Item');
-var ItemInner = require('./ItemInner');
-var ItemNote = require('./ItemNote');
-var ItemTitle = require('./ItemTitle');
-var React = require('react');
-var Tappable = require('react-tappable');
+import classnames from 'classnames';
+import Item from './Item';
+import ItemInner from './ItemInner';
+import ItemNote from './ItemNote';
+import ItemTitle from './ItemTitle';
+import React from 'react';
+import Tappable from 'react-tappable';
 
 module.exports = React.createClass({
 	displayName: 'RadioList',

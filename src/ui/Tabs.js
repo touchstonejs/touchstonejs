@@ -1,8 +1,7 @@
-var React = require('react');
-var Tappable = require('react-tappable');
-
-var blacklist = require('blacklist');
-var classnames = require('classnames');
+import blacklist from 'blacklist';
+import classnames from 'classnames';
+import React from 'react';
+import Tappable from 'react-tappable';
 
 export var Navigator = React.createClass({
 	propTypes: {

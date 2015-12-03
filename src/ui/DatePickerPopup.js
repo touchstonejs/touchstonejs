@@ -1,8 +1,8 @@
-var blacklist = require('blacklist');
-var React = require('react');
-var Popup = require('./Popup');
-var DatePicker = require('./DatePicker');
-var classnames = require('classnames');
+import blacklist from 'blacklist';
+import classnames from 'classnames';
+import DatePicker from './DatePicker';
+import Popup from './Popup';
+import React from 'react';
 
 module.exports = React.createClass({
 	displayName: 'DatePickerPopup',

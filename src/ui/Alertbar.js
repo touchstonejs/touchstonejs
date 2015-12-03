@@ -1,6 +1,6 @@
-var React = require('react');
-var classnames = require('classnames');
-var ReactCSSTransitionGroup = require('react-addons-css-transition-group');
+import classnames from 'classnames';
+import React from 'react';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 module.exports = React.createClass({
 	displayName: 'Alertbar',

@@ -1,8 +1,8 @@
-var blacklist = require('blacklist');
-var classNames = require('classnames');
-var ErrorView = require('./ErrorView');
-var React = require('react');
-var ReactCSSTransitionGroup = require('react-addons-css-transition-group');
+import blacklist from 'blacklist';
+import classNames from 'classnames';
+import ErrorView from './ErrorView';
+import React from 'react';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 function createViewsFromChildren (children) {
 	var views = {};

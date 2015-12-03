@@ -1,9 +1,8 @@
 import blacklist from 'blacklist';
-import React from 'react';
-
 import Item from './Item';
 import ItemContent from './ItemContent';
 import ItemInner from './ItemInner';
+import React from 'react';
 
 // Many input types DO NOT support setSelectionRange.
 // Email will show an error on most desktop browsers but works on

@@ -1,10 +1,8 @@
-var React = require('react');
-
-var Item = require('./Item');
-var ItemContent = require('./ItemContent');
-var ItemInner = require('./ItemInner');
-
-var blacklist = require('blacklist');
+import blacklist from 'blacklist';
+import Item from './Item';
+import ItemContent from './ItemContent';
+import ItemInner from './ItemInner';
+import React from 'react';
 
 module.exports = React.createClass({
 	displayName: 'Input',

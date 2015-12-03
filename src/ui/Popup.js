@@ -1,7 +1,6 @@
-var React = require('react');
-var ReactCSSTransitionGroup = require('react-addons-css-transition-group');
-
-var classnames = require('classnames');
+import classnames from 'classnames';
+import React from 'react';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 module.exports = React.createClass({
 	displayName: 'Popup',
