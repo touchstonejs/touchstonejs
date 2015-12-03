@@ -1,5 +1,5 @@
 import blacklist from 'blacklist';
-import React from 'react/addons';
+import React from 'react';
 import classnames from 'classnames';
 
 module.exports = React.createClass({

@@ -1,7 +1,7 @@
 var classNames = require('classnames');
-var React = require('react/addons');
+var React = require('react');
 var Tappable = require('react-tappable');
-var Transition = React.addons.CSSTransitionGroup;
+var ReactCSSTransitionGroup = require('react-addons-css-transition-group');
 
 const DIRECTIONS = {
 	'reveal-from-right': -1,
@@ -110,9 +110,9 @@ var NavigationBar = React.createClass({
 		var arrow = this.state.leftArrow ? <span className="NavigationBarLeftArrow" /> : null;
 
 		return (
-			<Transition transitionName={transitionName}>
+			<ReactCSSTransitionGroup transitionName={transitionName}>
 				{arrow}
-			</Transition>
+			</ReactCSSTransitionGroup>
 		);
 	},
 
@@ -127,9 +127,9 @@ var NavigationBar = React.createClass({
 		}
 
 		return (
-			<Transition transitionName={transitionName}>
+			<ReactCSSTransitionGroup transitionName={transitionName}>
 				<span key={Date.now()} className="NavigationBarLeftLabel">{this.state.leftLabel}</span>
-			</Transition>
+			</ReactCSSTransitionGroup>
 		);
 	},
 
@@ -145,9 +145,9 @@ var NavigationBar = React.createClass({
 		}
 
 		return (
-			<Transition transitionName={transitionName}>
+			<ReactCSSTransitionGroup transitionName={transitionName}>
 				{title}
-			</Transition>
+			</ReactCSSTransitionGroup>
 		);
 	},
 
@@ -163,9 +163,9 @@ var NavigationBar = React.createClass({
 			</Tappable>
 		) : null;
 		return (
-			<Transition transitionName={transitionName}>
+			<ReactCSSTransitionGroup transitionName={transitionName}>
 				{button}
-			</Transition>
+			</ReactCSSTransitionGroup>
 		);
 	},
 

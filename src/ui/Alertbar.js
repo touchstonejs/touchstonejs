@@ -1,6 +1,6 @@
-var React = require('react/addons');
+var React = require('react');
 var classnames = require('classnames');
-var Transition = React.addons.CSSTransitionGroup;
+var ReactCSSTransitionGroup = require('react-addons-css-transition-group');
 
 module.exports = React.createClass({
 	displayName: 'Alertbar',
@@ -29,9 +29,9 @@ module.exports = React.createClass({
 		var animatedBar = this.props.visible ? <div className={className}>{pulseWrap}</div> : null;
 
 		var component = this.props.animated ? (
-			<Transition transitionName="Alertbar" component="div">
+			<ReactCSSTransitionGroup transitionName="Alertbar" transitionEnterTimeout={300} transitionLeaveTimeout={300} component="div">
 				{animatedBar}
-			</Transition>
+			</ReactCSSTransitionGroup>
 		) : <div className={className}>{pulseWrap}</div>;
 
 		return component;
