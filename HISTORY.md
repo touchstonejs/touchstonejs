@@ -1,5 +1,9 @@
 # TouchstoneJS
 
+## v0.7.1 / 2015-12-04
+
+* Updated for React 0.14
+
 ## v0.6.0 / 2015-09-26
 
 * added; new `DatePicker` component
