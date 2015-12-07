@@ -1,5 +1,9 @@
 # TouchstoneJS
 
+## v0.7.2 / 2015-12-07
+
+* fixed; transition timeout warnings for the ViewManager with React 0.14
+
 ## v0.7.1 / 2015-12-04
 
 * Updated for React 0.14
