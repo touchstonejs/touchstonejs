@@ -137,12 +137,21 @@ var ViewManager = React.createClass({
 		var viewContainer = this.renderViewContainer(this.state.currentView, { viewProps: this.state.currentViewProps });
 
 		var transitionName = 'view-transition-instant';
+		var transitionDurationEnter = 10;
+		var transitionDurationLeave = 60;
 		if (this.state.options.transition) {
 			// console.log('applying view transition: ' + this.state.options.transition + ' to view ' + this.state.currentView);
 			transitionName = 'view-transition-' + this.state.options.transition;
+			if (this.state.options.transition === 'fade') {
+				var transitionDurationEnter = 10;
+				var transitionDurationLeave = 340;
+			} else {
+				var transitionDurationEnter = 500;
+				var transitionDurationLeave = 500;
+			}
 		}
 		return (
-			<ReactCSSTransitionGroup transitionName={transitionName} transitionEnter={true} transitionLeave={true} className={className} component="div">
+			<ReactCSSTransitionGroup transitionName={transitionName} transitionEnterTimeout={transitionDurationEnter} transitionLeaveTimeout={transitionDurationLeave} className={className} component="div">
 				{viewContainer}
 			</ReactCSSTransitionGroup>
 		);
