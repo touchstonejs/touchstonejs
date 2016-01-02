@@ -14,4 +14,4 @@ See the [touchstone-starter](https://github.com/touchstonejs/touchstonejs-starte
 
 ### License
 
-MIT. Copyright (c) 2015 Jed Watson
+MIT. Copyright (c) 2016 Jed Watson
