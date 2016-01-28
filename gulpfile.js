@@ -36,12 +36,12 @@ gulp.task('watch:lib', ['build:lib'], function () {
 });
 
 // Site
-gulp.task('clean:site', function () { return del(['site/__dist']); });
+gulp.task('clean:site', function () { return del(['site/__build']); });
 
 gulp.task('build:site:files', function () {
-	return gulp.src([
+	return gulp.src(
 			SITE_FILES
-		], {
+		, {
 			cwd: 'site',
 			base: 'site'
 		})
