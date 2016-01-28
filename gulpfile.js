@@ -26,7 +26,10 @@ const SITE_FILES = [
 // Build/Clean/Watch lib
 gulp.task('build:lib', function () {
 	return gulp.src('src/**/*')
-		.pipe(babel({ plugins: [require('babel-plugin-object-assign')] }))
+		.pipe(babel({
+			plugins: ['transform-object-assign', 'transform-object-rest-spread'],
+			presets: ['es2015', 'react'],
+		}))
 		.pipe(gulp.dest('lib'));
 });
 
@@ -51,7 +54,8 @@ gulp.task('build:site:files', function () {
 gulp.task('build:site:js', function () {
 	browserify('site/site.js')
 		.transform(babelify.configure({
-			plugins: [require('babel-plugin-object-assign')]
+			plugins: ['transform-object-assign', 'transform-object-rest-spread'],
+			presets: ['es2015', 'react'],
 		}))
 		.bundle()
 		.on('error', function (e) {
