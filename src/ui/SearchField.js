@@ -12,7 +12,8 @@ module.exports = React.createClass({
 		onSubmit: React.PropTypes.func,
 		placeholder: React.PropTypes.string,
 		type: React.PropTypes.oneOf(['default', 'dark']),
-		value: React.PropTypes.string
+		value: React.PropTypes.string,
+		cancelText: React.PropTypes.string
 	},
 
 	getInitialState () {
@@ -72,7 +73,7 @@ module.exports = React.createClass({
 		var className = classnames('SearchField__cancel', {
 			'is-visible': this.state.isFocused || this.props.value
 		});
-		return <Tappable className={className} onTap={this.handleCancel}>Cancel</Tappable>;
+		return <Tappable className={className} onTap={this.handleCancel}>{this.props.cancelText}</Tappable>;
 	},
 
 	render () {
