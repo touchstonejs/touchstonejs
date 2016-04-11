@@ -59,7 +59,7 @@ var ViewManager = React.createClass({
 	},
 	componentWillReceiveProps (nextProps) {
 		this.setState({
-			views: createViewsFromChildren(this.props.children)
+			views: createViewsFromChildren(nextProps.children)
 		});
 		if (nextProps.name !== this.props.name) {
 			this.context.app.viewManagers[nextProps.name] = this;
