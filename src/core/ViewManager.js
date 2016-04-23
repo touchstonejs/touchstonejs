@@ -146,8 +146,8 @@ var ViewManager = React.createClass({
 				var transitionDurationEnter = 10;
 				var transitionDurationLeave = 340;
 			} else {
-				var transitionDurationEnter = 500;
-				var transitionDurationLeave = 500;
+				var transitionDurationEnter = this.state.options.transition === 'instant'? 50: 500;
+				var transitionDurationLeave = this.state.options.transition === 'instant'? 50: 500;
 			}
 		}
 		return (
