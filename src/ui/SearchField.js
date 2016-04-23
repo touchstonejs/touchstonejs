@@ -13,7 +13,8 @@ module.exports = React.createClass({
 		placeholder: React.PropTypes.string,
 		type: React.PropTypes.oneOf(['default', 'dark']),
 		value: React.PropTypes.string,
-		cancelText: React.PropTypes.string
+		cancelText: React.PropTypes.string,
+		hideOnBlur: React.PropTypes.bool
 	},
 
 	getInitialState () {
@@ -26,7 +27,8 @@ module.exports = React.createClass({
 		return {
 			type: 'default',
 			value: '',
-			cancelText: 'Cancel'
+			cancelText: 'Cancel',
+			hideOnBlur: false
 		};
 	},
 
@@ -66,13 +68,21 @@ module.exports = React.createClass({
 	},
 
 	renderClear () {
-		if (!this.props.value.length) return;
+		if (this.props.hideOnBlur) {
+			if (!this.props.value.length || !this.state.isFocused) return;
+		} else {
+			if (!this.props.value.length) return;
+		}
 		return <Tappable className="SearchField__icon SearchField__icon--clear" onTap={this.handleClear} />;
 	},
 
 	renderCancel () {
+		if (this.props.hideOnBlur)
+			var visibleBool = this.state.isFocused;
+		else
+			var visibleBool = this.state.isFocused || this.props.value;
 		var className = classnames('SearchField__cancel', {
-			'is-visible': this.state.isFocused || this.props.value
+			'is-visible': visibleBool
 		});
 		return <Tappable className={className} onTap={this.handleCancel}>{this.props.cancelText}</Tappable>;
 	},
