@@ -45,11 +45,10 @@
     "tween.js": "^16.3.4"
   },
   "peerDependencies": {
-    "react": "^0.14.0",
-    "react-dom": "^0.14.0",
-    "react-container": "^0.3.1",
-    "react-tappable": "^0.7.1",
-    "react-addons-css-transition-group": "^0.14.0"
+     "react": "^15.1.0",
+     "react-dom": "^15.1.0",
+     "react-tappable": "^0.8.1",
+     "react-addons-css-transition-group": "^15.1.0"
   },
   "devDependencies": {
     "babel-core": "^6.4.5",
