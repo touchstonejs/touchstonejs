@@ -2,8 +2,6 @@
 
 Mobile App Framework powered by React.
 
-See the demo at [touchstonejs.io](http://touchstonejs.io/).
-
 Follow [@touchstonejs](https://twitter.com/touchstonejs) on Twitter for updates.
 
 See the [touchstone-starter](https://github.com/touchstonejs/touchstonejs-starter) project for example usage.
